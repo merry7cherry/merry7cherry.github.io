@@ -141,7 +141,7 @@ function displayPublications() {
 
 function createPublicationHTML(pub) {
     const authorsHtml = pub.authors.map(author =>
-        author.includes('Weikai Huang') ? `<strong>${author}</strong>` : author
+        author.includes('Chenrui Ma') ? `<strong>${author}</strong>` : author
     ).join(', ');
 
     // Create links with better labels and ordering

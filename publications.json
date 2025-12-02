@@ -12,7 +12,7 @@
       ],
       "venue": "AAAI",
       "year": "2026",
-      "image": "img/papers/sos.png",
+      "image": "img/papers/cad-vae.jpg",
       "arxiv_id": "2503.07938",
       "github_repo": "merry7cherry/CAD-VAE",
       "links": {
@@ -36,7 +36,7 @@
       ],
       "venue": "ICLR (Submitted)",
       "year": "2026",
-      "image": "img/papers/sos.png",
+      "image": "img/papers/stochastic-interpolants.png",
       "arxiv_id": "2509.23122",
       "github_repo": "merry7cherry/Stochastic-Interpolants-via-Conditional-Dependent-Coupling",
       "links": {
@@ -60,7 +60,7 @@
       ],
       "venue": "CVPR (Submitted)",
       "year": "2026",
-      "image": "img/papers/sos.png",
+      "image": "img/papers/learning-straight-flows.png",
       "arxiv_id": "2511.17583",
       "github_repo": "merry7cherry/S-VFM",
       "links": {
@@ -88,7 +88,7 @@
       ],
       "venue": "WACV",
       "year": "2026",
-      "image": "img/papers/sos.png",
+      "image": "img/papers/probe.png",
       "arxiv_id": "2511.12410",
       "github_repo": "xixiaouab/PROBE",
       "links": {
@@ -115,7 +115,7 @@
       ],
       "venue": "ICANN",
       "year": "2025",
-      "image": "img/papers/sos.png",
+      "image": "img/papers/cibr.png",
       "links": {
         "arxiv": "https://link.springer.com/chapter/10.1007/978-3-032-04558-4_20"
       },
@@ -132,7 +132,7 @@
       ],
       "venue": "In Submission",
       "year": "2025",
-      "image": "img/papers/sos.png",
+      "image": "img/papers/beyond-editing-pairs.png",
       "arxiv_id": "2505.19352",
       "links": {
         "arxiv": "https://arxiv.org/abs/2505.19352"
@@ -157,12 +157,11 @@
       ],
       "venue": "ICASSP (Submitted)",
       "year": "2026",
-      "image": "img/papers/sos.png",
       "arxiv_id": "2510.15962",
       "links": {
         "arxiv": "https://arxiv.org/abs/2510.15962"
       },
-      "selected": true,
+      "selected": false,
       "tldr": "CTR-LoRA is a simple and efficient LoRA framework for large language models. It is based on the idea of using a simple and efficient LoRA framework for large language models.",
       "citations": 0
     }
