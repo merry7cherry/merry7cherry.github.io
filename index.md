@@ -30,11 +30,11 @@ img {
 }
 </style>
 
-Hi, I am a Master's student at the University of California, Irvine, working as a Research Assistant in the [Trustworthy ML/AI Group](https://sites.google.com/uci.edu/yanning-shen/group?authuser=0) at UCI. I am also a student collaborator at [Oak Ridge National Laboratory](https://education.ornl.gov/graduate/) working on generative and understanding models.
+Hi, I am a Master's student at the University of California, Irvine, working as a Research Assistant in the [Trustworthy ML/AI Group](https://sites.google.com/uci.edu/yanning-shen/group?authuser=0) at UCI. I am also a student collaborator at [Oak Ridge National Laboratory](https://education.ornl.gov/graduate/).
 
 **Research Interests**:
 
-- **Generative Models**: Developing advanced algorithms and models for generative modeling, understanding, and reasoning, with applications in computer vision and vision-language models.
+- **Generative Modeling**: Developing advanced algorithms and models for generative modeling, understanding, and reasoning, with applications in computer vision and vision-language models.
 
 - **Efficient Generation**: Proposing novel generative theory/algorithms for efficiency, including one-step generation and multi-stage generation approaches.
 
@@ -97,9 +97,5 @@ Hi, I am a Master's student at the University of California, Irvine, working as 
 
 ## 📫 Contact
 Email: [chenrum@uci.edu](mailto:chenrum@uci.edu)  
-Phone: +1-949-792-8518  
-Location: Irvine, California - 92612, USA  
-<br>LinkedIn: [Chenrui Ma](https://www.linkedin.com/in/chenrui-ma-23804132b/)  
-<br>GitHub: [merry7cherry](https://github.com/merry7cherry)  
-<br>Google Scholar: [Chenrui Ma](https://scholar.google.com/citations?user=dvkqKZsAAAAJ&hl=en)
+Location: Irvine, California, USA  
 
