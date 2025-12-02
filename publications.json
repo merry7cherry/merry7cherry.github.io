@@ -69,7 +69,7 @@
       },
       "selected": true,
       "tldr": "Introduing a varitional latent code, which provides \"generation overview\", and the straightness loss into flow matching framework for efficient (one-step) image generation.",
-      "github_stars": 0,
+      "github_stars": 1,
       "citations": 2
     },
     {

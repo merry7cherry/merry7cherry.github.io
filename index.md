@@ -32,20 +32,35 @@ img {
 
 Hi, I am a Master's student at the University of California, Irvine, working as a Research Assistant in the [Trustworthy ML/AI Group](https://sites.google.com/uci.edu/yanning-shen/group?authuser=0) at UCI. I am also a student collaborator at [Oak Ridge National Laboratory](https://education.ornl.gov/graduate/).
 
-**Research Interests**:
 
-- **Generative Modeling**: Developing advanced algorithms and models for generative modeling, understanding, and reasoning, with applications in computer vision and vision-language models.
+## 📫 Contact
+Email: [chenrum@uci.edu](mailto:chenrum@uci.edu)  
+Location: Irvine, California, USA  
 
-- **Efficient Generation**: Proposing novel generative theory/algorithms for efficiency, including one-step generation and multi-stage generation approaches.
 
-- **Fairness in AI**: Designing methods to address challenges of fairness in generative models and representation learning.
+**Research Interests**
 
-- **Multi-modal Understanding**: Working on generative and understanding models for real-world data (images, videos, 3D, and multi-modality), focusing on improving efficiency and performance.
+- **Generative Modeling & Algorithmic Foundations**:  
+  Research focuses on advanced generative models, including diffusion/flow models, autoregressive models, and VAEs, with an emphasis on the **mathematical and algorithmic foundations** of generation, aiming to improve controllability, robustness, and generalization for real-world data. A key direction is the development of **efficient generative methods**, these methods aim to fundamentally reduce inference and training cost while preserving or improving fidelity, providing theoretically grounded solutions for scalable and fast generation.
+
+- **Multi-modal and Physically-Aware Understanding**:  
+  Research also covers **multi-modal understanding and generation** for images, videos, 3D data, and vision–language tasks, motivating to solve the multi-modal collaboration and cross-modal alignment. Longer-term interests include incorporating **physical structure, dynamics, and causal constraints** into generative models, moving toward physically consistent, trustworthy AI systems deployed in realistic environments.
+
+- **Fairness and Trustworthy Representation Learning**:  
+  Another line of work studies the interaction between generative models, representation learning, and **fairness**, enabling both generative and downstream tasks to behave reliably and ethically across diverse populations and data distributions.
+
 
 
 <div class="announcement-banner">
   📢 I'm seeking a PhD position focused on generative and understanding models for real-world data (images, videos, 3D, and multi-modality). Motivated to address challenges in generation, understanding, reasoning, efficiency, and fairness. Feel free to <a href="mailto:chenrum@uci.edu">reach out</a>!
 </div>
+
+
+## 📰 News
+- [2025-11] Glad to see our recent work [Learning Straight Flows: Variational Flow Matching for Efficient Generation](https://arxiv.org/abs/2511.17583) (under review), receiving growing attention and discussion in the community.
+- [2025-11] Our work [CAD-VAE: Leveraging Correlation-Aware Latents for Comprehensive Fair Disentanglement](https://arxiv.org/abs/2503.07938) is accepted to AAAI 2026 main track.
+- [2025-11] Our work [Self-Supervised Visual Prompting for Cross-Domain Road Damage Detection](https://arxiv.org/abs/2511.12410) is accepted to WACV 2026.
+
 
 ## 📝 Publications
 
@@ -77,6 +92,7 @@ Hi, I am a Master's student at the University of California, Irvine, working as 
   September 2021 – June 2024  
   Grade: 86.8%, Rank: Top 35%
 
+
 ## 💼 Experience
 - **Research Assistant**  
   *Trustworthy ML/AI Group @ UCI*  
@@ -95,7 +111,29 @@ Hi, I am a Master's student at the University of California, Irvine, working as 
   May 2025 – Present  
   - Engineered generative and understanding models with a focus on improving efficiency and performance.
 
-## 📫 Contact
-Email: [chenrum@uci.edu](mailto:chenrum@uci.edu)  
-Location: Irvine, California, USA  
+  
+## 🏅 Awards
+- **AAAI-2026 Scholarship**  
+  Singapore, November 2025  
+  Awarded to students with outstanding academic performance for the year.
+
+- **University-level Second Prize Scholarship (Top 20%)**  
+  Central South University, September 2024
+
+- **University-level Third Prize Scholarship (Top 30%)**  
+  Central South University, September 2023
+
+- **21st China Undergraduate Mathematical Competition in Modeling**  
+  Changsha, Hunan, China, September 2023  
+  National Second Prize, Top 15% nationwide.
+
+- **4th National College Student Mathematical Modeling Competition**  
+  Changsha, Hunan, China, July 2023  
+  National First Prize, Top 5% nationwide.
+
+
+## 📍 Professional Services
+- **Conference Reviewer**: CVPR 2026, AAAI 2026
+- TA for **UCI EECS 298: Networked System**, Spring 2026
+
 
