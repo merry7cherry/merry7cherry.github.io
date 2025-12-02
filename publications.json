@@ -1,28 +1,23 @@
 {
   "publications": [
     {
-      "id": "sos",
-      "title": "Synthetic Object Compositions for Scalable and Accurate Learning in Detection, Segmentation, and Grounding",
+      "id": "cad-vae",
+      "title": "CAD-VAE: Leveraging Correlation-Aware Latents for Comprehensive Fair Disentanglement",
       "authors": [
-        "Weikai Huang",
-        "Jieyu Zhang",
-        "Taoyang Jia",
-        "Chenhao Zheng",
-        "Ziqi Gao",
-        "Jae Sung Park",
-        "Winson Han",
-        "Ranjay Krishna"
+        "Chenrui Ma",
+        "Xi Xiao",
+        "Tianyang Wang",
+        "Xiao Wang",
+        "Yanning Shen"
       ],
-      "venue": "arXiv",
-      "year": "2025",
+      "venue": "AAAI",
+      "year": "2026",
       "image": "img/papers/sos.png",
-      "arxiv_id": "2510.09110",
-      "github_repo": "weikaih04/Synthetic-Detection-Segmentation-Grounding-Data",
+      "arxiv_id": "2503.07938",
+      "github_repo": "merry7cherry/CAD-VAE",
       "links": {
-        "arxiv": "https://arxiv.org/abs/2510.09110",
-        "website": "https://github.com/weikaih04/Synthetic-Detection-Segmentation-Grounding-Data",
-        "code": "https://github.com/weikaih04/Synthetic-Detection-Segmentation-Grounding-Data",
-        "huggingface": "https://huggingface.co/collections/weikaih/sos-synthetic-object-segments-improves-detection-segmentat-682679751d20faa20800033c"
+        "arxiv": "https://arxiv.org/abs/2503.07938",
+        "code": "https://github.com/merry7cherry/CAD-VAE"
       },
       "selected": true,
       "tldr": "1M diverse and dense-annotated synthetic images composed by 20M synthetic object—boost GroundingDINO, Mask2Former on LVIS, gRefCOCO. First synthetic dataset surpassing real datasets in different models / benchmarks.",
@@ -30,25 +25,23 @@
       "citations": 0
     },
     {
-      "id": "gas",
-      "title": "Generate Any Scene: Scene Graph Driven Data Synthesis for Visual Generation Training",
+      "id": "stochastic-interpolants",
+      "title": "Stochastic Interpolants via Conditional Dependent Coupling",
       "authors": [
-        "Ziqi Gao*",
-        "Weikai Huang*",
-        "Jieyu Zhang",
-        "Aniruddha Kembhavi",
-        "Ranjay Krishna"
+        "Chenrui Ma",
+        "Xi Xiao",
+        "Tianyang Wang",
+        "Xiao Wang",
+        "Yanning Shen"
       ],
-      "venue": "arXiv",
-      "year": "2025",
-      "image": "img/papers/gas.png",
-      "arxiv_id": "2412.08221",
-      "github_repo": "RAIVNLab/GenerateAnyScene",
+      "venue": "ICLR (Submitted)",
+      "year": "2026",
+      "image": "img/papers/sos.png",
+      "arxiv_id": "2509.23122",
+      "github_repo": "merry7cherry/Stochastic-Interpolants-via-Conditional-Dependent-Coupling",
       "links": {
-        "website": "https://generate-any-scene.github.io/",
-        "arxiv": "https://arxiv.org/abs/2412.08221",
-        "code": "https://github.com/RAIVNLab/GenerateAnyScene",
-        "huggingface": "https://huggingface.co/datasets/UWGZQ/GenerateAnyScene"
+        "arxiv": "https://arxiv.org/abs/2509.23122",
+        "code": "https://github.com/merry7cherry/Stochastic-Interpolants-via-Conditional-Dependent-Coupling"
       },
       "selected": true,
       "tldr": "Scene graph programming generates infinite compositional scenes—systematically improves text-to-image, text-to-video and text-to-3D models. Also support RL training!",
@@ -56,102 +49,122 @@
       "citations": 0
     },
     {
-      "id": "provision",
-      "title": "ProVision: Programmatically Scaling Vision-centric Instruction Data for Multimodal Language Models",
+      "id": "learning-straight-flows",
+      "title": "Learning Straight Flows: Variational Flow Matching for Efficient Generation",
       "authors": [
-        "Jieyu Zhang",
-        "Le Xue",
-        "Linxin Song",
-        "Jun Wang",
-        "Weikai Huang",
-        "Manli Shu",
-        "An Yan",
-        "Zixian Ma",
-        "Juan Carlos Niebles",
-        "Silvio Savarese",
-        "Caiming Xiong",
-        "Zeyuan Chen",
-        "Ranjay Krishna",
-        "Ran Xu"
+        "Chenrui Ma",
+        "Xi Xiao",
+        "Tianyang Wang",
+        "Xiao Wang",
+        "Yanning Shen"
       ],
-      "venue": "arXiv",
-      "year": "2024",
-      "image": "img/papers/provision.png",
-      "arxiv_id": "2412.07012",
-      "github_repo": "JieyuZ2/ProVision",
+      "venue": "CVPR (Submitted)",
+      "year": "2026",
+      "image": "img/papers/sos.png",
+      "arxiv_id": "2511.17583",
+      "github_repo": "merry7cherry/S-VFM",
       "links": {
-        "arxiv": "https://arxiv.org/abs/2412.07012",
-        "code": "https://github.com/JieyuZ2/ProVision",
-        "huggingface": "https://huggingface.co/datasets/Salesforce/ProVision-10M",
-        "blog": "https://www.salesforce.com/blog/provision-multimodal-data-generation/"
+        "arxiv": "https://arxiv.org/abs/2511.17583",
+        "code": "https://github.com/merry7cherry/S-VFM"
       },
       "selected": true,
-      "tldr": "10M vision-centric VQA questions generated by 100% accurate program—7% boost on CVBench 2D, 8% on 3D, 8% on Mantis-Eval. Zero manual annotation.",
-      "highlight": "🔥 Used in Salesforce's SOTA VLM <a href='https://github.com/salesforce/LAVIS/tree/xgen-mm' target='_blank' style='color: #ffffff; text-decoration: underline;'>BLIP-3</a> training mixture | 📰 Covered by <a href='https://venturebeat.com/data-infrastructure/breaking-the-data-bottleneck-salesforces-provision-speeds-multimodal-ai-training-with-image-scene-graphs' target='_blank' style='color: #ffffff; text-decoration: underline;'>VentureBeat</a> & <a href='https://www.marktechpost.com/2024/12/10/salesforce-ai-research-introduces-provision-a-programmatic-approach-to-scale-vision-centric-instruction-data-for-multimodal-language-models/' target='_blank' style='color: #ffffff; text-decoration: underline;'>MarkTechPost</a>",
-      "github_stars": 35,
-      "citations": 12
+      "tldr": "S-VFM is a simple and efficient variational flow matching framework for image generation. It is based on the idea of using a simple and efficient variational flow matching framework for image generation.",
+      "github_stars": 120,
+      "citations": 0
     },
     {
-      "id": "tma",
-      "title": "Task Me Anything",
+      "id": "probe",
+      "title": "Self-Supervised Visual Prompting for Cross-Domain Road Damage Detection",
       "authors": [
-        "Jieyu Zhang",
-        "Weikai Huang*",
-        "Zixian Ma*",
-        "Oscar Michel",
-        "Dong He",
-        "Tanmay Gupta",
-        "Wei-Chiu Ma",
-        "Ali Farhadi",
-        "Aniruddha Kembhavi",
-        "Ranjay Krishna"
+        "Xi Xiao",
+        "Zhuxuanzi Wang",
+        "Mingqiao Mo",
+        "Chen Liu",
+        "Chenrui Ma",
+        "Yanshu Li",
+        "Smita Krishnaswamy",
+        "Xiao Wang",
+        "Tianyang Wang"
       ],
-      "venue": "NeurIPS (Main Conference)",
-      "year": "2024",
-      "award": null,
-      "additional_venue": "Video-Language Models Workshop (Oral)",
-      "image": "img/papers/tma.png",
-      "arxiv_id": "2406.11775",
-      "github_repo": "JieyuZ2/TaskMeAnything",
+      "venue": "WACV",
+      "year": "2026",
+      "image": "img/papers/sos.png",
+      "arxiv_id": "2511.12410",
+      "github_repo": "xixiaouab/PROBE",
       "links": {
-        "arxiv": "https://arxiv.org/abs/2406.11775",
-        "website": "https://www.task-me-anything.org/",
-        "code": "https://github.com/JieyuZ2/TaskMeAnything",
-        "huggingface": "https://huggingface.co/collections/jieyuz2/taskme-anything-667e1f31bdfedf6c0c3b2e03",
-        "blog": "https://snorkel.ai/blog/task-me-anything-innovating-multimodal-model-benchmarks/",
-        "talk": "https://www.youtube.com/watch?v=J3ECnV8Yc_g"
+        "arxiv": "https://arxiv.org/abs/2511.12410",
+        "code": "https://github.com/xixiaouab/PROBE"
       },
       "selected": true,
-      "tldr": "Provided 2D/3D assets, generate 750M+ fine-grained visual questions without any human annotation—reveals SOTA VLM's weaknesses.",
-      "highlight": "📰 Covered by <a href='https://snorkel.ai/blog/task-me-anything-innovating-multimodal-model-benchmarks/' target='_blank' style='color: #ffffff; text-decoration: underline;'>Snorkel AI</a> | 🎥 Featured <a href='https://www.youtube.com/watch?v=J3ECnV8Yc_g' target='_blank' style='color: #ffffff; text-decoration: underline;'>Talk</a>",
-      "github_stars": 73,
-      "citations": 24
+      "tldr": "PROBE is a simple and efficient visual prompting framework for cross-domain road damage detection. It is based on the idea of using a simple and efficient visual prompting framework for cross-domain road damage detection.",
+      "github_stars": 120,
+      "citations": 0
     },
     {
-      "id": "mms",
-      "title": "m&m's: A Benchmark to Evaluate Tool-Use for multi-step multi-modal Tasks",
+      "id": "cibr",
+      "title": "CIBR: Cross-modal information bottleneck regularization for robust clip generalization",
       "authors": [
-        "Zixian Ma",
-        "Weikai Huang",
-        "Jieyu Zhang",
-        "Tanmay Gupta",
-        "Ranjay Krishna"
+        "Yingrui Ji",
+        "Xi Xiao",
+        "Gaofei Chen",
+        "Hao Xu",
+        "Chenrui Ma",
+        "Lijing Zhu",
+        "Aokun Liang",
+        "Jiansheng Chen"
       ],
-      "venue": "ECCV",
-      "year": "2024",
-      "image": "img/papers/mms.png",
-      "arxiv_id": "2403.11085",
-      "github_repo": "RAIVNLab/mnms",
+      "venue": "ICANN",
+      "year": "2025",
+      "image": "img/papers/sos.png",
       "links": {
-        "arxiv": "https://arxiv.org/abs/2403.11085",
-        "website": "https://mnms-project.github.io/",
-        "code": "https://github.com/RAIVNLab/mnms",
-        "huggingface": "https://huggingface.co/datasets/zixianma/mnms"
+        "arxiv": "https://link.springer.com/chapter/10.1007/978-3-032-04558-4_20"
+      },
+      "selected": true
+    },
+    {
+      "id": "beyond-editing-pairs",
+      "title": "Beyond Editing Pairs: Fine-Grained Instructional Image Editing via Multi-Scale Learnable Regions",
+      "authors": [
+        "Chenrui Ma",
+        "Xi Xiao",
+        "Tianyang Wang",
+        "Yanning Shen"
+      ],
+      "venue": "In Submission",
+      "year": "2025",
+      "image": "img/papers/sos.png",
+      "arxiv_id": "2505.19352",
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2505.19352"
       },
       "selected": true,
-      "tldr": "First multi-modal tool-use benchmark—4K+ human-verified tasks with 33 tools, GPT-4V achieves only 24% success rate.",
-      "github_stars": 44,
-      "citations": 33
+      "tldr": "Beyond Editing Pairs is a simple and efficient editing framework for instructional image editing. It is based on the idea of using a simple and efficient editing framework for instructional image editing.",
+      "citations": 0
+    },
+    {
+      "id": "ctr-lora",
+      "title": "CTR-LoRA: Curvature-Aware and Trust-Region Guided Low-Rank Adaptation for Large Language Models",
+      "authors": [
+        "Zhuxuanzi Wang",
+        "Mingqiao Mo",
+        "Xi Xiao",
+        "Chen Liu",
+        "Chenrui Ma",
+        "Yunbei Zhang",
+        "Xiao Wang",
+        "Smita Krishnaswamy",
+        "Tianyang Wang"
+      ],
+      "venue": "ICASSP (Submitted)",
+      "year": "2026",
+      "image": "img/papers/sos.png",
+      "arxiv_id": "2510.15962",
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2510.15962"
+      },
+      "selected": true,
+      "tldr": "CTR-LoRA is a simple and efficient LoRA framework for large language models. It is based on the idea of using a simple and efficient LoRA framework for large language models.",
+      "citations": 0
     }
   ]
 }
