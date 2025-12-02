@@ -12,7 +12,7 @@
       ],
       "venue": "AAAI",
       "year": "2026",
-      "image": "img/papers/cad-vae.jpg",
+      "image": "img/papers/cad-vae.png",
       "arxiv_id": "2503.07938",
       "github_repo": "merry7cherry/CAD-VAE",
       "links": {
@@ -20,9 +20,9 @@
         "code": "https://github.com/merry7cherry/CAD-VAE"
       },
       "selected": true,
-      "tldr": "1M diverse and dense-annotated synthetic images composed by 20M synthetic object—boost GroundingDINO, Mask2Former on LVIS, gRefCOCO. First synthetic dataset surpassing real datasets in different models / benchmarks.",
-      "github_stars": 98,
-      "citations": 0
+      "tldr": "CAD-VAE leverages a Correlation-Aware latent code to model the correlation between target and sensitive attributes so that achieving comprehensive Fair Disentanglement",
+      "github_stars": 2,
+      "citations": 5
     },
     {
       "id": "stochastic-interpolants",
@@ -44,9 +44,9 @@
         "code": "https://github.com/merry7cherry/Stochastic-Interpolants-via-Conditional-Dependent-Coupling"
       },
       "selected": true,
-      "tldr": "Scene graph programming generates infinite compositional scenes—systematically improves text-to-image, text-to-video and text-to-3D models. Also support RL training!",
-      "github_stars": 120,
-      "citations": 0
+      "tldr": "Stochastic Interpolants via Conditional Dependent Coupling is a simple, efficient and novel multi-stage generative framework for coarse-to-fine image generation. The single generative model prameterizes all stages of the generative process, and can be trained in an end-to-end manner.",
+      "github_stars": 1,
+      "citations": 3
     },
     {
       "id": "learning-straight-flows",
@@ -68,9 +68,9 @@
         "code": "https://github.com/merry7cherry/S-VFM"
       },
       "selected": true,
-      "tldr": "S-VFM is a simple and efficient variational flow matching framework for image generation. It is based on the idea of using a simple and efficient variational flow matching framework for image generation.",
-      "github_stars": 120,
-      "citations": 0
+      "tldr": "Introduing a varitional latent code, which provides \"generation overview\", and the straightness loss into flow matching framework for efficient (one-step) image generation.",
+      "github_stars": 0,
+      "citations": 2
     },
     {
       "id": "probe",
@@ -96,8 +96,8 @@
         "code": "https://github.com/xixiaouab/PROBE"
       },
       "selected": true,
-      "tldr": "PROBE is a simple and efficient visual prompting framework for cross-domain road damage detection. It is based on the idea of using a simple and efficient visual prompting framework for cross-domain road damage detection.",
-      "github_stars": 120,
+      "tldr": "This work introduces a self-supervised framework that uses defect-aware prompts to probe unlabeled target domains, enabling robust cross-domain pavement defect detection without costly re-annotation. The method achieves strong zero-shot transfer and outperforms supervised, self-supervised, and adaptation baselines across multiple benchmarks.",
+      "github_stars": 0,
       "citations": 0
     },
     {
@@ -119,7 +119,9 @@
       "links": {
         "arxiv": "https://link.springer.com/chapter/10.1007/978-3-032-04558-4_20"
       },
-      "selected": true
+      "selected": true,
+      "tldr": "This work explains CLIP’s generalization using an Information Bottleneck view and introduces a regularization method (CIBR) that reduces modality-specific redundancy, yielding consistent performance improvements.",
+      "citations": 0
     },
     {
       "id": "beyond-editing-pairs",
@@ -130,7 +132,7 @@
         "Tianyang Wang",
         "Yanning Shen"
       ],
-      "venue": "In Submission",
+      "venue": "Revising...",
       "year": "2025",
       "image": "img/papers/beyond-editing-pairs.png",
       "arxiv_id": "2505.19352",
@@ -138,8 +140,8 @@
         "arxiv": "https://arxiv.org/abs/2505.19352"
       },
       "selected": true,
-      "tldr": "Beyond Editing Pairs is a simple and efficient editing framework for instructional image editing. It is based on the idea of using a simple and efficient editing framework for instructional image editing.",
-      "citations": 0
+      "tldr": "Leveraging the representational strength of unified encoders (e.g., CLIP) and combine it with pretrained diffusion models to achieve fine-grained image editing via a learnable region",
+      "citations": 4
     },
     {
       "id": "ctr-lora",
