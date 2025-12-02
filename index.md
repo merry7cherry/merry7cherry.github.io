@@ -30,21 +30,21 @@ img {
 }
 </style>
 
-Hi, I am an undergrad at the University of Washington, advised by Prof. [Ranjay Krishna](http://www.ranjaykrishna.com/index.html), PhD student [Jieyu Zhang](https://jieyuz2.github.io/), and PhD student [Zixian Ma](https://zixianma.github.io/) at [UW CSE RAIVN Lab](https://raivn.cs.washington.edu/). Currently I am also a student collaborator at [Allen Institute for AI](https://allenai.org/) working on VLM training and data generation.
+Hi, I am a Master's student at the University of California, Irvine, working as a Research Assistant in the [Trustworthy ML/AI Group](https://sites.google.com/uci.edu/yanning-shen/group?authuser=0) at UCI. I am also a student collaborator at [Oak Ridge National Laboratory](https://education.ornl.gov/graduate/) working on generative and understanding models.
 
 **Research Interests**:
 
-- **2D and 3D Grounding and Tracking**: Developing robust object detection, grounding and tracking systems that can understand spatial relationships and temporal dynamics across different modalities, with applications in autonomous systems and embodied AI.
+- **Generative Models**: Developing advanced algorithms and models for generative modeling, understanding, and reasoning, with applications in computer vision and vision-language models.
 
-- **Controllable Generative Models**: Building controllable and interpretable generative models for visual content creation, enabling precise control with more fine-grained control signal.
+- **Efficient Generation**: Proposing novel generative theory/algorithms for efficiency, including one-step generation and multi-stage generation approaches.
 
-- **Compositional and Scalable Synthetic Visual Data Generation**: Creating programmable and scalable synthetic data generation pipelines for Vision Foundation Model includes: VLMs, VLAs, Detectors, Generative models.
+- **Fairness in AI**: Designing methods to address challenges of fairness in generative models and representation learning.
 
-- **Vision and Spatial centric VLM**: Advancing vision-language models to better understand complex spatial reasoning, multi-step visual tasks, and multimodal tool-use scenarios, bridging the gap between visual perception and actionable intelligence.
+- **Multi-modal Understanding**: Working on generative and understanding models for real-world data (images, videos, 3D, and multi-modality), focusing on improving efficiency and performance.
 
 
 <div class="announcement-banner">
-  📢 I'm applying for PhD programs in the 2027 cycle. I'm also seeking research collaborations at UW and AI2, and open to exploring other opportunities. Feel free to <a href="mailto:weikaih@cs.washington.edu">reach out</a>!
+  📢 I'm seeking a PhD position focused on generative and understanding models for real-world data (images, videos, 3D, and multi-modality). Motivated to address challenges in generation, understanding, reasoning, efficiency, and fairness. Feel free to <a href="mailto:chenrum@uci.edu">reach out</a>!
 </div>
 
 ## 📝 Publications
@@ -62,26 +62,44 @@ Hi, I am an undergrad at the University of Washington, advised by Prof. [Ranjay 
 </div>
 
 ## 🎓 Education
-- **University of Washington**  
-  *B.S. in Computer Science, Minor in Applied Mathematics and Music*  
-  2023 – 2027 (Expected)
-  
-## 📰 News
-- [2024-9] Our work [Task Me Anything](https://www.task-me-anything.org/) is accepted to NeurIPS 2024.
-- [2024-7] Our work [m&m's: A Benchmark to Evaluate Tool-Use for multi-step multi-modal Tasks](https://arxiv.org/abs/2403.11085) is accepted to ECCV 2024.
-  
-## 🏅 Awards
-- UW CSE John and JoAnne Wisniewski Endowed Scholarship 2024
+- **University of California, Irvine**  
+  *Master of Science in Computer Science (Networked Systems)*  
+  September 2025 – June 2026 (Expected)  
+  GPA: 4.00/4.00
 
-## 📍 Professional Services
-- Organizer of the **Synthetic Data for Computer Vision Workshop** at CVPR 2024 and CVPR 2025 ([website](https://syndata4cv.github.io/))
-- TA for **UW CSE 455: Computer Vision**, Autumn 2025 ([course page](https://courses.cs.washington.edu/courses/cse455/))
-- TA for **UW CSE 493G: Deep Learning**, Spring 2025 ([course page](https://courses.cs.washington.edu/courses/cse493g1/25sp/))
+- **University of California, Irvine**  
+  *Joint Education Student (UCI 3+2 Engineering program) in Computer Science*  
+  September 2024 – June 2025  
+  GPA: 3.92/4.00
+
+- **Central South University**  
+  *Bachelor of Science in Computer Science*  
+  September 2021 – June 2024  
+  Grade: 86.8%, Rank: Top 35%
+
+## 💼 Experience
+- **Research Assistant**  
+  *Trustworthy ML/AI Group @ UCI*  
+  September 2024 – Present  
+  - Developed advanced algorithms and models for generative modeling, understanding, and reasoning, with applications in computer vision and vision-language models.
+  - Proposed novel generative theory/algorithms for efficiency (one-step generation, multi-stage generation).
+  - Designed methods to address challenges of fairness in generative models and representation learning.
+
+- **Teaching Assistant**  
+  *University of California, Irvine*  
+  January 2026 – March 2026  
+  - Assist the professor with teaching and grading, and organize course discussions.
+
+- **Student Collaborator (remote)**  
+  *Oak Ridge National Laboratory*  
+  May 2025 – Present  
+  - Engineered generative and understanding models with a focus on improving efficiency and performance.
 
 ## 📫 Contact
-Email: weikaih@cs.washington.edu
-<br>Twitter (X): [@weikaih04](https://twitter.com/weikaih04)
-<br>Instagram: [@weikaih04](https://www.instagram.com/weikaih04/)
-<br>Linkedin: [Weikai Huang](https://www.linkedin.com/in/weikaihuang/)
-<br>Wechat: hwk18105962347
+Email: [chenrum@uci.edu](mailto:chenrum@uci.edu)  
+Phone: +1-949-792-8518  
+Location: Irvine, California - 92612, USA  
+<br>LinkedIn: [Chenrui Ma](https://www.linkedin.com/in/chenrui-ma-23804132b/)  
+<br>GitHub: [merry7cherry](https://github.com/merry7cherry)  
+<br>Google Scholar: [Chenrui Ma](https://scholar.google.com/citations?user=dvkqKZsAAAAJ&hl=en)
 
