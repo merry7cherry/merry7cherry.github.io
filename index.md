@@ -30,7 +30,7 @@ img {
 }
 </style>
 
-Hi, I am a Master's student at the University of California, Irvine, working as a Research Assistant in the [Trustworthy ML/AI Group](https://sites.google.com/uci.edu/yanning-shen/group?authuser=0) at UCI. I am also a student collaborator at [Oak Ridge National Laboratory](https://education.ornl.gov/graduate/).
+Hi, here is Chenrui's homepage, welcome! I am a Master's student at the University of California, Irvine, working as a Research Assistant in the [Trustworthy ML/AI Group](https://sites.google.com/uci.edu/yanning-shen/group?authuser=0) at UCI. I am also a student collaborator at [Oak Ridge National Laboratory](https://education.ornl.gov/graduate/).
 
 
 ## 📫 Contact
@@ -43,7 +43,7 @@ Location: Irvine, California, USA
 - **Generative Modeling & Algorithmic Foundations**:  
   Research focuses on advanced generative models, including diffusion/flow models, autoregressive models, and VAEs, with an emphasis on the **mathematical and algorithmic foundations** of generation, aiming to improve controllability, robustness, and generalization for real-world data. A key direction is the development of **efficient generative methods**, these methods aim to fundamentally reduce inference and training cost while preserving or improving fidelity, providing theoretically grounded solutions for scalable and fast generation.
 
-- **Multi-modal and Physically-Aware Understanding**:  
+- **Multi-modal and Physically-Aware Understanding and Generation**:  
   Research also covers **multi-modal understanding and generation** for images, videos, 3D data, and vision–language tasks, motivating to solve the multi-modal collaboration and cross-modal alignment. Longer-term interests include incorporating **physical structure, dynamics, and causal constraints** into generative models, moving toward physically consistent, trustworthy AI systems deployed in realistic environments.
 
 - **Fairness and Trustworthy Representation Learning**:  
