@@ -83,13 +83,13 @@ Location: Irvine, California, USA
   GPA: 4.00/4.00
 
 - **University of California, Irvine**  
-  *Joint Education Student (UCI 3+2 Engineering program) in Computer Science*  
+  *Exchange Student (UCI 3+2 Engineering program) in Computer Science*  
   September 2024 – June 2025  
   GPA: 3.92/4.00
 
 - **Central South University**  
   *Bachelor of Science in Computer Science*  
-  September 2021 – June 2024  
+  September 2021 – June 2025  
   Grade: 86.8%, Rank: Top 35%
 
 
