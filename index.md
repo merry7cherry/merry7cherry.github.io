@@ -58,6 +58,7 @@ Location: Irvine, California, USA
 
 ## 📰 News
 - [2025-11] Glad to see our recent work [Learning Straight Flows: Variational Flow Matching for Efficient Generation](https://arxiv.org/abs/2511.17583) (under review), receiving growing attention and discussion in the community.
+- [2025-11] Exited to receive AAAI-26 Scholarship (1000$), Thanks AAAI!
 - [2025-11] Our work [CAD-VAE: Leveraging Correlation-Aware Latents for Comprehensive Fair Disentanglement](https://arxiv.org/abs/2503.07938) is accepted to AAAI 2026 main track.
 - [2025-11] Our work [Self-Supervised Visual Prompting for Cross-Domain Road Damage Detection](https://arxiv.org/abs/2511.12410) is accepted to WACV 2026.
 
