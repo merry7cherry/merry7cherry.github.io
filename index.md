@@ -30,15 +30,13 @@ img {
 }
 </style>
 
-Hi, here is Chenrui's homepage, welcome! I am a Master's student at the University of California, Irvine, working as a Research Assistant in the [Trustworthy ML/AI Group](https://sites.google.com/uci.edu/yanning-shen/group?authuser=0) at UCI. I am also a student collaborator at [Oak Ridge National Laboratory](https://education.ornl.gov/graduate/).
+Hi, here is Chenrui's homepage, welcome 👋! 
+
+I am a Master's student at the [University of California, Irvine](https://uci.edu/), working as a Research Assistant in the [Trustworthy ML/AI Group](https://sites.google.com/uci.edu/yanning-shen/group?authuser=0) at UCI, advised by [Prof. Yanning Shen](https://sites.google.com/uci.edu/yanning-shen/home?authuser=0). I am also a student collaborator at [Oak Ridge National Laboratory](https://education.ornl.gov/graduate/).
+I received my bachelor's degree from [Central South University (中南大学)](https://www.usnews.com/education/best-global-universities/central-south-university-501467). During my senior year, I studied as an exchange student at the [University of California, Irvine](https://uci.edu/), where I completed my undergraduate thesis and graduate-level coursework.
 
 
-## 📫 Contact
-Email: [chenrum@uci.edu](mailto:chenrum@uci.edu)  
-Location: Irvine, California, USA  
-
-
-**Research Interests**
+## 🌟 Research Interests
 
 - **Generative Modeling & Algorithmic Foundations**:  
   Research focuses on advanced generative models, including diffusion/flow models, autoregressive models, and VAEs, with an emphasis on the **mathematical and algorithmic foundations** of generation, aiming to improve controllability, robustness, and generalization for real-world data. A key direction is the development of **efficient generative methods**, these methods aim to fundamentally reduce inference and training cost while preserving or improving fidelity, providing theoretically grounded solutions for scalable and fast generation.
@@ -54,6 +52,12 @@ Location: Irvine, California, USA
 <div class="announcement-banner">
   📢 I'm seeking a PhD position focused on generative and understanding models for real-world data (images, videos, 3D, and multi-modality). Motivated to address challenges in generation, understanding, reasoning, efficiency, and fairness. Feel free to <a href="mailto:chenrum@uci.edu">reach out</a>!
 </div>
+
+
+## 📫 Contact
+Email: [chenrum@uci.edu](mailto:chenrum@uci.edu)  
+Location: Irvine, California, USA  
+My Chinese name is 马晨睿.
 
 
 ## 📰 News
