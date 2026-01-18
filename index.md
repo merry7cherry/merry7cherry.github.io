@@ -61,6 +61,7 @@ My Chinese name is 马晨睿.
 
 
 ## 📰 News
+- [2026-01] Our work [CTR-LoRA: Curvature-Aware and Trust-Region Guided Low-Rank Adaptation for Large Language Models](https://arxiv.org/abs/2510.15962) is accepted to ICASSP 2026.
 - [2025-11] Glad to see our recent work [Learning Straight Flows: Variational Flow Matching for Efficient Generation](https://arxiv.org/abs/2511.17583) (under review), receiving growing attention and discussion in the community.
 - [2025-11] Exited to receive AAAI-26 Scholarship ($1000), Thanks AAAI!
 - [2025-11] Our work [CAD-VAE: Leveraging Correlation-Aware Latents for Comprehensive Fair Disentanglement](https://arxiv.org/abs/2503.07938) is accepted to AAAI 2026 main track.
