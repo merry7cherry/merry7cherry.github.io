@@ -33,6 +33,12 @@ img {
   color: #ff9500;
 }
 
+.mentor-name:hover,
+.mentor-name:focus {
+  color: #ff9500;
+  font-weight: bold;
+}
+
 .education-list {
   margin: 0 0 10px;
 }
