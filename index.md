@@ -33,17 +33,35 @@ img {
   color: #ff9500;
 }
 
-.education-entry {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
+.education-list {
+  margin: 0 0 10px;
 }
 
-.education-entry img.education-logo {
-  width: 26px;
-  height: 26px;
+.education-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  line-height: 1.5;
+  min-height: 84px;
+}
+
+.education-item + .education-item {
+  margin-top: 14px;
+}
+
+.education-logo {
+  width: 28px;
+  height: 28px;
   object-fit: contain;
-  border-radius: 3px;
+  border-radius: 4px;
+  flex: 0 0 28px;
+}
+
+.education-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  line-height: 1.5;
 }
 </style>
 
@@ -100,24 +118,43 @@ My Chinese name is 马晨睿.
 </div>
 
 ## 🎓 Education
-- <span class="education-entry"><img class="education-logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/University_of_Virginia_logo.svg" alt="University of Virginia logo"> <strong>University of Virginia</strong></span>  
-  *Doctor of Philosophy in Computer Science*  
-  August 2026 – June 2030 (Expected)  
-
-- <span class="education-entry"><img class="education-logo" src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Ucirvine_logo.png" alt="University of California, Irvine logo"> <strong>University of California, Irvine</strong></span>  
-  *Master of Science in Computer Science*  
-  September 2025 – June 2026 (Expected)  
-  GPA: 4.00/4.00
-
-- <span class="education-entry"><img class="education-logo" src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Ucirvine_logo.png" alt="University of California, Irvine logo"> <strong>University of California, Irvine</strong></span>  
-  *Exchange Student (UCI 3+2 Engineering program) in Computer Science*  
-  September 2024 – June 2025  
-  GPA: 3.92/4.00
-
-- <span class="education-entry"><img class="education-logo" src="https://upload.wikimedia.org/wikipedia/en/6/62/CSU_xiaohui.png" alt="Central South University logo"> <strong>Central South University</strong></span>  
-  *Bachelor of Science in Computer Science*  
-  September 2021 – June 2025  
-  Grade: 86.8%, Rank: Top 35%
+<div class="education-list">
+  <div class="education-item">
+    <img class="education-logo" src="{{ '/img/uva-logo.svg' | relative_url }}" alt="University of Virginia">
+    <div class="education-item-content">
+      <strong>University of Virginia</strong>
+      <em>Doctor of Philosophy in Computer Science</em>
+      <span>August 2026 – June 2030 (Expected)</span>
+    </div>
+  </div>
+  <div class="education-item">
+    <img class="education-logo" src="{{ '/img/uci-logo.svg' | relative_url }}" alt="University of California, Irvine">
+    <div class="education-item-content">
+      <strong>University of California, Irvine</strong>
+      <em>Master of Science in Computer Science</em>
+      <span>September 2025 – June 2026 (Expected)</span>
+      <span>GPA: 4.00/4.00</span>
+    </div>
+  </div>
+  <div class="education-item">
+    <img class="education-logo" src="{{ '/img/uci-logo.svg' | relative_url }}" alt="University of California, Irvine">
+    <div class="education-item-content">
+      <strong>University of California, Irvine</strong>
+      <em>Exchange Student (UCI 3+2 Engineering program) in Computer Science</em>
+      <span>September 2024 – June 2025</span>
+      <span>GPA: 3.92/4.00</span>
+    </div>
+  </div>
+  <div class="education-item">
+    <img class="education-logo" src="{{ '/img/csu-logo.svg' | relative_url }}" alt="Central South University">
+    <div class="education-item-content">
+      <strong>Central South University</strong>
+      <em>Bachelor of Science in Computer Science</em>
+      <span>September 2021 – June 2025</span>
+      <span>Grade: 86.8%, Rank: Top 35%</span>
+    </div>
+  </div>
+</div>
 
 
 ## 💼 Experience
