@@ -141,7 +141,7 @@ function displayPublications() {
 
 function createPublicationHTML(pub) {
     const authorsHtml = pub.authors.map(author =>
-        author.includes('Chenrui Ma') ? `<strong>${author}</strong>` : author
+        author.includes('Chenrui Ma') ? `<span class="publication-author-self">${author}</span>` : author
     ).join(', ');
 
     // Create links with better labels and ordering
@@ -272,4 +272,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-
