@@ -56,8 +56,8 @@ img {
 }
 
 .education-logo {
-  width: 56px;
-  height: 56px;
+  width: 84px;
+  height: 84px;
   object-fit: contain;
   border-radius: 4px;
   flex: 0 0 28px;
@@ -126,7 +126,7 @@ My Chinese name is 马晨睿.
 ## 🎓 Education
 <div class="education-list">
   <div class="education-item">
-    <img class="education-logo" src="{{ '/img/logo/UVA.jpg' | relative_url }}" alt="University of Virginia">
+    <img class="education-logo" src="{{ '/img/logo/UVA.png' | relative_url }}" alt="University of Virginia">
     <div class="education-item-content">
       <strong>University of Virginia</strong>
       <em>Doctor of Philosophy in Computer Science</em>
@@ -139,7 +139,6 @@ My Chinese name is 马晨睿.
       <strong>University of California, Irvine</strong>
       <em>Master of Science in Computer Science</em>
       <span>September 2025 – June 2026 (Expected)</span>
-      <span>GPA: 4.00/4.00</span>
     </div>
   </div>
   <div class="education-item">
@@ -148,7 +147,6 @@ My Chinese name is 马晨睿.
       <strong>University of California, Irvine</strong>
       <em>Exchange Student (UCI 3+2 Engineering program) in Computer Science</em>
       <span>September 2024 – June 2025</span>
-      <span>GPA: 3.92/4.00</span>
     </div>
   </div>
   <div class="education-item">
@@ -157,7 +155,6 @@ My Chinese name is 马晨睿.
       <strong>Central South University</strong>
       <em>Bachelor of Science in Computer Science</em>
       <span>September 2021 – June 2025</span>
-      <span>Grade: 86.8%, Rank: Top 35%</span>
     </div>
   </div>
 </div>
