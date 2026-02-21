@@ -32,7 +32,7 @@ img {
 
 Hi, here is Chenrui's homepage, welcome 👋! 
 
-I am a Master's student at the [University of California, Irvine](https://uci.edu/), working as a Research Assistant in the [Trustworthy ML/AI Group](https://sites.google.com/uci.edu/yanning-shen/group?authuser=0) at UCI, advised by [Prof. Yanning Shen](https://sites.google.com/uci.edu/yanning-shen/home?authuser=0). I am also a student collaborator at [Oak Ridge National Laboratory](https://education.ornl.gov/graduate/).
+I will join the [University of Virginia](https://www.virginia.edu/) as a Computer Science Ph.D. student, affiliate in [RAISE Lab](https://nandofioretto.github.io/group/), advisored by [Prof. Ferdinando Fioretto](https://nandofioretto.github.io/). Currently, I am a Master's student at the [University of California, Irvine](https://uci.edu/), working as a Research Assistant in the [Trustworthy ML/AI Group](https://sites.google.com/uci.edu/yanning-shen/group?authuser=0) at UCI, advised by [Prof. Yanning Shen](https://sites.google.com/uci.edu/yanning-shen/home?authuser=0). I am also a student collaborator at [Oak Ridge National Laboratory](https://education.ornl.gov/graduate/).
 I received my bachelor's degree from [Central South University (中南大学)](https://www.usnews.com/education/best-global-universities/central-south-university-501467). During my senior year, I studied as an exchange student at the [University of California, Irvine](https://uci.edu/), where I completed my undergraduate thesis and graduate-level coursework.
 
 
@@ -55,14 +55,14 @@ I received my bachelor's degree from [Central South University (中南大学)](h
 
 
 ## 📫 Contact
-Email: [chenrum@uci.edu](mailto:chenrum@uci.edu)  
+Email: [zzz8fa@virginia.edu](mailto:zzz8fa@virginia.edu) and [chenrum@uci.edu](mailto:chenrum@uci.edu)  
 Location: Irvine, California, USA  
 My Chinese name is 马晨睿.
 
 
 ## 📰 News
+- [2026-02] Our work [Learning Straight Flows: Variational Flow Matching for Efficient Generation](https://arxiv.org/abs/2511.17583) is accepted to CVPR 2026 main conference.
 - [2026-01] Our work [CTR-LoRA: Curvature-Aware and Trust-Region Guided Low-Rank Adaptation for Large Language Models](https://arxiv.org/abs/2510.15962) is accepted to ICASSP 2026.
-- [2025-11] Glad to see our recent work [Learning Straight Flows: Variational Flow Matching for Efficient Generation](https://arxiv.org/abs/2511.17583) (under review), receiving growing attention and discussion in the community.
 - [2025-11] Exited to receive AAAI-26 Scholarship ($1000), Thanks AAAI!
 - [2025-11] Our work [CAD-VAE: Leveraging Correlation-Aware Latents for Comprehensive Fair Disentanglement](https://arxiv.org/abs/2503.07938) is accepted to AAAI 2026 main track.
 - [2025-11] Our work [Self-Supervised Visual Prompting for Cross-Domain Road Damage Detection](https://arxiv.org/abs/2511.12410) is accepted to WACV 2026.
@@ -83,8 +83,12 @@ My Chinese name is 马晨睿.
 </div>
 
 ## 🎓 Education
+- **University of Virginia**  
+  *Doctor of Philosophy in Computer Science*  
+  August 2026 – June 2030 (Expected)  
+
 - **University of California, Irvine**  
-  *Master of Science in Computer Science (Networked Systems)*  
+  *Master of Science in Computer Science*  
   September 2025 – June 2026 (Expected)  
   GPA: 4.00/4.00
 
@@ -119,9 +123,11 @@ My Chinese name is 马晨睿.
 
   
 ## 🏅 Awards
+- **Computer Science Scholar Fellowship**  
+  University of Virginia, February 2026  
+
 - **AAAI-2026 Scholarship**  
   Singapore, November 2025  
-  Awarded to students with outstanding academic performance for the year.
 
 - **University-level Second Prize Scholarship (Top 20%)**  
   Central South University, September 2024

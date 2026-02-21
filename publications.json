@@ -10,7 +10,7 @@
         "Xiao Wang",
         "Yanning Shen"
       ],
-      "venue": "AAAI",
+      "venue": "AAAI (Main Track)",
       "year": "2026",
       "image": "img/papers/cad-vae.png",
       "arxiv_id": "2503.07938",
@@ -34,7 +34,7 @@
         "Xiao Wang",
         "Yanning Shen"
       ],
-      "venue": "ICLR (Submitted)",
+      "venue": "ICML (Submitted)",
       "year": "2026",
       "image": "img/papers/stochastic-interpolants.png",
       "arxiv_id": "2509.23122",
@@ -58,7 +58,7 @@
         "Xiao Wang",
         "Yanning Shen"
       ],
-      "venue": "CVPR (Submitted)",
+      "venue": "CVPR (Main Conference)",
       "year": "2026",
       "image": "img/papers/learning-straight-flows.png",
       "arxiv_id": "2511.17583",
@@ -157,7 +157,7 @@
         "Smita Krishnaswamy",
         "Tianyang Wang"
       ],
-      "venue": "ICASSP (Submitted)",
+      "venue": "ICASSP",
       "year": "2026",
       "arxiv_id": "2510.15962",
       "links": {
