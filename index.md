@@ -50,7 +50,7 @@ I received my bachelor's degree from [Central South University (中南大学)](h
 
 
 <div class="announcement-banner">
-  📢 I'm seeking a PhD position focused on generative and understanding models for real-world data (images, videos, 3D, and multi-modality). Motivated to address challenges in generation, understanding, reasoning, efficiency, and fairness. Feel free to <a href="mailto:chenrum@uci.edu">reach out</a>!
+  📢 I am seeking a summer internship focused on generative and multimodal understanding models for real-world data, including images and videos. I am highly motivated to tackle challenges in generation, perception, reasoning, and efficiency. Feel free to <a href="mailto:chenrum@uci.edu">reach out</a>!
 </div>
 
 
