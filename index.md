@@ -40,7 +40,7 @@ img {
 }
 
 .education-list {
-  margin: 0 0 30px;
+  margin: 0 0 40px;
   margin-left: 20px;
 }
 
