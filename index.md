@@ -56,8 +56,8 @@ img {
 }
 
 .education-logo {
-  width: 28px;
-  height: 28px;
+  width: 56px;
+  height: 56px;
   object-fit: contain;
   border-radius: 4px;
   flex: 0 0 28px;
@@ -126,7 +126,7 @@ My Chinese name is 马晨睿.
 ## 🎓 Education
 <div class="education-list">
   <div class="education-item">
-    <img class="education-logo" src="{{ '/img/uva-logo.svg' | relative_url }}" alt="University of Virginia">
+    <img class="education-logo" src="{{ '/img/logo/UVA.jpg' | relative_url }}" alt="University of Virginia">
     <div class="education-item-content">
       <strong>University of Virginia</strong>
       <em>Doctor of Philosophy in Computer Science</em>
@@ -134,7 +134,7 @@ My Chinese name is 马晨睿.
     </div>
   </div>
   <div class="education-item">
-    <img class="education-logo" src="{{ '/img/uci-logo.svg' | relative_url }}" alt="University of California, Irvine">
+    <img class="education-logo" src="{{ '/img/logo/UCI.png' | relative_url }}" alt="University of California, Irvine">
     <div class="education-item-content">
       <strong>University of California, Irvine</strong>
       <em>Master of Science in Computer Science</em>
@@ -143,7 +143,7 @@ My Chinese name is 马晨睿.
     </div>
   </div>
   <div class="education-item">
-    <img class="education-logo" src="{{ '/img/uci-logo.svg' | relative_url }}" alt="University of California, Irvine">
+    <img class="education-logo" src="{{ '/img/logo/UCI.png' | relative_url }}" alt="University of California, Irvine">
     <div class="education-item-content">
       <strong>University of California, Irvine</strong>
       <em>Exchange Student (UCI 3+2 Engineering program) in Computer Science</em>
@@ -152,7 +152,7 @@ My Chinese name is 马晨睿.
     </div>
   </div>
   <div class="education-item">
-    <img class="education-logo" src="{{ '/img/csu-logo.svg' | relative_url }}" alt="Central South University">
+    <img class="education-logo" src="{{ '/img/logo/CSU.png' | relative_url }}" alt="Central South University">
     <div class="education-item-content">
       <strong>Central South University</strong>
       <em>Bachelor of Science in Computer Science</em>
