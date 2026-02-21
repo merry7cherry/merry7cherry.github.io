@@ -40,7 +40,7 @@ img {
 }
 
 .education-list {
-  margin: 0 0 10px;
+  margin: 0 0 20px;
   margin-left: 20px;
 }
 
@@ -165,10 +165,7 @@ My Chinese name is 马晨睿.
 - **Research Assistant**  
   *Trustworthy ML/AI Group @ UCI*  
   September 2024 – Present  
-  <!-- - Developed advanced algorithms and models for generative modeling, understanding, and reasoning, with applications in computer vision and vision-language models.
-  - Proposed novel generative theory/algorithms for efficiency (one-step generation, multi-stage generation).
-  - Designed methods to address challenges of fairness in generative models and representation learning. -->
-
+  
 - **Teaching Assistant**  
   *University of California, Irvine*  
   January 2026 – March 2026  
@@ -177,7 +174,6 @@ My Chinese name is 马晨睿.
 - **Student Collaborator (remote)**  
   *Oak Ridge National Laboratory*  
   May 2025 – Present  
-  <!-- - Engineered generative and understanding models with a focus on improving efficiency and performance. -->
 
   
 ## 🏅 Awards
