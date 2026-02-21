@@ -28,11 +28,28 @@ layout: default
 img {
   aspect-ratio: attr(width) / attr(height);
 }
+
+.mentor-name {
+  color: #ff9500;
+}
+
+.education-entry {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.education-entry img.education-logo {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  border-radius: 3px;
+}
 </style>
 
 Hi, here is Chenrui's homepage, welcome 👋! 
 
-I will be joining the [University of Virginia](https://www.virginia.edu/) as a Ph.D. student in Computer Science, where I will be affiliated with the [RAISE Lab](https://nandofioretto.github.io/group/) and advised by [Prof. Ferdinando Fioretto](https://nandofioretto.github.io/). Currently, I am a Master's student at the [University of California, Irvine](https://uci.edu/), working as a Research Assistant in the [Trustworthy ML/AI Group](https://sites.google.com/uci.edu/yanning-shen/group?authuser=0) at UCI, advised by [Prof. Yanning Shen](https://sites.google.com/uci.edu/yanning-shen/home?authuser=0). I am also a student collaborator at [Oak Ridge National Laboratory](https://education.ornl.gov/graduate/).
+I will be joining the [University of Virginia](https://www.virginia.edu/) as a Ph.D. student in Computer Science, where I will be affiliated with the [RAISE Lab](https://nandofioretto.github.io/group/) and advised by <a class="mentor-name" href="https://nandofioretto.github.io/">Prof. Ferdinando Fioretto</a>. Currently, I am a Master's student at the [University of California, Irvine](https://uci.edu/), working as a Research Assistant in the [Trustworthy ML/AI Group](https://sites.google.com/uci.edu/yanning-shen/group?authuser=0) at UCI, advised by <a class="mentor-name" href="https://sites.google.com/uci.edu/yanning-shen/home?authuser=0">Prof. Yanning Shen</a>. I am also a student collaborator at [Oak Ridge National Laboratory](https://education.ornl.gov/graduate/).
 I received my bachelor's degree from [Central South University (中南大学)](https://www.usnews.com/education/best-global-universities/central-south-university-501467). During my senior year, I studied as an exchange student at the [University of California, Irvine](https://uci.edu/), where I completed my undergraduate thesis and graduate-level coursework.
 
 
@@ -83,21 +100,21 @@ My Chinese name is 马晨睿.
 </div>
 
 ## 🎓 Education
-- **University of Virginia**  
+- <span class="education-entry"><img class="education-logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/University_of_Virginia_logo.svg" alt="University of Virginia logo"> <strong>University of Virginia</strong></span>  
   *Doctor of Philosophy in Computer Science*  
   August 2026 – June 2030 (Expected)  
 
-- **University of California, Irvine**  
+- <span class="education-entry"><img class="education-logo" src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Ucirvine_logo.png" alt="University of California, Irvine logo"> <strong>University of California, Irvine</strong></span>  
   *Master of Science in Computer Science*  
   September 2025 – June 2026 (Expected)  
   GPA: 4.00/4.00
 
-- **University of California, Irvine**  
+- <span class="education-entry"><img class="education-logo" src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Ucirvine_logo.png" alt="University of California, Irvine logo"> <strong>University of California, Irvine</strong></span>  
   *Exchange Student (UCI 3+2 Engineering program) in Computer Science*  
   September 2024 – June 2025  
   GPA: 3.92/4.00
 
-- **Central South University**  
+- <span class="education-entry"><img class="education-logo" src="https://upload.wikimedia.org/wikipedia/en/6/62/CSU_xiaohui.png" alt="Central South University logo"> <strong>Central South University</strong></span>  
   *Bachelor of Science in Computer Science*  
   September 2021 – June 2025  
   Grade: 86.8%, Rank: Top 35%
@@ -147,5 +164,3 @@ My Chinese name is 马晨睿.
 ## 📍 Professional Services
 - **Conference Reviewer**: CVPR 2026, AAAI 2026
 - TA for **UCI EECS 298: Networked System**, Spring 2026
-
-
