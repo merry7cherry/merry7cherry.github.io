@@ -69,8 +69,33 @@
       },
       "selected": true,
       "tldr": "Introduing a varitional latent code, which provides \"generation overview\", and the straightness loss into flow matching framework for efficient (one-step) image generation.",
-      "github_stars": 1,
+      "github_stars": 6,
       "citations": 2
+    },
+    {
+      "id": "not-all-directions",
+      "title": "Not All Directions Matter: Toward Structured and Task-Aware Low-Rank Adaptation",
+      "authors": [
+        "Xi Xiao",
+        "Chenrui Ma",
+        "Yunbei Zhang",
+        "Chen Liu",
+        "Zhuxuanzi Wang",
+        "Yanshu Li",
+        "Lin Zhao",
+        "Guosheng Hu",
+        "Tianyang Wang",
+        "Hao Xu"
+      ],
+      "venue": "ACL (Main Conference)",
+      "year": "2026",
+      "image": "img/papers/not-all-directions.png",
+      "arxiv_id": "2603.14228",
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2603.14228"
+      },
+      "selected": true,
+      "tldr": "StructLoRA improves LoRA by filtering task-irrelevant update directions and coordinating layer-wise adaptation during training, yielding stronger PEFT performance across LLMs, VLMs, and vision models without adding inference cost."
     },
     {
       "id": "probe",

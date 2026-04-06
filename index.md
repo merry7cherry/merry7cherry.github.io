@@ -103,6 +103,7 @@ My Chinese name is 马晨睿.
 
 
 ## 📰 News
+- [2026-04] Our work [Not All Directions Matter: Toward Structured and Task-Aware Low-Rank Adaptation](https://arxiv.org/abs/2603.14228) is accepted to ACL 2026 main conference.
 - [2026-02] Our work [Learning Straight Flows: Variational Flow Matching for Efficient Generation](https://arxiv.org/abs/2511.17583) is accepted to CVPR 2026 main conference.
 - [2026-01] Our work [CTR-LoRA: Curvature-Aware and Trust-Region Guided Low-Rank Adaptation for Large Language Models](https://arxiv.org/abs/2510.15962) is accepted to ICASSP 2026.
 - [2025-11] Exited to receive AAAI-26 Scholarship ($1000), Thanks AAAI!
