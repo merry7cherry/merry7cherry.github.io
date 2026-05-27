@@ -60,6 +60,8 @@ assert_contains "_layouts/index.html" "https://github.com/merry7cherry"
 assert_contains "_layouts/index.html" "https://www.linkedin.com/in/chenrui-ma-23804132b/"
 assert_contains "_layouts/index.html" "zzz8fa [at] virginia.edu"
 assert_contains "_layouts/index.html" "chenrum [at] uci.edu"
+assert_contains "_layouts/index.html" "Open to research internships, visiting opportunities, and collaborations."
+assert_contains "_layouts/index.html" "If my work aligns with your interests or you just want to say Hi, I'd be delighted to connect:)"
 assert_contains "_layouts/index.html" "cv-logo"
 assert_contains "_layouts/index.html" "Oak Ridge National Laboratory logo"
 assert_contains "_layouts/index.html" "RAISE Lab @ UVA"
@@ -129,6 +131,11 @@ fi
 
 if grep -Fq 'My research focuses on' "_layouts/index.html"; then
   printf 'research interest still contains explanatory paragraph\n' >&2
+  failures=$((failures + 1))
+fi
+
+if grep -Fq 'I am seeking a summer internship' "_layouts/index.html"; then
+  printf 'availability note still uses direct seeking-internship wording\n' >&2
   failures=$((failures + 1))
 fi
 
