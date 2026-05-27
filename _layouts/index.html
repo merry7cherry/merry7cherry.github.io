@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<script type="text/javascript">
+		function toggle_vis(id) {
+			var e = document.getElementsByClassName(id);
+			var showText = document.getElementById("showText");
+			for (var i = 0; i < e.length; i++) {
+				if (e[i].style.display == "none") {
+					e[i].style.display = "inline";
+					showText.innerHTML = "[Show less]";
+				} else {
+					e[i].style.display = "none";
+					showText.innerHTML = "[Show more]";
+				}
+			}
+		}
+	</script>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Chenrui Ma - Ph.D. student in Computer Science at the University of Virginia. Research in generative modeling, multimodal AI, and trustworthy representation learning.">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css">
+	<link rel="stylesheet" href="{{ '/static/styles.css?v=20260527' | relative_url }}">
+	<link href="{{ '/files/jumbotron.css' | relative_url }}" rel="stylesheet">
+	<link rel="icon" href="{{ '/files/favicon.ico' | relative_url }}" type="image/x-icon">
+	<script src="{{ '/js/main.js?v=20260526' | relative_url }}"></script>
+	<script src="{{ '/js/scroll.js' | relative_url }}"></script>
+</head>
+
+<title>Chenrui Ma</title>
+
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top navbar-custom" id="Home">
+		<div class="container">
+			<a class="navbar-brand" href="#Home">Chenrui Ma</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarToggle">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#Publications" id="publicationsMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Publications</a>
+						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="publicationsMenu">
+							<a class="dropdown-item" href="#Publications">Selected Publications</a>
+							<a class="dropdown-item" href="{{ '/other-publications.html' | relative_url }}">Other Publications</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#CV" id="cvMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CV</a>
+						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="cvMenu">
+							<a class="dropdown-item" href="#Experience">Experience</a>
+							<a class="dropdown-item" href="#Education">Education</a>
+							<a class="dropdown-item" href="#Awards">Awards &amp; Honors</a>
+							<a class="dropdown-item" href="#Miscellanea">Professional Services</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container intro-panel" id="About">
+		<div class="row align-items-center">
+			<div class="col-md-3 profile-column">
+				<br>
+				<img class="img-responsive profile-photo" src="{{ '/img/ChenruiMa.jpeg' | relative_url }}" alt="Chenrui Ma"><br>
+			</div>
+
+			<div class="col-md-9 intro-copy">
+				<br>
+				<p class="intro-kicker">Generative Modeling · Multimodal AI · Trustworthy ML</p>
+				<h1>Chenrui Ma</h1>
+				<p class="intro-subtitle">Ph.D. Student @ UVA · MSCS @ UCI</p>
+				<p>
+					I will be joining the <a href="https://www.virginia.edu/" target="_blank">University of Virginia</a> as a Ph.D. student in Computer Science, where I will be affiliated with the <a href="https://nandofioretto.github.io/group/" target="_blank">RAISE Lab</a> and advised by <a href="https://nandofioretto.github.io/" target="_blank">Prof. Ferdinando Fioretto</a>. Currently, I am a Master's student at the <a href="https://uci.edu/" target="_blank">University of California, Irvine</a>, working as a Research Assistant in the <a href="https://sites.google.com/uci.edu/yanning-shen/group?authuser=0" target="_blank">Trustworthy ML/AI Group</a> advised by <a href="https://sites.google.com/uci.edu/yanning-shen/home?authuser=0" target="_blank">Prof. Yanning Shen</a>. I am also a student collaborator at <a href="https://education.ornl.gov/graduate/" target="_blank">Oak Ridge National Laboratory</a>.
+				</p>
+				<p>
+					I received my bachelor's degree from <a href="https://www.usnews.com/education/best-global-universities/central-south-university-501467" target="_blank">Central South University (中南大学)</a>. During my senior year, I studied as an exchange student at the University of California, Irvine, where I completed my undergraduate thesis and graduate-level coursework. My Chinese name is 马晨睿.
+				</p>
+				<div class="availability-note">
+					<span style="font-weight: 700;">I am seeking a summer internship focused on generative and multimodal understanding models for real-world data, including images and videos.</span>
+					I am motivated to tackle challenges in generation, perception, reasoning, and efficiency.
+				</div>
+				<p class="profile-links">
+					<a target="_blank" href="https://scholar.google.com/citations?user=dvkqKZsAAAAJ&hl=en"><i class="ai ai-google-scholar ai-lg"></i> Scholar</a>
+					<a target="_blank" href="https://github.com/merry7cherry"><i class="fab fa-github fa-lg"></i> GitHub</a>
+					<a target="_blank" href="https://www.linkedin.com/in/chenrui-ma-23804132b/"><i class="fab fa-linkedin fa-lg"></i> LinkedIn</a>
+					<a target="_blank" href="{{ '/files/2026FALL_PHD_CV.pdf' | relative_url }}"><i class="fas fa-file-pdf fa-lg"></i> CV</a>
+					<span class="email-link">zzz8fa [at] virginia.edu · chenrum [at] uci.edu</span>
+				</p>
+			</div>
+		</div>
+	</div><br>
+
+	<div class="container cv-overview" id="CV">
+		<div class="cv-grid">
+			<div class="cv-panel" id="Experience">
+				<h3 style="padding-top: 90px; margin-top: -80px;">Experience</h3><hr>
+				<div class="cv-entry">
+					<div class="cv-entry-date">09/2024 - Present</div>
+					<div class="cv-logo-wrap">
+						<img class="cv-logo" src="{{ '/img/logo/UCI.png' | relative_url }}" alt="University of California, Irvine logo">
+					</div>
+					<div class="cv-entry-body">
+						<div class="cv-role">Research Assistant</div>
+						<div class="cv-org">Trustworthy ML/AI Group @ UCI</div>
+						<div class="cv-meta">Irvine, California, USA</div>
+						<div class="cv-detail">Advised by <a href="https://sites.google.com/uci.edu/yanning-shen/home?authuser=0" target="_blank">Prof. Yanning Shen</a>.</div>
+					</div>
+				</div>
+				<div class="cv-entry">
+					<div class="cv-entry-date">01/2026 - 03/2026</div>
+					<div class="cv-logo-wrap">
+						<img class="cv-logo" src="{{ '/img/logo/UCI.png' | relative_url }}" alt="University of California, Irvine logo">
+					</div>
+					<div class="cv-entry-body">
+						<div class="cv-role">Teaching Assistant</div>
+						<div class="cv-org">University of California, Irvine</div>
+						<div class="cv-meta">Irvine, California, USA</div>
+						<div class="cv-detail">Assisted the professor with teaching and grading, and organized course discussions.</div>
+					</div>
+				</div>
+				<div class="cv-entry">
+					<div class="cv-entry-date">05/2025 - Present</div>
+					<div class="cv-logo-wrap">
+						<img class="cv-logo" src="{{ '/img/logo/ORNL.png' | relative_url }}" alt="Oak Ridge National Laboratory logo">
+					</div>
+					<div class="cv-entry-body">
+						<div class="cv-role">Student Collaborator (remote)</div>
+						<div class="cv-org">Oak Ridge National Laboratory</div>
+						<div class="cv-meta">Remote</div>
+					</div>
+				</div>
+			</div>
+			<div class="cv-panel" id="Education">
+				<h3 style="padding-top: 90px; margin-top: -80px;">Education</h3><hr>
+				<div class="cv-entry">
+					<div class="cv-entry-date">08/2026 - 06/2030</div>
+					<div class="cv-logo-wrap">
+						<img class="cv-logo" src="{{ '/img/logo/UVA.png' | relative_url }}" alt="University of Virginia logo">
+					</div>
+					<div class="cv-entry-body">
+						<div class="cv-role">Ph.D. in Computer Science</div>
+						<div class="cv-org">University of Virginia</div>
+						<div class="cv-meta">Charlottesville, Virginia, USA · Expected 2030</div>
+					</div>
+				</div>
+				<div class="cv-entry">
+					<div class="cv-entry-date">09/2025 - 06/2026</div>
+					<div class="cv-logo-wrap">
+						<img class="cv-logo" src="{{ '/img/logo/UCI.png' | relative_url }}" alt="University of California, Irvine logo">
+					</div>
+					<div class="cv-entry-body">
+						<div class="cv-role">M.S. in Computer Science</div>
+						<div class="cv-org">University of California, Irvine</div>
+						<div class="cv-meta">Irvine, California, USA · Expected 2026</div>
+					</div>
+				</div>
+				<div class="cv-entry">
+					<div class="cv-entry-date">09/2024 - 06/2025</div>
+					<div class="cv-logo-wrap">
+						<img class="cv-logo" src="{{ '/img/logo/UCI.png' | relative_url }}" alt="University of California, Irvine logo">
+					</div>
+					<div class="cv-entry-body">
+						<div class="cv-role">Exchange Student in Computer Science</div>
+						<div class="cv-org">University of California, Irvine</div>
+						<div class="cv-meta">UCI 3+2 Engineering program</div>
+					</div>
+				</div>
+				<div class="cv-entry">
+					<div class="cv-entry-date">09/2021 - 06/2025</div>
+					<div class="cv-logo-wrap">
+						<img class="cv-logo" src="{{ '/img/logo/CSU.png' | relative_url }}" alt="Central South University logo">
+					</div>
+					<div class="cv-entry-body">
+						<div class="cv-role">B.S. in Computer Science</div>
+						<div class="cv-org">Central South University</div>
+						<div class="cv-meta">Changsha, Hunan, China</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><br><br>
+
+	<div class="container">
+		<h3 id="Research" style="padding-top: 100px; margin-top: -80px;">Research Interest</h3><hr>
+		<ul class="research-topics">
+			<li>
+				<b>Generative Modeling &amp; Efficient Generation</b>:
+				[<a href="https://cvpr.thecvf.com/" target="_blank">CVPR'26</a>]
+				[<a href="https://aaai.org/conference/aaai/aaai-26/" target="_blank">AAAI'26</a>]
+				[<a href="https://icml.cc/" target="_blank">ICML'26 Submitted</a>]
+			</li>
+			<li>
+				<b>Efficient Model Adaptation &amp; Language Models</b>:
+				[<a href="https://2026.aclweb.org/" target="_blank">ACL'26</a>]
+				[<a href="https://2026.ieeeicassp.org/" target="_blank">ICASSP'26</a>]
+			</li>
+			<li>
+				<b>Multi-modal Perception &amp; Trustworthy Representation Learning</b>:
+				[<a href="https://wacv.thecvf.com/virtual/2026" target="_blank">WACV'26</a>]
+				[<a href="https://e-nns.org/icann2025/" target="_blank">ICANN'25</a>]
+			</li>
+		</ul>
+	</div><br><br>
+
+	<div class="container">
+		<h3 id="News" style="padding-top: 70px; margin-top: -80px;">News</h3><hr>
+		<div class="news-group">
+			<div class="news-year">2026</div>
+			<ul class="news-list">
+				<li><tt>[04]</tt> Our work <a href="https://arxiv.org/abs/2603.14228" target="_blank"><b>Not All Directions Matter: Toward Structured and Task-Aware Low-Rank Adaptation</b></a> is accepted to the <b>ACL 2026</b> main conference.</li>
+				<li><tt>[02]</tt> Our work <a href="https://arxiv.org/abs/2511.17583" target="_blank"><b>Learning Straight Flows: Variational Flow Matching for Efficient Generation</b></a> is accepted to the <b>CVPR 2026</b> main conference.</li>
+				<li><tt>[01]</tt> Our work <a href="https://arxiv.org/abs/2510.15962" target="_blank"><b>CTR-LoRA: Curvature-Aware and Trust-Region Guided Low-Rank Adaptation for Large Language Models</b></a> is accepted to <b>ICASSP 2026</b>.</li>
+			</ul>
+		</div>
+		<div class="news-group">
+			<div class="news-year">2025</div>
+			<ul class="news-list">
+				<li><tt>[11]</tt> Excited to receive the <b>AAAI-26 Scholarship</b> ($1000). Thanks AAAI!</li>
+				<li><tt>[11]</tt> Our work <a href="https://arxiv.org/abs/2503.07938" target="_blank"><b>CAD-VAE: Leveraging Correlation-Aware Latents for Comprehensive Fair Disentanglement</b></a> is accepted to the <b>AAAI 2026</b> main track.</li>
+				<li><tt>[11]</tt> Our work <a href="https://arxiv.org/abs/2511.12410" target="_blank"><b>Self-Supervised Visual Prompting for Cross-Domain Road Damage Detection</b></a> is accepted to <b>WACV 2026</b>.</li>
+			</ul>
+		</div>
+	</div><br><br>
+
+	<div class="container">
+		<h3 id="Publications" style="padding-top: 70px; margin-top: -80px;">
+			Selected Publications
+			<small><small> (<i>see full list <a href="https://scholar.google.com/citations?user=dvkqKZsAAAAJ&hl=en" target="_blank">here</a>; * indicates equal contribution</i>)</small></small><br>
+		</h3>
+
+		<div id="pubs"></div>
+		<div id="pubs_selected" class="selected-publications" language="text">
+			<div class="row pub-card">
+				<div class="col-md-3 pub-image-col">
+					<img class="img-fluid pub-thumb" src="{{ '/img/papers/cad-vae.png' | relative_url }}" alt="CAD-VAE overview">
+				</div>
+				<div class="col-md-9 pub-content">
+					<strong><u>Chenrui Ma</u></strong>, Xi Xiao, Tianyang Wang, Xiao Wang, Yanning Shen<br>
+					<b><font color="black">CAD-VAE: Leveraging Correlation-Aware Latents for Comprehensive Fair Disentanglement</font></b><br>
+					<b><a href="https://aaai.org/conference/aaai/aaai-26/" target="_blank">AAAI 2026 Main Track</a></b>
+					<small><a href="https://arxiv.org/abs/2503.07938" target="_blank">[Paper]</a></small>
+					<small><a href="https://github.com/merry7cherry/CAD-VAE" target="_blank">[Code]</a></small><br>
+					<font color="firebrick"><b>Correlation-aware latent modeling for comprehensive fair disentanglement</b></font><br>
+				</div>
+			</div><hr>
+
+			<div class="row pub-card">
+				<div class="col-md-3 pub-image-col">
+					<img class="img-fluid pub-thumb" src="{{ '/img/papers/stochastic-interpolants.png' | relative_url }}" alt="Stochastic Interpolants overview">
+				</div>
+				<div class="col-md-9 pub-content">
+					<strong><u>Chenrui Ma</u></strong>, Xi Xiao, Tianyang Wang, Xiao Wang, Yanning Shen<br>
+					<b><font color="black">Stochastic Interpolants via Conditional Dependent Coupling</font></b><br>
+					<b><a href="https://icml.cc/" target="_blank">ICML 2026 Submitted</a></b>
+					<small><a href="https://arxiv.org/abs/2509.23122" target="_blank">[Paper]</a></small>
+					<small><a href="https://github.com/merry7cherry/Stochastic-Interpolants-via-Conditional-Dependent-Coupling" target="_blank">[Code]</a></small><br>
+					<font color="firebrick"><b>A coarse-to-fine image generation framework parameterized by a single generative model</b></font><br>
+				</div>
+			</div><hr>
+
+			<div class="row pub-card">
+				<div class="col-md-3 pub-image-col">
+					<img class="img-fluid pub-thumb" src="{{ '/img/papers/learning-straight-flows.png' | relative_url }}" alt="Learning Straight Flows overview">
+				</div>
+				<div class="col-md-9 pub-content">
+					<strong><u>Chenrui Ma</u></strong>, Xi Xiao, Tianyang Wang, Xiao Wang, Yanning Shen<br>
+					<b><font color="black">Learning Straight Flows: Variational Flow Matching for Efficient Generation</font></b><br>
+					<b><a href="https://cvpr.thecvf.com/" target="_blank">CVPR 2026 Main Conference</a></b>
+					<small><a href="https://arxiv.org/abs/2511.17583" target="_blank">[Paper]</a></small>
+					<small><a href="https://github.com/merry7cherry/S-VFM" target="_blank">[Code]</a></small><br>
+					<font color="firebrick"><b>Variational flow matching with latent generation overview and straightness loss for efficient one-step generation</b></font><br>
+				</div>
+			</div><hr>
+
+			<div class="row pub-card">
+				<div class="col-md-3 pub-image-col">
+					<img class="img-fluid pub-thumb" src="{{ '/img/papers/not-all-directions.png' | relative_url }}" alt="StructLoRA overview">
+				</div>
+				<div class="col-md-9 pub-content">
+					Xi Xiao, <strong><u>Chenrui Ma</u></strong>, Yunbei Zhang, Chen Liu, Zhuxuanzi Wang, Yanshu Li, Lin Zhao, Guosheng Hu, Tianyang Wang, Hao Xu<br>
+					<b><font color="black">Not All Directions Matter: Toward Structured and Task-Aware Low-Rank Adaptation</font></b><br>
+					<b><a href="https://2026.aclweb.org/" target="_blank">ACL 2026 Main Conference</a></b>
+					<small><a href="https://arxiv.org/abs/2603.14228" target="_blank">[Paper]</a></small><br>
+					<font color="firebrick"><b>Structured task-aware adaptation that filters task-irrelevant update directions without adding inference cost</b></font><br>
+				</div>
+			</div><hr>
+
+			<div class="row pub-card">
+				<div class="col-md-3 pub-image-col">
+					<img class="img-fluid pub-thumb" src="{{ '/img/papers/probe.png' | relative_url }}" alt="PROBE overview">
+				</div>
+				<div class="col-md-9 pub-content">
+					Xi Xiao, Zhuxuanzi Wang, Mingqiao Mo, Chen Liu, <strong><u>Chenrui Ma</u></strong>, Yanshu Li, Smita Krishnaswamy, Xiao Wang, Tianyang Wang<br>
+					<b><font color="black">Self-Supervised Visual Prompting for Cross-Domain Road Damage Detection</font></b><br>
+					<b><a href="https://wacv.thecvf.com/virtual/2026" target="_blank">WACV 2026</a></b>
+					<small><a href="https://arxiv.org/abs/2511.12410" target="_blank">[Paper]</a></small>
+					<small><a href="https://github.com/xixiaouab/PROBE" target="_blank">[Code]</a></small><br>
+					<font color="firebrick"><b>Self-supervised defect-aware prompts for cross-domain pavement defect detection</b></font><br>
+				</div>
+			</div><hr>
+
+			<div class="row pub-card">
+				<div class="col-md-3 pub-image-col">
+					<img class="img-fluid pub-thumb" src="{{ '/img/papers/beyond-editing-pairs.png' | relative_url }}" alt="Beyond Editing Pairs overview">
+				</div>
+				<div class="col-md-9 pub-content">
+					<strong><u>Chenrui Ma</u></strong>, Xi Xiao, Tianyang Wang, Yanning Shen<br>
+					<b><font color="black">Beyond Editing Pairs: Fine-Grained Instructional Image Editing via Multi-Scale Learnable Regions</font></b><br>
+					<b>Revising</b>
+					<small><a href="https://arxiv.org/abs/2505.19352" target="_blank">[Paper]</a></small><br>
+					<font color="firebrick"><b>Combining unified encoders and pretrained diffusion models for fine-grained instructional image editing</b></font><br>
+				</div>
+			</div><hr>
+		</div>
+		<div class="publication-more-link">
+			<a href="{{ '/other-publications.html' | relative_url }}">View Other Publications</a>
+		</div>
+	</div><br><br>
+
+	<div class="container">
+		<h3 id="Awards" style="padding-top: 70px; margin-top: -80px;">Awards &amp; Honors</h3>
+		<hr>
+		<ul class="honor-list">
+			<li><tt>[2026]</tt> <b>Computer Science Scholar Fellowship</b>, University of Virginia.</li>
+			<li><tt>[2025]</tt> <b>AAAI-2026 Scholarship</b>, Singapore.</li>
+			<li><tt>[2024]</tt> <b>University-level Second Prize Scholarship</b> (Top 20%), Central South University.</li>
+			<li><tt>[2023]</tt> <b>University-level Third Prize Scholarship</b> (Top 30%), Central South University.</li>
+			<li><tt>[2023]</tt> <b>21st China Undergraduate Mathematical Competition in Modeling</b>, National Second Prize, Top 15% nationwide.</li>
+			<li><tt>[2023]</tt> <b>4th National College Student Mathematical Modeling Competition</b>, National First Prize, Top 5% nationwide.</li>
+		</ul>
+	</div><br><br>
+
+	<div class="container">
+		<h3 id="Miscellanea" style="padding-top: 70px; margin-top: -80px;">Professional Services</h3>
+		<hr>
+		<p><strong>Academic Service</strong></p>
+		<p class="service-list">Conference reviewer for CVPR 2026 and AAAI 2026. Teaching Assistant for <b>UCI EECS 298: Networked System</b>, Spring 2026.</p>
+	</div><br><br>
+
+	<div class="container">
+		<hr>
+		<center>
+			<footer>
+				<p>&copy; Chenrui Ma 2026. Website adapted from <a href="https://github.com/xixiaouab/xixiaouab.github.io" target="_blank">Xi Xiao's template</a>.</p>
+			</footer>
+		</center>
+	</div>
+
+	<script>showPubs(1);</script>
+	<script>var scroll = new SmoothScroll('a[href*="#"]', { speed: 1000 });</script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+</body>
+
+</html>
