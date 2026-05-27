@@ -49,6 +49,10 @@ assert_contains "_layouts/index.html" "Professional Services"
 assert_contains "_layouts/index.html" "2026FALL_PHD_CV.pdf"
 assert_contains "_layouts/index.html" "cv-logo"
 assert_contains "_layouts/index.html" "Oak Ridge National Laboratory logo"
+assert_contains "_layouts/index.html" "RAISE Lab @ UVA"
+assert_contains "_layouts/index.html" "Charlottesville, Virginia, USA"
+assert_contains "_layouts/index.html" "Prof. Ferdinando Fioretto"
+assert_contains "_layouts/index.html" "Teaching Service"
 assert_contains "_layouts/index.html" "CVPR'26"
 assert_contains "_layouts/index.html" "AAAI'26"
 assert_contains "_layouts/index.html" "ACL'26"
@@ -62,6 +66,16 @@ fi
 
 if grep -Fq 'My research focuses on' "_layouts/index.html"; then
   printf 'research interest still contains explanatory paragraph\n' >&2
+  failures=$((failures + 1))
+fi
+
+if grep -Fq 'Student Collaborator (remote)' "_layouts/index.html"; then
+  printf 'student collaborator still includes remote in role\n' >&2
+  failures=$((failures + 1))
+fi
+
+if grep -Fq 'Conference reviewer for CVPR 2026 and AAAI 2026. Teaching Assistant' "_layouts/index.html"; then
+  printf 'teaching assistant still bundled into academic service\n' >&2
   failures=$((failures + 1))
 fi
 
