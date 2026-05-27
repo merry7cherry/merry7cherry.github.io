@@ -275,6 +275,25 @@ if paper["authors"][:3] != ["Xi Xiao*", "Chenrui Ma*", "Yunbei Zhang*"]:
     raise SystemExit(f"ACL co-first authors not marked correctly: {paper['authors'][:3]}")
 PY
 
+python3 - <<'PY' || failures=$((failures + 1))
+import re
+from pathlib import Path
+
+html = Path("_layouts/index.html").read_text()
+start = html.index('<div class="cv-panel" id="Experience">')
+end = html.index('<div class="cv-panel" id="Education">', start)
+section = html[start:end]
+dates = re.findall(r'class="cv-entry-date">([^<]+)</div>', section)
+expected = [
+    "08/2026 - Present",
+    "01/2026 - 03/2026",
+    "05/2025 - Present",
+    "09/2024 - Present",
+]
+if dates != expected:
+    raise SystemExit(f"experience entries not sorted by descending start date: {dates}")
+PY
+
 date_line=$(grep -n -m 1 'class="cv-entry-date"' "_layouts/index.html" | cut -d: -f1 || true)
 logo_line=$(grep -n -m 1 'class="cv-logo-wrap"' "_layouts/index.html" | cut -d: -f1 || true)
 if [[ -z "$date_line" || -z "$logo_line" || "$date_line" -gt "$logo_line" ]]; then
