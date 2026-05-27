@@ -52,6 +52,14 @@ assert_contains "_layouts/index.html" "img/papers/drift-flow-matching.png"
 assert_contains "_layouts/index.html" "img/papers/transition-flow-matching.png"
 assert_contains "_layouts/index.html" "Professional Services"
 assert_contains "_layouts/index.html" "2026FALL_PHD_CV.pdf"
+assert_contains "_layouts/index.html" "profile-action-grid"
+assert_contains "_layouts/index.html" "profile-action"
+assert_contains "_layouts/index.html" "profile-email-list"
+assert_contains "_layouts/index.html" "https://scholar.google.com/citations?user=dvkqKZsAAAAJ&hl=en"
+assert_contains "_layouts/index.html" "https://github.com/merry7cherry"
+assert_contains "_layouts/index.html" "https://www.linkedin.com/in/chenrui-ma-23804132b/"
+assert_contains "_layouts/index.html" "zzz8fa [at] virginia.edu"
+assert_contains "_layouts/index.html" "chenrum [at] uci.edu"
 assert_contains "_layouts/index.html" "cv-logo"
 assert_contains "_layouts/index.html" "Oak Ridge National Laboratory logo"
 assert_contains "_layouts/index.html" "RAISE Lab @ UVA"
@@ -96,6 +104,16 @@ fi
 
 if grep -Fq 'Other Publications' "_layouts/index.html"; then
   printf 'homepage still uses Other Publications wording\n' >&2
+  failures=$((failures + 1))
+fi
+
+if grep -Fq '<p class="profile-links">' "_layouts/index.html"; then
+  printf 'right-side profile links still present in _layouts/index.html\n' >&2
+  failures=$((failures + 1))
+fi
+
+if grep -Fq 'zzz8fa [at] virginia.edu · chenrum [at] uci.edu' "_layouts/index.html"; then
+  printf 'emails still bundled into one profile-link line\n' >&2
   failures=$((failures + 1))
 fi
 
@@ -207,6 +225,10 @@ assert_contains "static/styles.css" ".pub-card"
 assert_contains "static/styles.css" ".cv-entry"
 assert_contains "static/styles.css" ".cv-logo"
 assert_contains "static/styles.css" ".visitor-map"
+assert_contains "static/styles.css" ".profile-action-grid"
+assert_contains "static/styles.css" ".profile-action"
+assert_contains "static/styles.css" ".profile-email-list"
+assert_contains "static/styles.css" "grid-template-columns: repeat(2, minmax(0, 1fr));"
 assert_contains "static/styles.css" "grid-template-columns: 165px 82px 1fr;"
 assert_contains "static/styles.css" "height: 76px;"
 assert_contains "other-publications.html" "CTR-LoRA"
