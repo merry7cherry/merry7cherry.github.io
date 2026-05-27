@@ -62,9 +62,24 @@ assert_contains "_layouts/index.html" "AAAI'26"
 assert_contains "_layouts/index.html" "ACL'26"
 assert_contains "_layouts/index.html" "ICASSP'26"
 assert_contains "_layouts/index.html" "WACV'26"
+assert_contains "_layouts/index.html" "Generative Modeling</b>"
+assert_contains "_layouts/index.html" "Trustworthy Machine Learning</b>"
+assert_contains "_layouts/index.html" "Multimodal AI</b>"
+assert_contains "_layouts/index.html" "https://arxiv.org/abs/2511.17583"
+assert_contains "_layouts/index.html" "https://arxiv.org/abs/2509.23122"
+assert_contains "_layouts/index.html" "https://arxiv.org/abs/2503.07938"
+assert_contains "_layouts/index.html" "https://arxiv.org/abs/2603.14228"
+assert_contains "_layouts/index.html" "https://arxiv.org/abs/2510.15962"
+assert_contains "_layouts/index.html" "https://arxiv.org/abs/2511.12410"
+assert_contains "_layouts/index.html" "https://link.springer.com/chapter/10.1007/978-3-032-04558-4_20"
 
 if grep -Fq '<span class="email-link">Irvine, California, USA</span>' "_layouts/index.html"; then
   printf 'removed location still present in _layouts/index.html\n' >&2
+  failures=$((failures + 1))
+fi
+
+if grep -Fq 'intro-kicker' "_layouts/index.html"; then
+  printf 'intro kicker still present in _layouts/index.html\n' >&2
   failures=$((failures + 1))
 fi
 
@@ -72,6 +87,46 @@ if grep -Fq 'My research focuses on' "_layouts/index.html"; then
   printf 'research interest still contains explanatory paragraph\n' >&2
   failures=$((failures + 1))
 fi
+
+python3 - <<'PY' || failures=$((failures + 1))
+from pathlib import Path
+
+html = Path("_layouts/index.html").read_text()
+start = html.index('<h3 id="Research"')
+end = html.index('<h3 id="News"')
+section = html[start:end]
+
+required = [
+    "Generative Modeling</b>",
+    "Trustworthy Machine Learning</b>",
+    "Multimodal AI</b>",
+    "https://arxiv.org/abs/2511.17583",
+    "https://arxiv.org/abs/2509.23122",
+    "https://arxiv.org/abs/2503.07938",
+    "https://arxiv.org/abs/2603.14228",
+    "https://arxiv.org/abs/2510.15962",
+    "https://arxiv.org/abs/2511.12410",
+    "https://link.springer.com/chapter/10.1007/978-3-032-04558-4_20",
+]
+for needle in required:
+    if needle not in section:
+        raise SystemExit(f"missing research interest content: {needle}")
+
+for forbidden in [
+    "Generative Modeling &amp; Efficient Generation",
+    "Efficient Model Adaptation &amp; Language Models",
+    "Multi-modal Perception &amp; Trustworthy Representation Learning",
+    "https://cvpr.thecvf.com/",
+    "https://aaai.org/conference/aaai/aaai-26/",
+    "https://icml.cc/",
+    "https://2026.aclweb.org/",
+    "https://2026.ieeeicassp.org/",
+    "https://wacv.thecvf.com/virtual/2026",
+    "https://e-nns.org/icann2025/",
+]:
+    if forbidden in section:
+        raise SystemExit(f"forbidden research interest content: {forbidden}")
+PY
 
 if grep -Fq 'Student Collaborator (remote)' "_layouts/index.html"; then
   printf 'student collaborator still includes remote in role\n' >&2
