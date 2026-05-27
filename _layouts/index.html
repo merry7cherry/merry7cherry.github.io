@@ -48,7 +48,7 @@
 						<a class="nav-link dropdown-toggle" href="#Publications" id="publicationsMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Publications</a>
 						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="publicationsMenu">
 							<a class="dropdown-item" href="#Publications">Selected Publications</a>
-							<a class="dropdown-item" href="{{ '/other-publications.html' | relative_url }}">Other Publications</a>
+							<a class="dropdown-item" href="{{ '/other-publications.html' | relative_url }}">All Publications</a>
 						</div>
 					</li>
 					<li class="nav-item dropdown">
@@ -205,7 +205,9 @@
 			<li>
 				<b>Generative Modeling</b>:
 				[<a href="https://arxiv.org/abs/2511.17583" target="_blank">CVPR'26</a>]
-				[<a href="https://arxiv.org/abs/2509.23122" target="_blank">ICML'26 Submitted</a>]
+				[<a href="https://arxiv.org/abs/2509.23122" target="_blank">arXiv'25</a>]
+				[<a href="https://arxiv.org/abs/2603.15689" target="_blank">arXiv'26a</a>]
+				[<a href="https://arxiv.org/abs/2605.17244" target="_blank">arXiv'26b</a>]
 			</li>
 			<li>
 				<b>Trustworthy Machine Learning</b>:
@@ -251,6 +253,32 @@
 		<div id="pubs_selected" class="selected-publications" language="text">
 			<div class="row pub-card">
 				<div class="col-md-3 pub-image-col">
+					<img class="img-fluid pub-thumb" src="{{ '/img/papers/drift-flow-matching.png' | relative_url }}" alt="Drift Flow Matching overview">
+				</div>
+				<div class="col-md-9 pub-content">
+					<strong><u>Chenrui Ma</u></strong>, Xi Xiao, Lin Zhao, Tianyang Wang, Ferdinando Fioretto, Yanning Shen<br>
+					<b><font color="black">Drift Flow Matching</font></b><br>
+					<b>arXiv</b>
+					<small><a href="https://arxiv.org/abs/2605.17244" target="_blank">[Paper]</a></small><br>
+					<font color="firebrick"><b>Bridging one-step drift models and iterative flow matching for adaptive quality-efficiency sampling</b></font><br>
+				</div>
+			</div><hr>
+
+			<div class="row pub-card">
+				<div class="col-md-3 pub-image-col">
+					<img class="img-fluid pub-thumb" src="{{ '/img/papers/transition-flow-matching.png' | relative_url }}" alt="Transition Flow Matching overview">
+				</div>
+				<div class="col-md-9 pub-content">
+					<strong><u>Chenrui Ma</u></strong><br>
+					<b><font color="black">Transition Flow Matching</font></b><br>
+					<b>arXiv</b>
+					<small><a href="https://arxiv.org/abs/2603.15689" target="_blank">[Paper]</a></small><br>
+					<font color="firebrick"><b>Direct transition-flow learning for one-step or arbitrary-time generation</b></font><br>
+				</div>
+			</div><hr>
+
+			<div class="row pub-card">
+				<div class="col-md-3 pub-image-col">
 					<img class="img-fluid pub-thumb" src="{{ '/img/papers/cad-vae.png' | relative_url }}" alt="CAD-VAE overview">
 				</div>
 				<div class="col-md-9 pub-content">
@@ -270,7 +298,7 @@
 				<div class="col-md-9 pub-content">
 					<strong><u>Chenrui Ma</u></strong>, Xi Xiao, Tianyang Wang, Xiao Wang, Yanning Shen<br>
 					<b><font color="black">Stochastic Interpolants via Conditional Dependent Coupling</font></b><br>
-					<b><a href="https://icml.cc/" target="_blank">ICML 2026 Submitted</a></b>
+					<b>arXiv</b>
 					<small><a href="https://arxiv.org/abs/2509.23122" target="_blank">[Paper]</a></small>
 					<small><a href="https://github.com/merry7cherry/Stochastic-Interpolants-via-Conditional-Dependent-Coupling" target="_blank">[Code]</a></small><br>
 					<font color="firebrick"><b>A coarse-to-fine image generation framework parameterized by a single generative model</b></font><br>
@@ -296,7 +324,7 @@
 					<img class="img-fluid pub-thumb" src="{{ '/img/papers/not-all-directions.png' | relative_url }}" alt="StructLoRA overview">
 				</div>
 				<div class="col-md-9 pub-content">
-					Xi Xiao, <strong><u>Chenrui Ma</u></strong>, Yunbei Zhang, Chen Liu, Zhuxuanzi Wang, Yanshu Li, Lin Zhao, Guosheng Hu, Tianyang Wang, Hao Xu<br>
+					Xi Xiao*, <strong><u>Chenrui Ma*</u></strong>, Yunbei Zhang*, Chen Liu, Zhuxuanzi Wang, Yanshu Li, Lin Zhao, Guosheng Hu, Tianyang Wang, Hao Xu<br>
 					<b><font color="black">Not All Directions Matter: Toward Structured and Task-Aware Low-Rank Adaptation</font></b><br>
 					<b><a href="https://2026.aclweb.org/" target="_blank">ACL 2026 Main Conference</a></b>
 					<small><a href="https://arxiv.org/abs/2603.14228" target="_blank">[Paper]</a></small><br>
@@ -318,21 +346,9 @@
 				</div>
 			</div><hr>
 
-			<div class="row pub-card">
-				<div class="col-md-3 pub-image-col">
-					<img class="img-fluid pub-thumb" src="{{ '/img/papers/beyond-editing-pairs.png' | relative_url }}" alt="Beyond Editing Pairs overview">
-				</div>
-				<div class="col-md-9 pub-content">
-					<strong><u>Chenrui Ma</u></strong>, Xi Xiao, Tianyang Wang, Yanning Shen<br>
-					<b><font color="black">Beyond Editing Pairs: Fine-Grained Instructional Image Editing via Multi-Scale Learnable Regions</font></b><br>
-					<b>Revising</b>
-					<small><a href="https://arxiv.org/abs/2505.19352" target="_blank">[Paper]</a></small><br>
-					<font color="firebrick"><b>Combining unified encoders and pretrained diffusion models for fine-grained instructional image editing</b></font><br>
-				</div>
-			</div><hr>
 		</div>
 		<div class="publication-more-link">
-			<a href="{{ '/other-publications.html' | relative_url }}">View Other Publications</a>
+			<a href="{{ '/other-publications.html' | relative_url }}">View All Publications</a>
 		</div>
 	</div><br><br>
 

@@ -1,6 +1,43 @@
 {
   "publications": [
     {
+      "id": "drift-flow-matching",
+      "title": "Drift Flow Matching",
+      "authors": [
+        "Chenrui Ma",
+        "Xi Xiao",
+        "Lin Zhao",
+        "Tianyang Wang",
+        "Ferdinando Fioretto",
+        "Yanning Shen"
+      ],
+      "venue": "arXiv",
+      "year": "2026",
+      "image": "img/papers/drift-flow-matching.png",
+      "arxiv_id": "2605.17244",
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2605.17244"
+      },
+      "selected": true,
+      "tldr": "Drift Flow Matching bridges one-step drift models and iterative flow matching for adaptive quality-efficiency sampling."
+    },
+    {
+      "id": "transition-flow-matching",
+      "title": "Transition Flow Matching",
+      "authors": [
+        "Chenrui Ma"
+      ],
+      "venue": "arXiv",
+      "year": "2026",
+      "image": "img/papers/transition-flow-matching.png",
+      "arxiv_id": "2603.15689",
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2603.15689"
+      },
+      "selected": true,
+      "tldr": "Transition Flow Matching directly learns global transition flows for one-step or arbitrary-time generation."
+    },
+    {
       "id": "cad-vae",
       "title": "CAD-VAE: Leveraging Correlation-Aware Latents for Comprehensive Fair Disentanglement",
       "authors": [
@@ -34,8 +71,8 @@
         "Xiao Wang",
         "Yanning Shen"
       ],
-      "venue": "ICML (Submitted)",
-      "year": "2026",
+      "venue": "arXiv",
+      "year": "2025",
       "image": "img/papers/stochastic-interpolants.png",
       "arxiv_id": "2509.23122",
       "github_repo": "merry7cherry/Stochastic-Interpolants-via-Conditional-Dependent-Coupling",
@@ -76,9 +113,9 @@
       "id": "not-all-directions",
       "title": "Not All Directions Matter: Toward Structured and Task-Aware Low-Rank Adaptation",
       "authors": [
-        "Xi Xiao",
-        "Chenrui Ma",
-        "Yunbei Zhang",
+        "Xi Xiao*",
+        "Chenrui Ma*",
+        "Yunbei Zhang*",
         "Chen Liu",
         "Zhuxuanzi Wang",
         "Yanshu Li",
@@ -164,7 +201,7 @@
       "links": {
         "arxiv": "https://arxiv.org/abs/2505.19352"
       },
-      "selected": true,
+      "selected": false,
       "tldr": "Leveraging the representational strength of unified encoders (e.g., CLIP) and combine it with pretrained diffusion models to achieve fine-grained image editing via a learnable region",
       "citations": 4
     },
@@ -191,6 +228,42 @@
       "selected": false,
       "tldr": "CTR-LoRA is a simple and efficient LoRA framework for large language models. It is based on the idea of using a simple and efficient LoRA framework for large language models.",
       "citations": 0
+    },
+    {
+      "id": "scs-yolo",
+      "title": "SCS-YOLO: a defect detection model for cigarette appearance",
+      "authors": [
+        "Yingchao Ding",
+        "Hao Zhou",
+        "Hao Wu",
+        "Chenrui Ma",
+        "Guowu Yuan"
+      ],
+      "venue": "Electronics",
+      "year": "2024",
+      "links": {
+        "paper": "https://www.mdpi.com/2079-9292/13/18/3761"
+      },
+      "selected": false,
+      "tldr": "A high-speed visual defect detector for cigarette appearance inspection."
+    },
+    {
+      "id": "dense-object-detection",
+      "title": "Dense Object Detection Based on De-Homogenized Queries",
+      "authors": [
+        "Yueming Huang",
+        "Chenrui Ma",
+        "Hao Zhou",
+        "Hao Wu",
+        "Guowu Yuan"
+      ],
+      "venue": "Electronics",
+      "year": "2024",
+      "links": {
+        "paper": "https://www.mdpi.com/2079-9292/13/12/2312"
+      },
+      "selected": false,
+      "tldr": "A dense object detection method that mitigates homogeneous query behavior in DETR-style detectors."
     }
   ]
 }
