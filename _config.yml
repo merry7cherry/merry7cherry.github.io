@@ -7,6 +7,7 @@ domain: merry7cherry.github.io
 baseurl: ""
 url: "https://merry7cherry.github.io"
 github_username: merry7cherry
+mapmyvisitors_token: "O0wPS2G8D9dZYJ1nm1i5M25bM3YmiWdQkpbGugBxaoo"
 
 theme: minima
 plugins:

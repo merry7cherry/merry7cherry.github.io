@@ -38,11 +38,14 @@ assert_file "img/papers/transition-flow-matching.png"
 assert_contains "_config.yml" "title: Chenrui Ma"
 assert_contains "_config.yml" "theme: minima"
 assert_contains "_config.yml" "tests/"
+assert_contains "_config.yml" "mapmyvisitors_token:"
 assert_contains "index.md" "layout: index"
 
 assert_contains "_layouts/index.html" "navbar-custom"
 assert_contains "_layouts/index.html" "intro-panel"
 assert_contains "_layouts/index.html" "Chenrui Ma"
+assert_contains "_layouts/index.html" "/static/styles.css?v=20260704"
+assert_contains "_layouts/index.html" "/js/main.js?v=20260704"
 assert_contains "_layouts/index.html" "University of Virginia"
 assert_contains "_layouts/index.html" "merry7cherry"
 assert_contains "_layouts/index.html" "Learning Straight Flows"
@@ -51,6 +54,11 @@ assert_contains "_layouts/index.html" "Drift Flow Matching"
 assert_contains "_layouts/index.html" "img/papers/drift-flow-matching.png"
 assert_contains "_layouts/index.html" "img/papers/transition-flow-matching.png"
 assert_contains "_layouts/index.html" "Professional Services"
+assert_contains "_layouts/index.html" "ECCV 2026"
+assert_contains "_layouts/index.html" "NeurIPS 2026"
+assert_contains "_layouts/index.html" "AAAI 2027"
+assert_contains "_layouts/index.html" "Last modified: July 4, 2026."
+assert_contains "_layouts/index.html" "last-modified"
 assert_contains "_layouts/index.html" "2026FALL_PHD_CV.pdf"
 assert_contains "_layouts/index.html" "profile-action-grid"
 assert_contains "_layouts/index.html" "profile-action"
@@ -69,9 +77,23 @@ assert_contains "_layouts/index.html" "Charlottesville, Virginia, USA"
 assert_contains "_layouts/index.html" "Prof. Ferdinando Fioretto"
 assert_contains "_layouts/index.html" "Teaching Service"
 assert_contains "_layouts/index.html" "Visitor Map"
-assert_contains "_layouts/index.html" "clustrmaps"
-assert_contains "_layouts/index.html" "//cdn.clustrmaps.com/map_v2.js"
-assert_contains "_layouts/index.html" "d=iI_u2m1shREKH65b-dCj2xTFY9f4fmyojjObbBCeWvQ"
+assert_contains "_layouts/index.html" "intro-identity"
+assert_contains "_layouts/index.html" "intro-identity-dynamic"
+assert_contains "_layouts/index.html" "intro-identity-cursor"
+assert_contains "_layouts/index.html" "research-card"
+assert_contains "_layouts/index.html" "research-chip"
+assert_contains "_layouts/index.html" "Straight Flows"
+assert_contains "_layouts/index.html" "DFM"
+assert_contains "_layouts/index.html" "TFM"
+assert_contains "_layouts/index.html" "CAD-VAE"
+assert_contains "_layouts/index.html" "StructLoRA"
+assert_contains "_layouts/index.html" "PROBE"
+assert_contains "_layouts/index.html" "visitor-map-card"
+assert_contains "_layouts/index.html" "visitor-map-embed"
+assert_contains "_layouts/index.html" "site.mapmyvisitors_token"
+assert_contains "_layouts/index.html" "mapmyvisitors.com/map.js"
+assert_contains "_layouts/index.html" "mapmyvisitors.com/map.png"
+assert_contains "_layouts/index.html" "noscript"
 assert_contains "_layouts/index.html" "All Publications"
 assert_contains "_layouts/index.html" "View All Publications"
 assert_contains "_layouts/index.html" "CVPR'26"
@@ -81,9 +103,9 @@ assert_contains "_layouts/index.html" "ICASSP'26"
 assert_contains "_layouts/index.html" "WACV'26"
 assert_contains "_layouts/index.html" "arXiv'26a"
 assert_contains "_layouts/index.html" "arXiv'26b"
-assert_contains "_layouts/index.html" "Generative Modeling</b>"
-assert_contains "_layouts/index.html" "Trustworthy Machine Learning</b>"
-assert_contains "_layouts/index.html" "Multimodal AI</b>"
+assert_contains "_layouts/index.html" "<h4>Generative Modeling</h4>"
+assert_contains "_layouts/index.html" "<h4>Trustworthy Machine Learning</h4>"
+assert_contains "_layouts/index.html" "<h4>Multimodal AI</h4>"
 assert_contains "_layouts/index.html" "https://arxiv.org/abs/2511.17583"
 assert_contains "_layouts/index.html" "https://arxiv.org/abs/2509.23122"
 assert_contains "_layouts/index.html" "https://arxiv.org/abs/2603.15689"
@@ -119,6 +141,16 @@ if grep -Fq 'zzz8fa [at] virginia.edu · chenrum [at] uci.edu' "_layouts/index.h
   failures=$((failures + 1))
 fi
 
+if grep -Fq 'cdn.clustrmaps.com' "_layouts/index.html"; then
+  printf 'old ClustrMaps CDN still present in _layouts/index.html\n' >&2
+  failures=$((failures + 1))
+fi
+
+if grep -Fq 'REPLACE_WITH_CHENRUI_MAPMYVISITORS_TOKEN' "_layouts/index.html"; then
+  printf 'visitor map placeholder token still present in _layouts/index.html\n' >&2
+  failures=$((failures + 1))
+fi
+
 if grep -Fq 'drift-flow-matching.svg' "_layouts/index.html" "publications.json"; then
   printf 'DFM publication image still points to old SVG\n' >&2
   failures=$((failures + 1))
@@ -148,13 +180,22 @@ end = html.index('<h3 id="News"')
 section = html[start:end]
 
 required = [
-    "Generative Modeling</b>",
-    "Trustworthy Machine Learning</b>",
-    "Multimodal AI</b>",
+    "<h4>Generative Modeling</h4>",
+    "<h4>Trustworthy Machine Learning</h4>",
+    "<h4>Multimodal AI</h4>",
     "CVPR'26",
     "arXiv'25",
     "arXiv'26a",
     "arXiv'26b",
+    "Straight Flows",
+    "Stochastic Interpolants",
+    "TFM",
+    "DFM",
+    "CAD-VAE",
+    "StructLoRA",
+    "CTR-LoRA",
+    "PROBE",
+    "CIBR",
     "https://arxiv.org/abs/2511.17583",
     "https://arxiv.org/abs/2509.23122",
     "https://arxiv.org/abs/2603.15689",
@@ -231,16 +272,28 @@ assert_contains "static/styles.css" ".navbar-custom"
 assert_contains "static/styles.css" ".pub-card"
 assert_contains "static/styles.css" ".cv-entry"
 assert_contains "static/styles.css" ".cv-logo"
-assert_contains "static/styles.css" ".visitor-map"
+assert_contains "static/styles.css" ".intro-identity"
+assert_contains "static/styles.css" ".intro-identity-cursor"
+assert_contains "static/styles.css" ".research-card"
+assert_contains "static/styles.css" ".research-chip"
+assert_contains "static/styles.css" ".visitor-map-card"
+assert_contains "static/styles.css" ".visitor-map-link"
+assert_contains "static/styles.css" ".visitor-map-image"
+assert_contains "static/styles.css" ".last-modified"
 assert_contains "static/styles.css" ".profile-action-grid"
 assert_contains "static/styles.css" ".profile-action"
 assert_contains "static/styles.css" ".profile-email-list"
 assert_contains "static/styles.css" "grid-template-columns: repeat(2, minmax(0, 1fr));"
 assert_contains "static/styles.css" "grid-template-columns: 165px 82px 1fr;"
 assert_contains "static/styles.css" "height: 76px;"
+assert_contains "js/main.js" "initIdentityTyping"
+assert_contains "js/main.js" "a Generative Modeling Researcher"
+assert_contains "js/main.js" "prefers-reduced-motion"
 assert_contains "other-publications.html" "CTR-LoRA"
 assert_contains "other-publications.html" "CIBR"
 assert_contains "other-publications.html" "<title>All Publications | Chenrui Ma</title>"
+assert_contains "other-publications.html" "static/styles.css?v=20260704"
+assert_contains "other-publications.html" "js/main.js?v=20260704"
 assert_contains "other-publications.html" ">All Publications</a>"
 assert_contains "other-publications.html" "<h1>All Publications</h1>"
 assert_contains "other-publications.html" "Additional papers grouped by year. For selected works, return to the <a href=\"index.html#Publications\">homepage publications section</a>."

@@ -25,14 +25,13 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css">
-	<link rel="stylesheet" href="{{ '/static/styles.css?v=20260527' | relative_url }}">
+	<link rel="stylesheet" href="{{ '/static/styles.css?v=20260704' | relative_url }}">
 	<link href="{{ '/files/jumbotron.css' | relative_url }}" rel="stylesheet">
 	<link rel="icon" href="{{ '/files/favicon.ico' | relative_url }}" type="image/x-icon">
-	<script src="{{ '/js/main.js?v=20260526' | relative_url }}"></script>
+	<script src="{{ '/js/main.js?v=20260704' | relative_url }}"></script>
 	<script src="{{ '/js/scroll.js' | relative_url }}"></script>
+	<title>Chenrui Ma</title>
 </head>
-
-<title>Chenrui Ma</title>
 
 <body>
 	<nav class="navbar navbar-expand-md navbar-dark fixed-top navbar-custom" id="Home">
@@ -96,7 +95,9 @@
 			<div class="col-md-9 intro-copy">
 				<br>
 				<h1>Chenrui Ma</h1>
-				<p class="intro-subtitle">Ph.D. Student @ UVA · MSCS @ UCI</p>
+				<p class="intro-identity" aria-label="I am a Ph.D. Student, a Generative Modeling Researcher, a Trustworthy ML Researcher, and a Multimodal AI Explorer.">
+					I am <span class="intro-identity-dynamic">a Ph.D. Student</span><span class="intro-identity-cursor" aria-hidden="true"></span>
+				</p>
 				<p>
 					I will be joining the <a href="https://www.virginia.edu/" target="_blank">University of Virginia</a> as a Ph.D. student in Computer Science, where I will be affiliated with the <a href="https://nandofioretto.github.io/group/" target="_blank">RAISE Lab</a> and advised by <a href="https://nandofioretto.github.io/" target="_blank">Prof. Ferdinando Fioretto</a>. Currently, I am a Master's student at the <a href="https://uci.edu/" target="_blank">University of California, Irvine</a>, working as a Research Assistant in the <a href="https://sites.google.com/uci.edu/yanning-shen/group?authuser=0" target="_blank">Trustworthy ML/AI Group</a> advised by <a href="https://sites.google.com/uci.edu/yanning-shen/home?authuser=0" target="_blank">Prof. Yanning Shen</a>. I am also a student collaborator at <a href="https://education.ornl.gov/graduate/" target="_blank">Oak Ridge National Laboratory</a>.
 				</p>
@@ -215,26 +216,38 @@
 
 	<div class="container">
 		<h3 id="Research" style="padding-top: 100px; margin-top: -80px;">Research Interest</h3><hr>
-		<ul class="research-topics">
-			<li>
-				<b>Generative Modeling</b>:
-				[<a href="https://arxiv.org/abs/2511.17583" target="_blank">CVPR'26</a>]
-				[<a href="https://arxiv.org/abs/2509.23122" target="_blank">arXiv'25</a>]
-				[<a href="https://arxiv.org/abs/2603.15689" target="_blank">arXiv'26a</a>]
-				[<a href="https://arxiv.org/abs/2605.17244" target="_blank">arXiv'26b</a>]
-			</li>
-			<li>
-				<b>Trustworthy Machine Learning</b>:
-				[<a href="https://arxiv.org/abs/2503.07938" target="_blank">AAAI'26</a>]
-				[<a href="https://arxiv.org/abs/2603.14228" target="_blank">ACL'26</a>]
-				[<a href="https://arxiv.org/abs/2510.15962" target="_blank">ICASSP'26</a>]
-			</li>
-			<li>
-				<b>Multimodal AI</b>:
-				[<a href="https://arxiv.org/abs/2511.12410" target="_blank">WACV'26</a>]
-				[<a href="https://link.springer.com/chapter/10.1007/978-3-032-04558-4_20" target="_blank">ICANN'25</a>]
-			</li>
-		</ul>
+		<p style="text-align: justify;">
+			My research centers on <b>generative modeling</b>, <b>trustworthy machine learning</b>, and <b>multimodal AI</b>, with an emphasis on efficient generation, structured adaptation, and robust cross-domain reasoning.
+		</p>
+		<div class="research-topics">
+			<article class="research-card">
+				<h4>Generative Modeling</h4>
+				<p>Efficient flow-based generation, one-step transition modeling, and adaptive sampling.</p>
+				<div class="research-chip-row">
+					<a class="research-chip" href="https://arxiv.org/abs/2511.17583" target="_blank"><span>CVPR'26</span> Straight Flows</a>
+					<a class="research-chip" href="https://arxiv.org/abs/2509.23122" target="_blank"><span>arXiv'25</span> Stochastic Interpolants</a>
+					<a class="research-chip" href="https://arxiv.org/abs/2603.15689" target="_blank"><span>arXiv'26a</span> TFM</a>
+					<a class="research-chip" href="https://arxiv.org/abs/2605.17244" target="_blank"><span>arXiv'26b</span> DFM</a>
+				</div>
+			</article>
+			<article class="research-card">
+				<h4>Trustworthy Machine Learning</h4>
+				<p>Fair representation learning, task-aware adaptation, and reliable low-rank fine-tuning.</p>
+				<div class="research-chip-row">
+					<a class="research-chip" href="https://arxiv.org/abs/2503.07938" target="_blank"><span>AAAI'26</span> CAD-VAE</a>
+					<a class="research-chip" href="https://arxiv.org/abs/2603.14228" target="_blank"><span>ACL'26</span> StructLoRA</a>
+					<a class="research-chip" href="https://arxiv.org/abs/2510.15962" target="_blank"><span>ICASSP'26</span> CTR-LoRA</a>
+				</div>
+			</article>
+			<article class="research-card">
+				<h4>Multimodal AI</h4>
+				<p>Visual prompting, road damage detection, and cross-domain multimodal representation learning.</p>
+				<div class="research-chip-row">
+					<a class="research-chip" href="https://arxiv.org/abs/2511.12410" target="_blank"><span>WACV'26</span> PROBE</a>
+					<a class="research-chip" href="https://link.springer.com/chapter/10.1007/978-3-032-04558-4_20" target="_blank"><span>ICANN'25</span> CIBR</a>
+				</div>
+			</article>
+		</div>
 	</div><br><br>
 
 	<div class="container">
@@ -383,21 +396,32 @@
 		<h3 id="Miscellanea" style="padding-top: 70px; margin-top: -80px;">Professional Services</h3>
 		<hr>
 		<p><strong>Academic Service</strong></p>
-		<p class="service-list">Conference reviewer for CVPR 2026 and AAAI 2026.</p>
+		<p class="service-list">Conference reviewer for CVPR 2026, ECCV 2026, NeurIPS 2026, AAAI 2026, and AAAI 2027.</p>
 		<p><strong>Teaching Service</strong></p>
 		<p class="service-list">Teaching Assistant for <b>UCI EECS 298: Networked System</b>, Spring 2026.</p>
 	</div><br><br>
 
 	<div class="container">
 		<hr>
-		<div class="visitor-map">
+		{% assign mapmyvisitors_token = site.mapmyvisitors_token | default: "" %}
+		{% if mapmyvisitors_token != "" %}
+		<div class="visitor-map-card">
 			<h5>Visitor Map</h5>
-			<script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=m&d=iI_u2m1shREKH65b-dCj2xTFY9f4fmyojjObbBCeWvQ&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff"></script>
+			<div class="visitor-map-embed">
+				<script type="text/javascript" id="mapmyvisitors" src="https://mapmyvisitors.com/map.js?d={{ mapmyvisitors_token | uri_escape }}&cl=ffffff&w=a"></script>
+				<noscript>
+					<a class="visitor-map-link" href="https://mapmyvisitors.com/add" title="Visit tracker" target="_blank" rel="noopener noreferrer">
+						<img class="visitor-map-image" src="https://mapmyvisitors.com/map.png?d={{ mapmyvisitors_token | uri_escape }}&cl=ffffff" alt="Visitor map for Chenrui Ma's homepage" loading="lazy" referrerpolicy="no-referrer">
+					</a>
+				</noscript>
+			</div>
 		</div>
+		{% endif %}
 
 		<center>
 			<footer>
 				<p>&copy; Chenrui Ma 2026. Website adapted from <a href="https://github.com/xixiaouab/xixiaouab.github.io" target="_blank">Xi Xiao's template</a>.</p>
+				<p class="last-modified">Last modified: July 4, 2026.</p>
 			</footer>
 		</center>
 	</div>
