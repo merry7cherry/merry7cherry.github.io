@@ -10,8 +10,9 @@ function initIdentityTyping() {
   var identities = [
     "a Ph.D. Student",
     "a Generative Modeling Researcher",
-    "a Trustworthy ML Researcher",
-    "a Multimodal AI Explorer"
+    "an Amateur Chef",
+    "a Sports Enthusiast",
+    "a Guitar Player"
   ];
 
   if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {

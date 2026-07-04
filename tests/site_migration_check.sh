@@ -80,6 +80,7 @@ assert_contains "_layouts/index.html" "Visitor Map"
 assert_contains "_layouts/index.html" "intro-identity"
 assert_contains "_layouts/index.html" "intro-identity-dynamic"
 assert_contains "_layouts/index.html" "intro-identity-cursor"
+assert_contains "_layouts/index.html" "I am a Ph.D. Student, a Generative Modeling Researcher, an Amateur Chef, a Sports Enthusiast, and a Guitar Player."
 assert_contains "_layouts/index.html" "research-card"
 assert_contains "_layouts/index.html" "research-chip"
 assert_contains "_layouts/index.html" "Straight Flows"
@@ -123,6 +124,16 @@ fi
 
 if grep -Fq 'intro-kicker' "_layouts/index.html"; then
   printf 'intro kicker still present in _layouts/index.html\n' >&2
+  failures=$((failures + 1))
+fi
+
+if grep -Fq 'a Trustworthy ML Researcher' "_layouts/index.html" "js/main.js"; then
+  printf 'old trustworthy ML identity still present in typing labels\n' >&2
+  failures=$((failures + 1))
+fi
+
+if grep -Fq 'a Multimodal AI Explorer' "_layouts/index.html" "js/main.js"; then
+  printf 'old multimodal AI identity still present in typing labels\n' >&2
   failures=$((failures + 1))
 fi
 
@@ -288,6 +299,9 @@ assert_contains "static/styles.css" "grid-template-columns: 165px 82px 1fr;"
 assert_contains "static/styles.css" "height: 76px;"
 assert_contains "js/main.js" "initIdentityTyping"
 assert_contains "js/main.js" "a Generative Modeling Researcher"
+assert_contains "js/main.js" "an Amateur Chef"
+assert_contains "js/main.js" "a Sports Enthusiast"
+assert_contains "js/main.js" "a Guitar Player"
 assert_contains "js/main.js" "prefers-reduced-motion"
 assert_contains "other-publications.html" "CTR-LoRA"
 assert_contains "other-publications.html" "CIBR"
