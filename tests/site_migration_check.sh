@@ -54,8 +54,8 @@ assert_contains "_layouts/index.html" "Drift Flow Matching"
 assert_contains "_layouts/index.html" "img/papers/drift-flow-matching.png"
 assert_contains "_layouts/index.html" "img/papers/transition-flow-matching.png"
 assert_contains "_layouts/index.html" "Professional Services"
-assert_contains "_layouts/index.html" "ECCV 2026"
 assert_contains "_layouts/index.html" "NeurIPS 2026"
+assert_contains "_layouts/index.html" "AAAI 2026"
 assert_contains "_layouts/index.html" "AAAI 2027"
 assert_contains "_layouts/index.html" "Last modified: July 4, 2026."
 assert_contains "_layouts/index.html" "last-modified"
@@ -104,7 +104,7 @@ assert_contains "_layouts/index.html" "ICASSP'26"
 assert_contains "_layouts/index.html" "WACV'26"
 assert_contains "_layouts/index.html" "arXiv'26a"
 assert_contains "_layouts/index.html" "arXiv'26b"
-assert_contains "_layouts/index.html" "<h4>Generative Modeling</h4>"
+assert_contains "_layouts/index.html" "<h4>Responsible and Efficient Generative Modeling</h4>"
 assert_contains "_layouts/index.html" "<h4>Trustworthy Machine Learning</h4>"
 assert_contains "_layouts/index.html" "<h4>Multimodal AI</h4>"
 assert_contains "_layouts/index.html" "https://arxiv.org/abs/2511.17583"
@@ -191,7 +191,7 @@ end = html.index('<h3 id="News"')
 section = html[start:end]
 
 required = [
-    "<h4>Generative Modeling</h4>",
+    "<h4>Responsible and Efficient Generative Modeling</h4>",
     "<h4>Trustworthy Machine Learning</h4>",
     "<h4>Multimodal AI</h4>",
     "CVPR'26",
@@ -384,7 +384,7 @@ expected = [
     "08/2026 - Present",
     "01/2026 - 03/2026",
     "05/2025 - Present",
-    "09/2024 - Present",
+    "09/2024 - 06/2026",
 ]
 if dates != expected:
     raise SystemExit(f"experience entries not sorted by descending start date: {dates}")
