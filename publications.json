@@ -1,6 +1,30 @@
 {
   "publications": [
     {
+      "id": "dhsm",
+      "title": "Dynamic Hub-and-Spoke Memory for Streaming Video Understanding",
+      "authors": [
+        "Xinru Jiang*",
+        "Lin Zhao*",
+        "Xi Xiao",
+        "Yunbei Zhang",
+        "Janet Wang",
+        "Chenrui Ma",
+        "Haolin Li",
+        "Yanzhi Wang",
+        "Yifan Gong",
+        "Octavia Camps"
+      ],
+      "venue": "EMNLP (Findings)",
+      "year": "2026",
+      "image": "img/papers/dhsm.png",
+      "links": {
+        "paper": "https://openreview.net/forum?id=zo1QpQ2KbF"
+      },
+      "selected": true,
+      "tldr": "D-HSM provides training-free dynamic hub-and-spoke memory for question-aware long-range retrieval in streaming video understanding."
+    },
+    {
       "id": "drift-flow-matching",
       "title": "Drift Flow Matching",
       "authors": [

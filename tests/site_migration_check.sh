@@ -32,6 +32,7 @@ assert_file "js/scroll.js"
 assert_file "files/jumbotron.css"
 assert_file "other-publications.html"
 assert_file "img/logo/ORNL.png"
+assert_file "img/papers/dhsm.png"
 assert_file "img/papers/drift-flow-matching.png"
 assert_file "img/papers/transition-flow-matching.png"
 
@@ -49,10 +50,14 @@ assert_contains "_layouts/index.html" "/js/main.js?v=20260704"
 assert_contains "_layouts/index.html" "University of Virginia"
 assert_contains "_layouts/index.html" "merry7cherry"
 assert_contains "_layouts/index.html" "Learning Straight Flows"
+assert_contains "_layouts/index.html" "Dynamic Hub-and-Spoke Memory for Streaming Video Understanding"
 assert_contains "_layouts/index.html" "Transition Flow Matching"
 assert_contains "_layouts/index.html" "Drift Flow Matching"
 assert_contains "_layouts/index.html" "img/papers/drift-flow-matching.png"
 assert_contains "_layouts/index.html" "img/papers/transition-flow-matching.png"
+assert_contains "_layouts/index.html" "img/papers/dhsm.png"
+assert_contains "_layouts/index.html" "EMNLP 2026 Findings"
+assert_contains "_layouts/index.html" "https://openreview.net/forum?id=zo1QpQ2KbF"
 assert_contains "_layouts/index.html" "Professional Services"
 assert_contains "_layouts/index.html" "NeurIPS 2026"
 assert_contains "_layouts/index.html" "AAAI 2026"
@@ -102,6 +107,7 @@ assert_contains "_layouts/index.html" "AAAI'26"
 assert_contains "_layouts/index.html" "ACL'26"
 assert_contains "_layouts/index.html" "ICASSP'26"
 assert_contains "_layouts/index.html" "WACV'26"
+assert_contains "_layouts/index.html" "EMNLP'26"
 assert_contains "_layouts/index.html" "arXiv'26a"
 assert_contains "_layouts/index.html" "arXiv'26b"
 assert_contains "_layouts/index.html" "<h4>Responsible and Efficient Generative Modeling</h4>"
@@ -207,6 +213,8 @@ required = [
     "CTR-LoRA",
     "PROBE",
     "CIBR",
+    "EMNLP'26",
+    "D-HSM",
     "https://arxiv.org/abs/2511.17583",
     "https://arxiv.org/abs/2509.23122",
     "https://arxiv.org/abs/2603.15689",
@@ -216,6 +224,7 @@ required = [
     "https://arxiv.org/abs/2510.15962",
     "https://arxiv.org/abs/2511.12410",
     "https://link.springer.com/chapter/10.1007/978-3-032-04558-4_20",
+    "https://openreview.net/forum?id=zo1QpQ2KbF",
 ]
 for needle in required:
     if needle not in section:
@@ -248,6 +257,10 @@ end = html.index('<div class="publication-more-link">', start)
 section = html[start:end]
 
 required = [
+    "Dynamic Hub-and-Spoke Memory for Streaming Video Understanding",
+    "EMNLP 2026 Findings",
+    "https://openreview.net/forum?id=zo1QpQ2KbF",
+    "Xinru Jiang*, Lin Zhao*, Xi Xiao, Yunbei Zhang, Janet Wang, <strong><u>Chenrui Ma</u></strong>",
     "Transition Flow Matching",
     "https://arxiv.org/abs/2603.15689",
     "Drift Flow Matching",
@@ -305,6 +318,9 @@ assert_contains "js/main.js" "a Guitar Player"
 assert_contains "js/main.js" "prefers-reduced-motion"
 assert_contains "other-publications.html" "CTR-LoRA"
 assert_contains "other-publications.html" "CIBR"
+assert_contains "other-publications.html" "Dynamic Hub-and-Spoke Memory for Streaming Video Understanding"
+assert_contains "other-publications.html" "EMNLP 2026 Findings"
+assert_contains "other-publications.html" "https://openreview.net/forum?id=zo1QpQ2KbF"
 assert_contains "other-publications.html" "<title>All Publications | Chenrui Ma</title>"
 assert_contains "other-publications.html" "static/styles.css?v=20260704"
 assert_contains "other-publications.html" "js/main.js?v=20260704"
@@ -326,6 +342,12 @@ assert_contains "other-publications.html" "https://arxiv.org/abs/2605.17244"
 assert_contains "other-publications.html" "Xi Xiao*, <strong><u>Chenrui Ma*</u></strong>, Yunbei Zhang*"
 assert_contains "publications.json" "\"image\": \"img/papers/drift-flow-matching.png\""
 assert_contains "publications.json" "\"image\": \"img/papers/transition-flow-matching.png\""
+assert_contains "publications.json" "\"image\": \"img/papers/dhsm.png\""
+
+if grep -Fq 'ZUHUC0f4aE' "_layouts/index.html" "other-publications.html" "publications.json"; then
+  printf 'private EMNLP acceptance link is exposed in public site content\n' >&2
+  failures=$((failures + 1))
+fi
 
 if grep -Fq 'Other Publications' "other-publications.html"; then
   printf 'archive page still uses Other Publications wording\n' >&2
@@ -342,6 +364,7 @@ from pathlib import Path
 
 html = Path("other-publications.html").read_text()
 for title in [
+    "Dynamic Hub-and-Spoke Memory for Streaming Video Understanding",
     "Transition Flow Matching",
     "Drift Flow Matching",
     "CAD-VAE: Leveraging Correlation-Aware Latents for Comprehensive Fair Disentanglement",
@@ -364,6 +387,15 @@ import json
 from pathlib import Path
 
 data = json.loads(Path("publications.json").read_text())
+dhsm = next((p for p in data["publications"] if p["id"] == "dhsm"), None)
+if dhsm is None:
+    raise SystemExit("missing dhsm publication data")
+if dhsm["authors"][:2] != ["Xinru Jiang*", "Lin Zhao*"]:
+    raise SystemExit(f"D-HSM co-first authors not marked correctly: {dhsm['authors'][:2]}")
+if dhsm["authors"][5] != "Chenrui Ma" or not dhsm["selected"]:
+    raise SystemExit("D-HSM author order or selected status is incorrect")
+if dhsm["links"].get("paper") != "https://openreview.net/forum?id=zo1QpQ2KbF":
+    raise SystemExit("D-HSM does not use the public OpenReview paper link")
 paper = next((p for p in data["publications"] if p["id"] == "not-all-directions"), None)
 if paper is None:
     raise SystemExit("missing not-all-directions publication data")
