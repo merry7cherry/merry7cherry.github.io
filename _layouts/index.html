@@ -25,10 +25,10 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css">
-	<link rel="stylesheet" href="{{ '/static/styles.css?v=20260704' | relative_url }}">
+	<link rel="stylesheet" href="{{ '/static/styles.css?v=20260827' | relative_url }}">
 	<link href="{{ '/files/jumbotron.css' | relative_url }}" rel="stylesheet">
 	<link rel="icon" href="{{ '/files/favicon.ico' | relative_url }}" type="image/x-icon">
-	<script src="{{ '/js/main.js?v=20260704' | relative_url }}"></script>
+	<script src="{{ '/js/main.js?v=20260827' | relative_url }}"></script>
 	<script src="{{ '/js/scroll.js' | relative_url }}"></script>
 	<title>Chenrui Ma</title>
 </head>
@@ -282,7 +282,10 @@
 		<div id="pubs_selected" class="selected-publications" language="text">
 			<div class="row pub-card">
 				<div class="col-md-3 pub-image-col">
-					<img class="img-fluid pub-thumb" src="{{ '/img/papers/drift-flow-matching.png' | relative_url }}" alt="Drift Flow Matching overview">
+					<button class="pub-thumb-trigger" type="button" aria-label="Enlarge Drift Flow Matching overview" aria-haspopup="dialog" data-lightbox-caption="Drift Flow Matching">
+						<img class="img-fluid pub-thumb" src="{{ '/img/papers/drift-flow-matching.png' | relative_url }}" alt="Drift Flow Matching overview">
+						<span class="pub-thumb-hint" aria-hidden="true"><i class="fas fa-expand"></i></span>
+					</button>
 				</div>
 				<div class="col-md-9 pub-content">
 					<strong><u>Chenrui Ma</u></strong>, Xi Xiao, Lin Zhao, Tianyang Wang, Ferdinando Fioretto, Yanning Shen<br>
@@ -295,7 +298,10 @@
 
 			<div class="row pub-card">
 				<div class="col-md-3 pub-image-col">
-					<img class="img-fluid pub-thumb" src="{{ '/img/papers/transition-flow-matching.png' | relative_url }}" alt="Transition Flow Matching overview">
+					<button class="pub-thumb-trigger" type="button" aria-label="Enlarge Transition Flow Matching overview" aria-haspopup="dialog" data-lightbox-caption="Transition Flow Matching">
+						<img class="img-fluid pub-thumb" src="{{ '/img/papers/transition-flow-matching.png' | relative_url }}" alt="Transition Flow Matching overview">
+						<span class="pub-thumb-hint" aria-hidden="true"><i class="fas fa-expand"></i></span>
+					</button>
 				</div>
 				<div class="col-md-9 pub-content">
 					<strong><u>Chenrui Ma</u></strong><br>
@@ -308,7 +314,10 @@
 
 			<div class="row pub-card">
 				<div class="col-md-3 pub-image-col">
-					<img class="img-fluid pub-thumb" src="{{ '/img/papers/learning-straight-flows.png' | relative_url }}" alt="Learning Straight Flows overview">
+					<button class="pub-thumb-trigger" type="button" aria-label="Enlarge Learning Straight Flows overview" aria-haspopup="dialog" data-lightbox-caption="Learning Straight Flows: Variational Flow Matching for Efficient Generation">
+						<img class="img-fluid pub-thumb" src="{{ '/img/papers/learning-straight-flows.png' | relative_url }}" alt="Learning Straight Flows overview">
+						<span class="pub-thumb-hint" aria-hidden="true"><i class="fas fa-expand"></i></span>
+					</button>
 				</div>
 				<div class="col-md-9 pub-content">
 					<strong><u>Chenrui Ma</u></strong>, Xi Xiao, Tianyang Wang, Xiao Wang, Yanning Shen<br>
@@ -322,7 +331,10 @@
 
 			<div class="row pub-card">
 				<div class="col-md-3 pub-image-col">
-					<img class="img-fluid pub-thumb" src="{{ '/img/papers/cad-vae.png' | relative_url }}" alt="CAD-VAE overview">
+					<button class="pub-thumb-trigger" type="button" aria-label="Enlarge CAD-VAE overview" aria-haspopup="dialog" data-lightbox-caption="CAD-VAE: Leveraging Correlation-Aware Latents for Comprehensive Fair Disentanglement">
+						<img class="img-fluid pub-thumb" src="{{ '/img/papers/cad-vae.png' | relative_url }}" alt="CAD-VAE overview">
+						<span class="pub-thumb-hint" aria-hidden="true"><i class="fas fa-expand"></i></span>
+					</button>
 				</div>
 				<div class="col-md-9 pub-content">
 					<strong><u>Chenrui Ma</u></strong>, Xi Xiao, Tianyang Wang, Xiao Wang, Yanning Shen<br>
@@ -336,7 +348,10 @@
 
 			<div class="row pub-card">
 				<div class="col-md-3 pub-image-col">
-					<img class="img-fluid pub-thumb" src="{{ '/img/papers/stochastic-interpolants.png' | relative_url }}" alt="Stochastic Interpolants overview">
+					<button class="pub-thumb-trigger" type="button" aria-label="Enlarge Stochastic Interpolants overview" aria-haspopup="dialog" data-lightbox-caption="Stochastic Interpolants via Conditional Dependent Coupling">
+						<img class="img-fluid pub-thumb" src="{{ '/img/papers/stochastic-interpolants.png' | relative_url }}" alt="Stochastic Interpolants overview">
+						<span class="pub-thumb-hint" aria-hidden="true"><i class="fas fa-expand"></i></span>
+					</button>
 				</div>
 				<div class="col-md-9 pub-content">
 					<strong><u>Chenrui Ma</u></strong>, Xi Xiao, Tianyang Wang, Xiao Wang, Yanning Shen<br>
@@ -350,7 +365,10 @@
 
 			<div class="row pub-card">
 				<div class="col-md-3 pub-image-col">
-					<img class="img-fluid pub-thumb" src="{{ '/img/papers/not-all-directions.png' | relative_url }}" alt="StructLoRA overview">
+					<button class="pub-thumb-trigger" type="button" aria-label="Enlarge Not All Directions Matter overview" aria-haspopup="dialog" data-lightbox-caption="Not All Directions Matter: Toward Structured and Task-Aware Low-Rank Adaptation">
+						<img class="img-fluid pub-thumb" src="{{ '/img/papers/not-all-directions.png' | relative_url }}" alt="Not All Directions Matter overview">
+						<span class="pub-thumb-hint" aria-hidden="true"><i class="fas fa-expand"></i></span>
+					</button>
 				</div>
 				<div class="col-md-9 pub-content">
 					Xi Xiao*, <strong><u>Chenrui Ma*</u></strong>, Yunbei Zhang*, Chen Liu, Zhuxuanzi Wang, Yanshu Li, Lin Zhao, Guosheng Hu, Tianyang Wang, Hao Xu<br>
@@ -363,7 +381,10 @@
 
 			<div class="row pub-card">
 				<div class="col-md-3 pub-image-col">
-					<img class="img-fluid pub-thumb" src="{{ '/img/papers/dhsm.png' | relative_url }}" alt="D-HSM overview">
+					<button class="pub-thumb-trigger" type="button" aria-label="Enlarge D-HSM overview" aria-haspopup="dialog" data-lightbox-caption="Dynamic Hub-and-Spoke Memory for Streaming Video Understanding">
+						<img class="img-fluid pub-thumb" src="{{ '/img/papers/dhsm.png' | relative_url }}" alt="D-HSM overview">
+						<span class="pub-thumb-hint" aria-hidden="true"><i class="fas fa-expand"></i></span>
+					</button>
 				</div>
 				<div class="col-md-9 pub-content">
 					Xinru Jiang*, Lin Zhao*, Xi Xiao, Yunbei Zhang, Janet Wang, <strong><u>Chenrui Ma</u></strong>, Haolin Li, Yanzhi Wang, Yifan Gong, Octavia Camps<br>
@@ -376,7 +397,10 @@
 
 			<div class="row pub-card">
 				<div class="col-md-3 pub-image-col">
-					<img class="img-fluid pub-thumb" src="{{ '/img/papers/probe.png' | relative_url }}" alt="PROBE overview">
+					<button class="pub-thumb-trigger" type="button" aria-label="Enlarge PROBE overview" aria-haspopup="dialog" data-lightbox-caption="Self-Supervised Visual Prompting for Cross-Domain Road Damage Detection">
+						<img class="img-fluid pub-thumb" src="{{ '/img/papers/probe.png' | relative_url }}" alt="PROBE overview">
+						<span class="pub-thumb-hint" aria-hidden="true"><i class="fas fa-expand"></i></span>
+					</button>
 				</div>
 				<div class="col-md-9 pub-content">
 					Xi Xiao, Zhuxuanzi Wang, Mingqiao Mo, Chen Liu, <strong><u>Chenrui Ma</u></strong>, Yanshu Li, Smita Krishnaswamy, Xiao Wang, Tianyang Wang<br>
@@ -439,6 +463,14 @@
 				<p class="last-modified">Last modified: August 27, 2026.</p>
 			</footer>
 		</center>
+	</div>
+
+	<div class="publication-lightbox" id="publication-lightbox" role="dialog" aria-modal="true" aria-labelledby="publication-lightbox-caption" hidden>
+		<div class="publication-lightbox-frame">
+			<button class="publication-lightbox-close" type="button" aria-label="Close enlarged publication image">&times;</button>
+			<img class="publication-lightbox-image" src="" alt="">
+			<p class="publication-lightbox-caption" id="publication-lightbox-caption"></p>
+		</div>
 	</div>
 
 	<script>showPubs(1);</script>

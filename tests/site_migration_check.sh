@@ -45,8 +45,8 @@ assert_contains "index.md" "layout: index"
 assert_contains "_layouts/index.html" "navbar-custom"
 assert_contains "_layouts/index.html" "intro-panel"
 assert_contains "_layouts/index.html" "Chenrui Ma"
-assert_contains "_layouts/index.html" "/static/styles.css?v=20260704"
-assert_contains "_layouts/index.html" "/js/main.js?v=20260704"
+assert_contains "_layouts/index.html" "/static/styles.css?v=20260827"
+assert_contains "_layouts/index.html" "/js/main.js?v=20260827"
 assert_contains "_layouts/index.html" "University of Virginia"
 assert_contains "_layouts/index.html" "merry7cherry"
 assert_contains "_layouts/index.html" "Learning Straight Flows"
@@ -102,6 +102,13 @@ assert_contains "_layouts/index.html" "mapmyvisitors.com/map.png"
 assert_contains "_layouts/index.html" "noscript"
 assert_contains "_layouts/index.html" "All Publications"
 assert_contains "_layouts/index.html" "View All Publications"
+assert_contains "_layouts/index.html" "pub-thumb-trigger"
+assert_contains "_layouts/index.html" "data-lightbox-caption"
+assert_contains "_layouts/index.html" "aria-haspopup=\"dialog\""
+assert_contains "_layouts/index.html" "publication-lightbox-caption"
+assert_contains "_layouts/index.html" "Close enlarged publication image"
+assert_contains "_layouts/index.html" "role=\"dialog\""
+assert_contains "_layouts/index.html" "aria-modal=\"true\""
 assert_contains "_layouts/index.html" "CVPR'26"
 assert_contains "_layouts/index.html" "AAAI'26"
 assert_contains "_layouts/index.html" "ACL'26"
@@ -271,6 +278,14 @@ expected_titles = [
 if titles != expected_titles:
     raise SystemExit(f"selected publications are in the wrong order: {titles}")
 
+captions = re.findall(r'data-lightbox-caption="([^"]+)"', section)
+if captions != expected_titles:
+    raise SystemExit(f"publication lightbox captions do not match titles: {captions}")
+if section.count('class="pub-thumb-trigger"') != len(expected_titles):
+    raise SystemExit("each selected publication must have exactly one lightbox trigger")
+if section.count('aria-haspopup="dialog"') != len(expected_titles):
+    raise SystemExit("each publication lightbox trigger must expose dialog semantics")
+
 required = [
     "Dynamic Hub-and-Spoke Memory for Streaming Video Understanding",
     "EMNLP 2026 Findings",
@@ -319,6 +334,10 @@ assert_contains "static/styles.css" ".visitor-map-card"
 assert_contains "static/styles.css" ".visitor-map-link"
 assert_contains "static/styles.css" ".visitor-map-image"
 assert_contains "static/styles.css" ".last-modified"
+assert_contains "static/styles.css" ".pub-thumb-trigger"
+assert_contains "static/styles.css" ".publication-lightbox[hidden]"
+assert_contains "static/styles.css" "body.publication-lightbox-open"
+assert_contains "static/styles.css" "prefers-reduced-motion: reduce"
 assert_contains "static/styles.css" ".profile-action-grid"
 assert_contains "static/styles.css" ".profile-action"
 assert_contains "static/styles.css" ".profile-email-list"
@@ -331,14 +350,22 @@ assert_contains "js/main.js" "an Amateur Chef"
 assert_contains "js/main.js" "a Sports Enthusiast"
 assert_contains "js/main.js" "a Guitar Player"
 assert_contains "js/main.js" "prefers-reduced-motion"
+assert_contains "js/main.js" "initPublicationLightbox"
+assert_contains "js/main.js" "dialog.hidden = false"
+assert_contains "js/main.js" "event.target === dialog"
+assert_contains "js/main.js" "event.key === \"Escape\""
+assert_contains "js/main.js" "event.key === \"Tab\""
+assert_contains "js/main.js" "event.key === \"Enter\""
+assert_contains "js/main.js" "event.key === \" \""
+assert_contains "js/main.js" "triggerToRestore.focus()"
 assert_contains "other-publications.html" "CTR-LoRA"
 assert_contains "other-publications.html" "CIBR"
 assert_contains "other-publications.html" "Dynamic Hub-and-Spoke Memory for Streaming Video Understanding"
 assert_contains "other-publications.html" "EMNLP 2026 Findings"
 assert_contains "other-publications.html" "https://openreview.net/forum?id=zo1QpQ2KbF"
 assert_contains "other-publications.html" "<title>All Publications | Chenrui Ma</title>"
-assert_contains "other-publications.html" "static/styles.css?v=20260704"
-assert_contains "other-publications.html" "js/main.js?v=20260704"
+assert_contains "other-publications.html" "static/styles.css?v=20260827"
+assert_contains "other-publications.html" "js/main.js?v=20260827"
 assert_contains "other-publications.html" ">All Publications</a>"
 assert_contains "other-publications.html" "<h1>All Publications</h1>"
 assert_contains "other-publications.html" "Additional papers grouped by year. For selected works, return to the <a href=\"index.html#Publications\">homepage publications section</a>."

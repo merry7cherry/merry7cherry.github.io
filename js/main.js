@@ -51,8 +51,83 @@ function initIdentityTyping() {
   window.setTimeout(tickIdentity, 1200);
 }
 
+function initPublicationLightbox() {
+  var dialog = document.getElementById("publication-lightbox");
+  var triggers = document.querySelectorAll(".pub-thumb-trigger");
+  if (!dialog || !triggers.length) {
+    return;
+  }
+
+  var lightboxImage = dialog.querySelector(".publication-lightbox-image");
+  var lightboxCaption = dialog.querySelector(".publication-lightbox-caption");
+  var closeButton = dialog.querySelector(".publication-lightbox-close");
+  var activeTrigger = null;
+
+  if (!lightboxImage || !lightboxCaption || !closeButton) {
+    return;
+  }
+
+  function closeLightbox() {
+    if (!dialog.hidden) {
+      dialog.hidden = true;
+      dialog.classList.remove("is-open");
+      document.body.classList.remove("publication-lightbox-open");
+      lightboxImage.removeAttribute("src");
+      if (activeTrigger) {
+        var triggerToRestore = activeTrigger;
+        activeTrigger = null;
+        triggerToRestore.focus();
+      }
+    }
+  }
+
+  triggers.forEach(function (trigger) {
+    trigger.addEventListener("click", function () {
+      var thumbnail = trigger.querySelector(".pub-thumb");
+      if (!thumbnail) {
+        return;
+      }
+
+      activeTrigger = trigger;
+      lightboxImage.src = thumbnail.currentSrc || thumbnail.src;
+      lightboxImage.alt = thumbnail.alt;
+      lightboxCaption.textContent = trigger.getAttribute("data-lightbox-caption") || thumbnail.alt;
+      document.body.classList.add("publication-lightbox-open");
+      dialog.hidden = false;
+      dialog.classList.add("is-open");
+      closeButton.focus();
+    });
+
+    trigger.addEventListener("keydown", function (event) {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        trigger.click();
+      }
+    });
+  });
+
+  closeButton.addEventListener("click", closeLightbox);
+  lightboxImage.addEventListener("click", closeLightbox);
+  dialog.addEventListener("click", function (event) {
+    if (event.target === dialog) {
+      closeLightbox();
+    }
+  });
+
+  dialog.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeLightbox();
+    } else if (event.key === "Tab") {
+      event.preventDefault();
+      closeButton.focus();
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   initIdentityTyping();
+  initPublicationLightbox();
 
   document.querySelectorAll('a[target="_blank"]').forEach(function (link) {
     link.rel = "noopener noreferrer";
