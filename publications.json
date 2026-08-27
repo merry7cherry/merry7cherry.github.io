@@ -1,30 +1,6 @@
 {
   "publications": [
     {
-      "id": "dhsm",
-      "title": "Dynamic Hub-and-Spoke Memory for Streaming Video Understanding",
-      "authors": [
-        "Xinru Jiang*",
-        "Lin Zhao*",
-        "Xi Xiao",
-        "Yunbei Zhang",
-        "Janet Wang",
-        "Chenrui Ma",
-        "Haolin Li",
-        "Yanzhi Wang",
-        "Yifan Gong",
-        "Octavia Camps"
-      ],
-      "venue": "EMNLP (Findings)",
-      "year": "2026",
-      "image": "img/papers/dhsm.png",
-      "links": {
-        "paper": "https://openreview.net/forum?id=zo1QpQ2KbF"
-      },
-      "selected": true,
-      "tldr": "D-HSM provides training-free dynamic hub-and-spoke memory for question-aware long-range retrieval in streaming video understanding."
-    },
-    {
       "id": "drift-flow-matching",
       "title": "Drift Flow Matching",
       "authors": [
@@ -60,6 +36,30 @@
       },
       "selected": true,
       "tldr": "Transition Flow Matching directly learns global transition flows for one-step or arbitrary-time generation."
+    },
+    {
+      "id": "learning-straight-flows",
+      "title": "Learning Straight Flows: Variational Flow Matching for Efficient Generation",
+      "authors": [
+        "Chenrui Ma",
+        "Xi Xiao",
+        "Tianyang Wang",
+        "Xiao Wang",
+        "Yanning Shen"
+      ],
+      "venue": "CVPR (Main Conference)",
+      "year": "2026",
+      "image": "img/papers/learning-straight-flows.png",
+      "arxiv_id": "2511.17583",
+      "github_repo": "merry7cherry/S-VFM",
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2511.17583",
+        "code": "https://github.com/merry7cherry/S-VFM"
+      },
+      "selected": true,
+      "tldr": "Introduing a varitional latent code, which provides \"generation overview\", and the straightness loss into flow matching framework for efficient (one-step) image generation.",
+      "github_stars": 6,
+      "citations": 5
     },
     {
       "id": "cad-vae",
@@ -110,30 +110,6 @@
       "citations": 3
     },
     {
-      "id": "learning-straight-flows",
-      "title": "Learning Straight Flows: Variational Flow Matching for Efficient Generation",
-      "authors": [
-        "Chenrui Ma",
-        "Xi Xiao",
-        "Tianyang Wang",
-        "Xiao Wang",
-        "Yanning Shen"
-      ],
-      "venue": "CVPR (Main Conference)",
-      "year": "2026",
-      "image": "img/papers/learning-straight-flows.png",
-      "arxiv_id": "2511.17583",
-      "github_repo": "merry7cherry/S-VFM",
-      "links": {
-        "arxiv": "https://arxiv.org/abs/2511.17583",
-        "code": "https://github.com/merry7cherry/S-VFM"
-      },
-      "selected": true,
-      "tldr": "Introduing a varitional latent code, which provides \"generation overview\", and the straightness loss into flow matching framework for efficient (one-step) image generation.",
-      "github_stars": 6,
-      "citations": 5
-    },
-    {
       "id": "not-all-directions",
       "title": "Not All Directions Matter: Toward Structured and Task-Aware Low-Rank Adaptation",
       "authors": [
@@ -157,6 +133,30 @@
       },
       "selected": true,
       "tldr": "StructLoRA improves LoRA by filtering task-irrelevant update directions and coordinating layer-wise adaptation during training, yielding stronger PEFT performance across LLMs, VLMs, and vision models without adding inference cost."
+    },
+    {
+      "id": "dhsm",
+      "title": "Dynamic Hub-and-Spoke Memory for Streaming Video Understanding",
+      "authors": [
+        "Xinru Jiang*",
+        "Lin Zhao*",
+        "Xi Xiao",
+        "Yunbei Zhang",
+        "Janet Wang",
+        "Chenrui Ma",
+        "Haolin Li",
+        "Yanzhi Wang",
+        "Yifan Gong",
+        "Octavia Camps"
+      ],
+      "venue": "EMNLP (Findings)",
+      "year": "2026",
+      "image": "img/papers/dhsm.png",
+      "links": {
+        "paper": "https://openreview.net/forum?id=zo1QpQ2KbF"
+      },
+      "selected": true,
+      "tldr": "D-HSM provides training-free dynamic hub-and-spoke memory for question-aware long-range retrieval in streaming video understanding."
     },
     {
       "id": "probe",

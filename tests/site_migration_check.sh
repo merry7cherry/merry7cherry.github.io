@@ -249,12 +249,27 @@ for forbidden in [
 PY
 
 python3 - <<'PY' || failures=$((failures + 1))
+import re
 from pathlib import Path
 
 html = Path("_layouts/index.html").read_text()
 start = html.index('<div id="pubs_selected"')
 end = html.index('<div class="publication-more-link">', start)
 section = html[start:end]
+
+titles = re.findall(r'<b><font color="black">([^<]+)</font></b>', section)
+expected_titles = [
+    "Drift Flow Matching",
+    "Transition Flow Matching",
+    "Learning Straight Flows: Variational Flow Matching for Efficient Generation",
+    "CAD-VAE: Leveraging Correlation-Aware Latents for Comprehensive Fair Disentanglement",
+    "Stochastic Interpolants via Conditional Dependent Coupling",
+    "Not All Directions Matter: Toward Structured and Task-Aware Low-Rank Adaptation",
+    "Dynamic Hub-and-Spoke Memory for Streaming Video Understanding",
+    "Self-Supervised Visual Prompting for Cross-Domain Road Damage Detection",
+]
+if titles != expected_titles:
+    raise SystemExit(f"selected publications are in the wrong order: {titles}")
 
 required = [
     "Dynamic Hub-and-Spoke Memory for Streaming Video Understanding",
@@ -387,6 +402,19 @@ import json
 from pathlib import Path
 
 data = json.loads(Path("publications.json").read_text())
+selected_ids = [paper["id"] for paper in data["publications"] if paper["selected"]]
+expected_selected_ids = [
+    "drift-flow-matching",
+    "transition-flow-matching",
+    "learning-straight-flows",
+    "cad-vae",
+    "stochastic-interpolants",
+    "not-all-directions",
+    "dhsm",
+    "probe",
+]
+if selected_ids != expected_selected_ids:
+    raise SystemExit(f"selected publication data is in the wrong order: {selected_ids}")
 dhsm = next((p for p in data["publications"] if p["id"] == "dhsm"), None)
 if dhsm is None:
     raise SystemExit("missing dhsm publication data")
