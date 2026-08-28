@@ -3,485 +3,204 @@ set -euo pipefail
 
 failures=0
 
+fail() {
+  printf '%s\n' "$1" >&2
+  failures=$((failures + 1))
+}
+
 assert_file() {
-  local path="$1"
-  if [[ ! -f "$path" ]]; then
-    printf 'missing file: %s\n' "$path" >&2
-    failures=$((failures + 1))
-  fi
+  [[ -f "$1" ]] || fail "missing required file: $1"
+}
+
+assert_absent() {
+  [[ ! -e "$1" ]] || fail "obsolete file still present: $1"
 }
 
 assert_contains() {
-  local path="$1"
-  local needle="$2"
-  if [[ ! -f "$path" ]]; then
-    printf 'cannot inspect missing file: %s\n' "$path" >&2
-    failures=$((failures + 1))
-    return
-  fi
-  if ! grep -Fq "$needle" "$path"; then
-    printf 'missing content in %s: %s\n' "$path" "$needle" >&2
-    failures=$((failures + 1))
+  local file=$1
+  local needle=$2
+  grep -Fq "$needle" "$file" || fail "missing expected content in $file: $needle"
+}
+
+assert_not_contains() {
+  local file=$1
+  local needle=$2
+  if grep -Fq "$needle" "$file"; then
+    fail "forbidden content still present in $file: $needle"
   fi
 }
 
-assert_file "_layouts/index.html"
-assert_file "static/styles.css"
-assert_file "js/main.js"
-assert_file "js/scroll.js"
-assert_file "files/jumbotron.css"
-assert_file "other-publications.html"
-assert_file "img/logo/ORNL.png"
-assert_file "img/papers/dhsm.png"
-assert_file "img/papers/drift-flow-matching.png"
-assert_file "img/papers/transition-flow-matching.png"
+required_files=(
+  "_config.yml"
+  "_data/publications.yml"
+  "_layouts/index.html"
+  "other-publications.html"
+  "static/styles.css"
+  "js/main.js"
+  "img/ChenruiMa.jpeg"
+)
+for file in "${required_files[@]}"; do
+  assert_file "$file"
+done
 
-assert_contains "_config.yml" "title: Chenrui Ma"
-assert_contains "_config.yml" "theme: minima"
-assert_contains "_config.yml" "tests/"
-assert_contains "_config.yml" "mapmyvisitors_token:"
-assert_contains "index.md" "layout: index"
+obsolete_files=(
+  ".github/workflows/update-metrics.yml"
+  "publications.json"
+  "fetch_metrics.py"
+  "update_metrics.py"
+  "js/scroll.js"
+  "CACHE_USAGE.md"
+  "CHANGES.md"
+  "CLEANUP_GUIDE.md"
+  "FINAL_IMPLEMENTATION.md"
+  "FINAL_SUMMARY.md"
+  "FONT_UPDATE_SUMMARY.md"
+  "IMAGE_SIZE_UPDATE.md"
+  "LINKS_UPDATE_SUMMARY.md"
+  "METRICS_FEATURE.md"
+  "METRICS_SETUP_GUIDE.md"
+  "SHIELDS_IO_SOLUTION.md"
+  "USAGE_GUIDE.md"
+)
+for file in "${obsolete_files[@]}"; do
+  assert_absent "$file"
+done
 
-assert_contains "_layouts/index.html" "navbar-custom"
-assert_contains "_layouts/index.html" "intro-panel"
-assert_contains "_layouts/index.html" "Chenrui Ma"
-assert_contains "_layouts/index.html" "/static/styles.css?v=20260827"
-assert_contains "_layouts/index.html" "/js/main.js?v=20260827"
-assert_contains "_layouts/index.html" "University of Virginia"
-assert_contains "_layouts/index.html" "merry7cherry"
-assert_contains "_layouts/index.html" "Learning Straight Flows"
-assert_contains "_layouts/index.html" "Dynamic Hub-and-Spoke Memory for Streaming Video Understanding"
-assert_contains "_layouts/index.html" "Transition Flow Matching"
-assert_contains "_layouts/index.html" "Drift Flow Matching"
-assert_contains "_layouts/index.html" "img/papers/drift-flow-matching.png"
-assert_contains "_layouts/index.html" "img/papers/transition-flow-matching.png"
-assert_contains "_layouts/index.html" "img/papers/dhsm.png"
-assert_contains "_layouts/index.html" "EMNLP 2026 Findings"
-assert_contains "_layouts/index.html" "https://openreview.net/forum?id=zo1QpQ2KbF"
-assert_contains "_layouts/index.html" "Professional Services"
-assert_contains "_layouts/index.html" "NeurIPS 2026"
-assert_contains "_layouts/index.html" "AAAI 2026"
-assert_contains "_layouts/index.html" "AAAI 2027"
-assert_contains "_layouts/index.html" "Last modified: August 27, 2026."
-assert_contains "_layouts/index.html" "last-modified"
-assert_contains "_layouts/index.html" "2026FALL_PHD_CV.pdf"
-assert_contains "_layouts/index.html" "profile-action-grid"
-assert_contains "_layouts/index.html" "profile-action"
-assert_contains "_layouts/index.html" "profile-email-list"
-assert_contains "_layouts/index.html" "https://scholar.google.com/citations?user=dvkqKZsAAAAJ&hl=en"
-assert_contains "_layouts/index.html" "https://github.com/merry7cherry"
-assert_contains "_layouts/index.html" "https://www.linkedin.com/in/chenrui-ma-23804132b/"
-assert_contains "_layouts/index.html" "zzz8fa [at] virginia.edu"
-assert_contains "_layouts/index.html" "chenrum [at] uci.edu"
-assert_contains "_layouts/index.html" "Open to research internships, visiting opportunities, and collaborations."
-assert_contains "_layouts/index.html" "If my work aligns with your interests or you just want to say Hi, I'd be delighted to connect:)"
-assert_contains "_layouts/index.html" "cv-logo"
-assert_contains "_layouts/index.html" "Oak Ridge National Laboratory logo"
-assert_contains "_layouts/index.html" "RAISE Lab @ UVA"
-assert_contains "_layouts/index.html" "Charlottesville, Virginia, USA"
-assert_contains "_layouts/index.html" "Prof. Ferdinando Fioretto"
-assert_contains "_layouts/index.html" "Teaching Service"
-assert_contains "_layouts/index.html" "Visitor Map"
-assert_contains "_layouts/index.html" "intro-identity"
-assert_contains "_layouts/index.html" "intro-identity-dynamic"
-assert_contains "_layouts/index.html" "intro-identity-cursor"
-assert_contains "_layouts/index.html" "I am a Ph.D. Student, a Generative Modeling Researcher, an Amateur Chef, a Sports Enthusiast, and a Guitar Player."
-assert_contains "_layouts/index.html" "research-card"
-assert_contains "_layouts/index.html" "research-chip"
-assert_contains "_layouts/index.html" "Straight Flows"
-assert_contains "_layouts/index.html" "DFM"
-assert_contains "_layouts/index.html" "TFM"
-assert_contains "_layouts/index.html" "CAD-VAE"
-assert_contains "_layouts/index.html" "StructLoRA"
-assert_contains "_layouts/index.html" "PROBE"
-assert_contains "_layouts/index.html" "visitor-map-card"
-assert_contains "_layouts/index.html" "visitor-map-embed"
-assert_contains "_layouts/index.html" "site.mapmyvisitors_token"
-assert_contains "_layouts/index.html" "mapmyvisitors.com/map.js"
-assert_contains "_layouts/index.html" "mapmyvisitors.com/map.png"
-assert_contains "_layouts/index.html" "noscript"
-assert_contains "_layouts/index.html" "All Publications"
-assert_contains "_layouts/index.html" "View All Publications"
-assert_contains "_layouts/index.html" "pub-thumb-trigger"
-assert_contains "_layouts/index.html" "data-lightbox-caption"
-assert_contains "_layouts/index.html" "aria-haspopup=\"dialog\""
-assert_contains "_layouts/index.html" "publication-lightbox-caption"
-assert_contains "_layouts/index.html" "Close enlarged publication image"
-assert_contains "_layouts/index.html" "role=\"dialog\""
-assert_contains "_layouts/index.html" "aria-modal=\"true\""
-assert_contains "_layouts/index.html" "CVPR'26"
-assert_contains "_layouts/index.html" "AAAI'26"
-assert_contains "_layouts/index.html" "ACL'26"
-assert_contains "_layouts/index.html" "ICASSP'26"
-assert_contains "_layouts/index.html" "WACV'26"
-assert_contains "_layouts/index.html" "EMNLP'26"
-assert_contains "_layouts/index.html" "arXiv'26a"
-assert_contains "_layouts/index.html" "arXiv'26b"
-assert_contains "_layouts/index.html" "<h4>Responsible and Efficient Generative Modeling</h4>"
-assert_contains "_layouts/index.html" "<h4>Trustworthy Machine Learning</h4>"
-assert_contains "_layouts/index.html" "<h4>Multimodal AI</h4>"
-assert_contains "_layouts/index.html" "https://arxiv.org/abs/2511.17583"
-assert_contains "_layouts/index.html" "https://arxiv.org/abs/2509.23122"
-assert_contains "_layouts/index.html" "https://arxiv.org/abs/2603.15689"
-assert_contains "_layouts/index.html" "https://arxiv.org/abs/2605.17244"
-assert_contains "_layouts/index.html" "https://arxiv.org/abs/2503.07938"
-assert_contains "_layouts/index.html" "https://arxiv.org/abs/2603.14228"
-assert_contains "_layouts/index.html" "https://arxiv.org/abs/2510.15962"
-assert_contains "_layouts/index.html" "https://arxiv.org/abs/2511.12410"
-assert_contains "_layouts/index.html" "https://link.springer.com/chapter/10.1007/978-3-032-04558-4_20"
+assert_contains "_layouts/index.html" 'class="skip-link"'
+assert_contains "_layouts/index.html" '<main id="main-content" tabindex="-1">'
+assert_contains "_layouts/index.html" '>Research</a>'
+assert_contains "_layouts/index.html" '>News</a>'
+assert_contains "_layouts/index.html" 'class="nav-dropdown-toggle dropdown-toggle"'
+assert_contains "_layouts/index.html" 'site.data.publications'
+assert_contains "_layouts/index.html" 'data-full-src="{{ paper.image.full | relative_url }}"'
+assert_contains "_layouts/index.html" 'loading="lazy"'
+assert_contains "_layouts/index.html" 'decoding="async"'
+assert_contains "_layouts/index.html" 'srcset="{{ paper.image.thumb | relative_url }} 480w, {{ paper.image.thumb_2x | relative_url }} 960w"'
+assert_contains "_layouts/index.html" 'aria-label="Paper: {{ paper.title | escape }}"'
+assert_contains "_layouts/index.html" 'Not All Directions Matter: Towards Structured and Task-Aware Low-Rank Model Adaptation'
+assert_contains "_layouts/index.html" 'EMNLP 2026 Findings'
+assert_contains "_layouts/index.html" '08/2026 - Present'
+assert_contains "_layouts/index.html" '05/2025 - Present'
+assert_not_contains "_layouts/index.html" 'Toward Structured and Task-Aware Low-Rank Adaptation'
+assert_not_contains "_layouts/index.html" '<font'
+assert_not_contains "_layouts/index.html" 'toggle_vis('
+assert_not_contains "_layouts/index.html" 'showPubs('
+assert_not_contains "_layouts/index.html" 'SmoothScroll'
+assert_not_contains "_layouts/index.html" 'padding-top: 70px; margin-top: -80px;'
 
-if grep -Fq '<span class="email-link">Irvine, California, USA</span>' "_layouts/index.html"; then
-  printf 'removed location still present in _layouts/index.html\n' >&2
-  failures=$((failures + 1))
-fi
+assert_contains "other-publications.html" 'layout: null'
+assert_contains "other-publications.html" 'Complete publication list grouped by year.'
+assert_contains "other-publications.html" 'site.data.publications'
+assert_contains "other-publications.html" 'sort: "sort_key" | reverse'
+assert_contains "other-publications.html" 'aria-current="page"'
+assert_contains "other-publications.html" '<main id="main-content" tabindex="-1">'
+assert_not_contains "other-publications.html" 'Additional papers grouped by year'
+assert_not_contains "other-publications.html" '<center>'
 
-if grep -Fq 'intro-kicker' "_layouts/index.html"; then
-  printf 'intro kicker still present in _layouts/index.html\n' >&2
-  failures=$((failures + 1))
-fi
+assert_contains "js/main.js" 'thumbnail.getAttribute("data-full-src")'
+assert_contains "js/main.js" 'siteShell.setAttribute("inert", "")'
+assert_contains "js/main.js" 'siteShell.removeAttribute("inert")'
+assert_contains "js/main.js" '.nav-link, .dropdown-item'
+assert_contains "js/main.js" '.nav-dropdown-toggle'
+assert_contains "js/main.js" 'event.target === dialog'
+assert_contains "js/main.js" 'event.key === "Escape"'
+assert_contains "js/main.js" 'event.key === "Tab"'
+assert_contains "js/main.js" 'triggerToRestore.focus()'
+assert_not_contains "js/main.js" 'function showPubs'
 
-if grep -Fq 'a Trustworthy ML Researcher' "_layouts/index.html" "js/main.js"; then
-  printf 'old trustworthy ML identity still present in typing labels\n' >&2
-  failures=$((failures + 1))
-fi
+assert_contains "static/styles.css" 'scroll-behavior: smooth;'
+assert_contains "static/styles.css" 'scroll-margin-top: 92px;'
+assert_contains "static/styles.css" '.skip-link'
+assert_contains "static/styles.css" '.nav-split-control'
+assert_contains "static/styles.css" '.nav-dropdown-toggle'
+assert_contains "static/styles.css" '.pub-title'
+assert_contains "static/styles.css" '.pub-summary'
+assert_contains "static/styles.css" '.publication-lightbox[hidden]'
+assert_contains "static/styles.css" '@media (prefers-reduced-motion: reduce)'
+assert_not_contains "static/styles.css" 'scroll-padding-top:'
 
-if grep -Fq 'a Multimodal AI Explorer' "_layouts/index.html" "js/main.js"; then
-  printf 'old multimodal AI identity still present in typing labels\n' >&2
-  failures=$((failures + 1))
-fi
+ruby <<'RUBY' || failures=$((failures + 1))
+require "yaml"
 
-if grep -Fq 'Other Publications' "_layouts/index.html"; then
-  printf 'homepage still uses Other Publications wording\n' >&2
-  failures=$((failures + 1))
-fi
+papers = YAML.safe_load(File.read("_data/publications.yml"))
+raise "publication data must be a non-empty array" unless papers.is_a?(Array) && !papers.empty?
+raise "expected 13 publications, found #{papers.length}" unless papers.length == 13
 
-if grep -Fq '<p class="profile-links">' "_layouts/index.html"; then
-  printf 'right-side profile links still present in _layouts/index.html\n' >&2
-  failures=$((failures + 1))
-fi
+ids = papers.map { |paper| paper.fetch("id") }
+raise "publication ids must be unique" unless ids.uniq.length == ids.length
 
-if grep -Fq 'zzz8fa [at] virginia.edu · chenrum [at] uci.edu' "_layouts/index.html"; then
-  printf 'emails still bundled into one profile-link line\n' >&2
-  failures=$((failures + 1))
-fi
-
-if grep -Fq 'cdn.clustrmaps.com' "_layouts/index.html"; then
-  printf 'old ClustrMaps CDN still present in _layouts/index.html\n' >&2
-  failures=$((failures + 1))
-fi
-
-if grep -Fq 'REPLACE_WITH_CHENRUI_MAPMYVISITORS_TOKEN' "_layouts/index.html"; then
-  printf 'visitor map placeholder token still present in _layouts/index.html\n' >&2
-  failures=$((failures + 1))
-fi
-
-if grep -Fq 'drift-flow-matching.svg' "_layouts/index.html" "publications.json"; then
-  printf 'DFM publication image still points to old SVG\n' >&2
-  failures=$((failures + 1))
-fi
-
-if grep -Fq 'transition-flow-matching.svg' "_layouts/index.html" "publications.json"; then
-  printf 'TFM publication image still points to old SVG\n' >&2
-  failures=$((failures + 1))
-fi
-
-if grep -Fq 'My research focuses on' "_layouts/index.html"; then
-  printf 'research interest still contains explanatory paragraph\n' >&2
-  failures=$((failures + 1))
-fi
-
-if grep -Fq 'I am seeking a summer internship' "_layouts/index.html"; then
-  printf 'availability note still uses direct seeking-internship wording\n' >&2
-  failures=$((failures + 1))
-fi
-
-python3 - <<'PY' || failures=$((failures + 1))
-from pathlib import Path
-
-html = Path("_layouts/index.html").read_text()
-start = html.index('<h3 id="Research"')
-end = html.index('<h3 id="News"')
-section = html[start:end]
-
-required = [
-    "<h4>Responsible and Efficient Generative Modeling</h4>",
-    "<h4>Trustworthy Machine Learning</h4>",
-    "<h4>Multimodal AI</h4>",
-    "CVPR'26",
-    "arXiv'25",
-    "arXiv'26a",
-    "arXiv'26b",
-    "Straight Flows",
-    "Stochastic Interpolants",
-    "TFM",
-    "DFM",
-    "CAD-VAE",
-    "StructLoRA",
-    "CTR-LoRA",
-    "PROBE",
-    "CIBR",
-    "EMNLP'26",
-    "D-HSM",
-    "https://arxiv.org/abs/2511.17583",
-    "https://arxiv.org/abs/2509.23122",
-    "https://arxiv.org/abs/2603.15689",
-    "https://arxiv.org/abs/2605.17244",
-    "https://arxiv.org/abs/2503.07938",
-    "https://arxiv.org/abs/2603.14228",
-    "https://arxiv.org/abs/2510.15962",
-    "https://arxiv.org/abs/2511.12410",
-    "https://link.springer.com/chapter/10.1007/978-3-032-04558-4_20",
-    "https://openreview.net/forum?id=zo1QpQ2KbF",
+selected = papers.select { |paper| paper["selected"] }.sort_by { |paper| paper.fetch("selected_order") }
+expected_selected = %w[
+  drift-flow-matching
+  transition-flow-matching
+  learning-straight-flows
+  cad-vae
+  stochastic-interpolants
+  not-all-directions
+  dhsm
+  probe
 ]
-for needle in required:
-    if needle not in section:
-        raise SystemExit(f"missing research interest content: {needle}")
+raise "selected publication order changed: #{selected.map { |paper| paper["id"] }}" unless selected.map { |paper| paper["id"] } == expected_selected
 
-for forbidden in [
-    "Generative Modeling &amp; Efficient Generation",
-    "Efficient Model Adaptation &amp; Language Models",
-    "Multi-modal Perception &amp; Trustworthy Representation Learning",
-    "https://cvpr.thecvf.com/",
-    "https://aaai.org/conference/aaai/aaai-26/",
-    "https://icml.cc/",
-    "https://2026.aclweb.org/",
-    "https://2026.ieeeicassp.org/",
-    "https://wacv.thecvf.com/virtual/2026",
-    "https://e-nns.org/icann2025/",
-    "arXiv'26: TFM",
-    "arXiv'26: DFM",
-]:
-    if forbidden in section:
-        raise SystemExit(f"forbidden research interest content: {forbidden}")
-PY
+not_all = papers.find { |paper| paper["id"] == "not-all-directions" }
+expected_acl_title = "Not All Directions Matter: Towards Structured and Task-Aware Low-Rank Model Adaptation"
+raise "ACL title is not canonical" unless not_all && not_all["title"] == expected_acl_title
 
-python3 - <<'PY' || failures=$((failures + 1))
-import re
-from pathlib import Path
+cibr = papers.find { |paper| paper["id"] == "cibr" }
+expected_cibr_title = "CIBR: Cross-Modal Information Bottleneck Regularization for Robust CLIP Generalization"
+raise "CIBR title is not canonical" unless cibr && cibr["title"] == expected_cibr_title
 
-html = Path("_layouts/index.html").read_text()
-start = html.index('<div id="pubs_selected"')
-end = html.index('<div class="publication-more-link">', start)
-section = html[start:end]
+papers.each do |paper|
+  raise "missing sort key for #{paper["id"]}" if paper["sort_key"].to_s.empty?
+  raise "missing authors for #{paper["id"]}" unless paper["authors"].is_a?(Array) && !paper["authors"].empty?
+  raise "missing paper URL for #{paper["id"]}" if paper["paper_url"].to_s.empty?
+  next unless paper["selected"]
 
-titles = re.findall(r'<b><font color="black">([^<]+)</font></b>', section)
-expected_titles = [
-    "Drift Flow Matching",
-    "Transition Flow Matching",
-    "Learning Straight Flows: Variational Flow Matching for Efficient Generation",
-    "CAD-VAE: Leveraging Correlation-Aware Latents for Comprehensive Fair Disentanglement",
-    "Stochastic Interpolants via Conditional Dependent Coupling",
-    "Not All Directions Matter: Toward Structured and Task-Aware Low-Rank Adaptation",
-    "Dynamic Hub-and-Spoke Memory for Streaming Video Understanding",
-    "Self-Supervised Visual Prompting for Cross-Domain Road Damage Detection",
+  image = paper.fetch("image")
+  %w[thumb thumb_2x full width height alt].each do |field|
+    raise "missing image #{field} for #{paper["id"]}" if image[field].to_s.empty?
+  end
+  %w[thumb thumb_2x full].each do |field|
+    path = image.fetch(field).sub(%r{\A/}, "")
+    raise "missing image file for #{paper["id"]}: #{path}" unless File.file?(path)
+  end
+end
+
+html = File.read("_layouts/index.html")
+experience = html[/<div class="cv-panel" id="Experience">(.*?)<div class="cv-panel" id="Education">/m, 1]
+raise "experience section not found" unless experience
+experience_dates = experience.scan(/class="cv-entry-date">([^<]+)</).flatten
+expected_dates = [
+  "08/2026 - Present",
+  "05/2025 - Present",
+  "01/2026 - 03/2026",
+  "09/2024 - 06/2026",
 ]
-if titles != expected_titles:
-    raise SystemExit(f"selected publications are in the wrong order: {titles}")
+raise "current experience entries must precede completed roles: #{experience_dates}" unless experience_dates == expected_dates
+RUBY
 
-captions = re.findall(r'data-lightbox-caption="([^"]+)"', section)
-if captions != expected_titles:
-    raise SystemExit(f"publication lightbox captions do not match titles: {captions}")
-if section.count('class="pub-thumb-trigger"') != len(expected_titles):
-    raise SystemExit("each selected publication must have exactly one lightbox trigger")
-if section.count('aria-haspopup="dialog"') != len(expected_titles):
-    raise SystemExit("each publication lightbox trigger must expose dialog semantics")
-
-required = [
-    "Dynamic Hub-and-Spoke Memory for Streaming Video Understanding",
-    "EMNLP 2026 Findings",
-    "https://openreview.net/forum?id=zo1QpQ2KbF",
-    "Xinru Jiang*, Lin Zhao*, Xi Xiao, Yunbei Zhang, Janet Wang, <strong><u>Chenrui Ma</u></strong>",
-    "Transition Flow Matching",
-    "https://arxiv.org/abs/2603.15689",
-    "Drift Flow Matching",
-    "https://arxiv.org/abs/2605.17244",
-    "Stochastic Interpolants via Conditional Dependent Coupling",
-    ">arXiv</",
-    "Xi Xiao*, <strong><u>Chenrui Ma*</u></strong>, Yunbei Zhang*",
-]
-for needle in required:
-    if needle not in section:
-        raise SystemExit(f"missing selected publication content: {needle}")
-
-for forbidden in [
-    "Beyond Editing Pairs",
-    "ICML 2026 Submitted",
-    "https://icml.cc/",
-]:
-    if forbidden in section:
-        raise SystemExit(f"forbidden selected publication content: {forbidden}")
-PY
-
-if grep -Fq 'Student Collaborator (remote)' "_layouts/index.html"; then
-  printf 'student collaborator still includes remote in role\n' >&2
-  failures=$((failures + 1))
+thumb_count=$(find img/papers/thumbs -type f -name '*.avif' | wc -l | tr -d ' ')
+if [[ "$thumb_count" != "16" ]]; then
+  fail "expected 16 AVIF thumbnail variants, found $thumb_count"
 fi
 
-if grep -Fq 'Conference reviewer for CVPR 2026 and AAAI 2026. Teaching Assistant' "_layouts/index.html"; then
-  printf 'teaching assistant still bundled into academic service\n' >&2
-  failures=$((failures + 1))
+thumb_bytes=0
+while IFS= read -r thumb; do
+  size=$(wc -c < "$thumb")
+  thumb_bytes=$((thumb_bytes + size))
+  if (( size > 102400 )); then
+    fail "thumbnail exceeds 100 KiB: $thumb ($size bytes)"
+  fi
+done < <(find img/papers/thumbs -type f -name '*.avif' -print | sort)
+if (( thumb_bytes > 716800 )); then
+  fail "combined publication thumbnails exceed 700 KiB: $thumb_bytes bytes"
 fi
 
-assert_contains "static/styles.css" ".navbar-custom"
-assert_contains "static/styles.css" ".pub-card"
-assert_contains "static/styles.css" ".cv-entry"
-assert_contains "static/styles.css" ".cv-logo"
-assert_contains "static/styles.css" ".intro-identity"
-assert_contains "static/styles.css" ".intro-identity-cursor"
-assert_contains "static/styles.css" ".research-card"
-assert_contains "static/styles.css" ".research-chip"
-assert_contains "static/styles.css" ".visitor-map-card"
-assert_contains "static/styles.css" ".visitor-map-link"
-assert_contains "static/styles.css" ".visitor-map-image"
-assert_contains "static/styles.css" ".last-modified"
-assert_contains "static/styles.css" ".pub-thumb-trigger"
-assert_contains "static/styles.css" ".publication-lightbox[hidden]"
-assert_contains "static/styles.css" "body.publication-lightbox-open"
-assert_contains "static/styles.css" "prefers-reduced-motion: reduce"
-assert_contains "static/styles.css" ".profile-action-grid"
-assert_contains "static/styles.css" ".profile-action"
-assert_contains "static/styles.css" ".profile-email-list"
-assert_contains "static/styles.css" "grid-template-columns: repeat(2, minmax(0, 1fr));"
-assert_contains "static/styles.css" "grid-template-columns: 165px 82px 1fr;"
-assert_contains "static/styles.css" "height: 76px;"
-assert_contains "js/main.js" "initIdentityTyping"
-assert_contains "js/main.js" "a Generative Modeling Researcher"
-assert_contains "js/main.js" "an Amateur Chef"
-assert_contains "js/main.js" "a Sports Enthusiast"
-assert_contains "js/main.js" "a Guitar Player"
-assert_contains "js/main.js" "prefers-reduced-motion"
-assert_contains "js/main.js" "initPublicationLightbox"
-assert_contains "js/main.js" "dialog.hidden = false"
-assert_contains "js/main.js" "event.target === dialog"
-assert_contains "js/main.js" "event.key === \"Escape\""
-assert_contains "js/main.js" "event.key === \"Tab\""
-assert_contains "js/main.js" "event.key === \"Enter\""
-assert_contains "js/main.js" "event.key === \" \""
-assert_contains "js/main.js" "triggerToRestore.focus()"
-assert_contains "other-publications.html" "CTR-LoRA"
-assert_contains "other-publications.html" "CIBR"
-assert_contains "other-publications.html" "Dynamic Hub-and-Spoke Memory for Streaming Video Understanding"
-assert_contains "other-publications.html" "EMNLP 2026 Findings"
-assert_contains "other-publications.html" "https://openreview.net/forum?id=zo1QpQ2KbF"
-assert_contains "other-publications.html" "<title>All Publications | Chenrui Ma</title>"
-assert_contains "other-publications.html" "static/styles.css?v=20260827"
-assert_contains "other-publications.html" "js/main.js?v=20260827"
-assert_contains "other-publications.html" ">All Publications</a>"
-assert_contains "other-publications.html" "<h1>All Publications</h1>"
-assert_contains "other-publications.html" "Additional papers grouped by year. For selected works, return to the <a href=\"index.html#Publications\">homepage publications section</a>."
-assert_contains "other-publications.html" "Transition Flow Matching"
-assert_contains "other-publications.html" "Drift Flow Matching"
-assert_contains "other-publications.html" "Learning Straight Flows"
-assert_contains "other-publications.html" "CAD-VAE"
-assert_contains "other-publications.html" "Stochastic Interpolants"
-assert_contains "other-publications.html" "Beyond Editing Pairs"
-assert_contains "other-publications.html" "Not All Directions Matter"
-assert_contains "other-publications.html" "Self-Supervised Visual Prompting"
-assert_contains "other-publications.html" "SCS-YOLO"
-assert_contains "other-publications.html" "Dense Object Detection Based on De-Homogenized Queries"
-assert_contains "other-publications.html" "https://arxiv.org/abs/2603.15689"
-assert_contains "other-publications.html" "https://arxiv.org/abs/2605.17244"
-assert_contains "other-publications.html" "Xi Xiao*, <strong><u>Chenrui Ma*</u></strong>, Yunbei Zhang*"
-assert_contains "publications.json" "\"image\": \"img/papers/drift-flow-matching.png\""
-assert_contains "publications.json" "\"image\": \"img/papers/transition-flow-matching.png\""
-assert_contains "publications.json" "\"image\": \"img/papers/dhsm.png\""
-
-if grep -Fq 'ZUHUC0f4aE' "_layouts/index.html" "other-publications.html" "publications.json"; then
-  printf 'private EMNLP acceptance link is exposed in public site content\n' >&2
-  failures=$((failures + 1))
-fi
-
-if grep -Fq 'Other Publications' "other-publications.html"; then
-  printf 'archive page still uses Other Publications wording\n' >&2
-  failures=$((failures + 1))
-fi
-
-if grep -Fq 'Full publication archive, including selected publications from the homepage.' "other-publications.html"; then
-  printf 'archive page still uses non-template archive subtitle\n' >&2
-  failures=$((failures + 1))
-fi
-
-python3 - <<'PY' || failures=$((failures + 1))
-from pathlib import Path
-
-html = Path("other-publications.html").read_text()
-for title in [
-    "Dynamic Hub-and-Spoke Memory for Streaming Video Understanding",
-    "Transition Flow Matching",
-    "Drift Flow Matching",
-    "CAD-VAE: Leveraging Correlation-Aware Latents for Comprehensive Fair Disentanglement",
-    "Stochastic Interpolants via Conditional Dependent Coupling",
-    "Learning Straight Flows: Variational Flow Matching for Efficient Generation",
-    "Not All Directions Matter: Toward Structured and Task-Aware Low-Rank Adaptation",
-    "Self-Supervised Visual Prompting for Cross-Domain Road Damage Detection",
-    "Beyond Editing Pairs: Fine-Grained Instructional Image Editing via Multi-Scale Learnable Regions",
-    "CTR-LoRA: Curvature-Aware and Trust-Region Guided Low-Rank Adaptation for Large Language Models",
-    "CIBR: Cross-modal information bottleneck regularization for robust clip generalization",
-    "SCS-YOLO: a defect detection model for cigarette appearance",
-    "Dense Object Detection Based on De-Homogenized Queries",
-]:
-    if html.count(title) != 1:
-        raise SystemExit(f"expected exactly one archive entry for {title!r}, found {html.count(title)}")
-PY
-
-python3 - <<'PY' || failures=$((failures + 1))
-import json
-from pathlib import Path
-
-data = json.loads(Path("publications.json").read_text())
-selected_ids = [paper["id"] for paper in data["publications"] if paper["selected"]]
-expected_selected_ids = [
-    "drift-flow-matching",
-    "transition-flow-matching",
-    "learning-straight-flows",
-    "cad-vae",
-    "stochastic-interpolants",
-    "not-all-directions",
-    "dhsm",
-    "probe",
-]
-if selected_ids != expected_selected_ids:
-    raise SystemExit(f"selected publication data is in the wrong order: {selected_ids}")
-dhsm = next((p for p in data["publications"] if p["id"] == "dhsm"), None)
-if dhsm is None:
-    raise SystemExit("missing dhsm publication data")
-if dhsm["authors"][:2] != ["Xinru Jiang*", "Lin Zhao*"]:
-    raise SystemExit(f"D-HSM co-first authors not marked correctly: {dhsm['authors'][:2]}")
-if dhsm["authors"][5] != "Chenrui Ma" or not dhsm["selected"]:
-    raise SystemExit("D-HSM author order or selected status is incorrect")
-if dhsm["links"].get("paper") != "https://openreview.net/forum?id=zo1QpQ2KbF":
-    raise SystemExit("D-HSM does not use the public OpenReview paper link")
-paper = next((p for p in data["publications"] if p["id"] == "not-all-directions"), None)
-if paper is None:
-    raise SystemExit("missing not-all-directions publication data")
-if paper["authors"][:3] != ["Xi Xiao*", "Chenrui Ma*", "Yunbei Zhang*"]:
-    raise SystemExit(f"ACL co-first authors not marked correctly: {paper['authors'][:3]}")
-PY
-
-python3 - <<'PY' || failures=$((failures + 1))
-import re
-from pathlib import Path
-
-html = Path("_layouts/index.html").read_text()
-start = html.index('<div class="cv-panel" id="Experience">')
-end = html.index('<div class="cv-panel" id="Education">', start)
-section = html[start:end]
-dates = re.findall(r'class="cv-entry-date">([^<]+)</div>', section)
-expected = [
-    "08/2026 - Present",
-    "01/2026 - 03/2026",
-    "05/2025 - Present",
-    "09/2024 - 06/2026",
-]
-if dates != expected:
-    raise SystemExit(f"experience entries not sorted by descending start date: {dates}")
-PY
-
-date_line=$(grep -n -m 1 'class="cv-entry-date"' "_layouts/index.html" | cut -d: -f1 || true)
-logo_line=$(grep -n -m 1 'class="cv-logo-wrap"' "_layouts/index.html" | cut -d: -f1 || true)
-if [[ -z "$date_line" || -z "$logo_line" || "$date_line" -gt "$logo_line" ]]; then
-  printf 'cv entry order must be date, logo, body\n' >&2
-  failures=$((failures + 1))
+if command -v file >/dev/null 2>&1; then
+  profile_metadata=$(file img/ChenruiMa.jpeg)
+  if [[ "$profile_metadata" == *"GPS-Data"* || "$profile_metadata" == *"HUAWEI"* || "$profile_metadata" == *"JEF-AN00"* ]]; then
+    fail "profile photo still exposes device or GPS EXIF metadata"
+  fi
 fi
 
 if [[ "$failures" -gt 0 ]]; then

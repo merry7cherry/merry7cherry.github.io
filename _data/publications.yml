@@ -1,0 +1,309 @@
+- id: drift-flow-matching
+  title: "Drift Flow Matching"
+  year: "2026"
+  sort_key: "2026-05"
+  selected: true
+  selected_order: 1
+  authors:
+    - name: Chenrui Ma
+    - name: Xi Xiao
+    - name: Lin Zhao
+    - name: Tianyang Wang
+    - name: Ferdinando Fioretto
+    - name: Yanning Shen
+  venue:
+    selected: arXiv
+    archive: arXiv 2026
+  paper_url: https://arxiv.org/abs/2605.17244
+  image:
+    thumb: /img/papers/thumbs/drift-flow-matching-480.avif
+    thumb_2x: /img/papers/thumbs/drift-flow-matching-960.avif
+    full: /img/papers/drift-flow-matching.png
+    width: 960
+    height: 360
+    alt: Drift Flow Matching overview
+  summary: Bridging one-step drift models and iterative flow matching for adaptive quality-efficiency sampling
+
+- id: transition-flow-matching
+  title: "Transition Flow Matching"
+  year: "2026"
+  sort_key: "2026-03-16"
+  selected: true
+  selected_order: 2
+  authors:
+    - name: Chenrui Ma
+  venue:
+    selected: arXiv
+    archive: arXiv 2026
+  paper_url: https://arxiv.org/abs/2603.15689
+  image:
+    thumb: /img/papers/thumbs/transition-flow-matching-480.avif
+    thumb_2x: /img/papers/thumbs/transition-flow-matching-960.avif
+    full: /img/papers/transition-flow-matching.png
+    width: 960
+    height: 468
+    alt: Transition Flow Matching overview
+  summary: Direct transition-flow learning for one-step or arbitrary-time generation
+
+- id: learning-straight-flows
+  title: "Learning Straight Flows: Variational Flow Matching for Efficient Generation"
+  year: "2026"
+  sort_key: "2026-02"
+  selected: true
+  selected_order: 3
+  authors:
+    - name: Chenrui Ma
+    - name: Xi Xiao
+    - name: Tianyang Wang
+    - name: Xiao Wang
+    - name: Yanning Shen
+  venue:
+    selected: CVPR 2026 Main Conference
+    archive: CVPR 2026
+    url: https://cvpr.thecvf.com/
+  paper_url: https://arxiv.org/abs/2511.17583
+  code_url: https://github.com/merry7cherry/S-VFM
+  image:
+    thumb: /img/papers/thumbs/learning-straight-flows-480.avif
+    thumb_2x: /img/papers/thumbs/learning-straight-flows-960.avif
+    full: /img/papers/learning-straight-flows.png
+    width: 960
+    height: 613
+    alt: Learning Straight Flows overview
+  summary: Variational flow matching with latent generation overview and straightness loss for efficient one-step generation
+
+- id: cad-vae
+  title: "CAD-VAE: Leveraging Correlation-Aware Latents for Comprehensive Fair Disentanglement"
+  year: "2026"
+  sort_key: "2025-11"
+  selected: true
+  selected_order: 4
+  authors:
+    - name: Chenrui Ma
+    - name: Xi Xiao
+    - name: Tianyang Wang
+    - name: Xiao Wang
+    - name: Yanning Shen
+  venue:
+    selected: AAAI 2026 Main Track
+    archive: AAAI 2026
+    url: https://aaai.org/conference/aaai/aaai-26/
+  paper_url: https://arxiv.org/abs/2503.07938
+  code_url: https://github.com/merry7cherry/CAD-VAE
+  image:
+    thumb: /img/papers/thumbs/cad-vae-480.avif
+    thumb_2x: /img/papers/thumbs/cad-vae-960.avif
+    full: /img/papers/cad-vae.png
+    width: 960
+    height: 531
+    alt: CAD-VAE overview
+  summary: Correlation-aware latent modeling for comprehensive fair disentanglement
+
+- id: stochastic-interpolants
+  title: "Stochastic Interpolants via Conditional Dependent Coupling"
+  year: "2025"
+  sort_key: "2025-09-27"
+  selected: true
+  selected_order: 5
+  authors:
+    - name: Chenrui Ma
+    - name: Xi Xiao
+    - name: Tianyang Wang
+    - name: Xiao Wang
+    - name: Yanning Shen
+  venue:
+    selected: arXiv
+    archive: arXiv 2025
+  paper_url: https://arxiv.org/abs/2509.23122
+  code_url: https://github.com/merry7cherry/Stochastic-Interpolants-via-Conditional-Dependent-Coupling
+  image:
+    thumb: /img/papers/thumbs/stochastic-interpolants-480.avif
+    thumb_2x: /img/papers/thumbs/stochastic-interpolants-960.avif
+    full: /img/papers/stochastic-interpolants.png
+    width: 960
+    height: 580
+    alt: Stochastic Interpolants overview
+  summary: A coarse-to-fine image generation framework parameterized by a single generative model
+
+- id: not-all-directions
+  title: "Not All Directions Matter: Towards Structured and Task-Aware Low-Rank Model Adaptation"
+  year: "2026"
+  sort_key: "2026-03-15"
+  selected: true
+  selected_order: 6
+  authors:
+    - name: Xi Xiao
+      equal: true
+    - name: Chenrui Ma
+      equal: true
+    - name: Yunbei Zhang
+      equal: true
+    - name: Chen Liu
+    - name: Zhuxuanzi Wang
+    - name: Yanshu Li
+    - name: Lin Zhao
+    - name: Guosheng Hu
+    - name: Tianyang Wang
+    - name: Hao Xu
+  venue:
+    selected: ACL 2026 Main Conference
+    archive: ACL 2026
+    url: https://2026.aclweb.org/
+  paper_url: https://arxiv.org/abs/2603.14228
+  image:
+    thumb: /img/papers/thumbs/not-all-directions-480.avif
+    thumb_2x: /img/papers/thumbs/not-all-directions-960.avif
+    full: /img/papers/not-all-directions.png
+    width: 960
+    height: 476
+    alt: Not All Directions Matter overview
+  summary: Structured task-aware adaptation that filters task-irrelevant update directions without adding inference cost
+
+- id: dhsm
+  title: "Dynamic Hub-and-Spoke Memory for Streaming Video Understanding"
+  year: "2026"
+  sort_key: "2026-08"
+  selected: true
+  selected_order: 7
+  authors:
+    - name: Xinru Jiang
+      equal: true
+    - name: Lin Zhao
+      equal: true
+    - name: Xi Xiao
+    - name: Yunbei Zhang
+    - name: Janet Wang
+    - name: Chenrui Ma
+    - name: Haolin Li
+    - name: Yanzhi Wang
+    - name: Yifan Gong
+    - name: Octavia Camps
+  venue:
+    selected: EMNLP 2026 Findings
+    archive: EMNLP 2026 Findings
+    url: https://2026.emnlp.org/
+  paper_url: https://openreview.net/forum?id=zo1QpQ2KbF
+  image:
+    thumb: /img/papers/thumbs/dhsm-480.avif
+    thumb_2x: /img/papers/thumbs/dhsm-960.avif
+    full: /img/papers/dhsm.png
+    width: 960
+    height: 417
+    alt: D-HSM overview
+  summary: Training-free dynamic hub-and-spoke memory for question-aware long-range retrieval in streaming video understanding
+
+- id: probe
+  title: "Self-Supervised Visual Prompting for Cross-Domain Road Damage Detection"
+  year: "2026"
+  sort_key: "2025-11-16"
+  selected: true
+  selected_order: 8
+  authors:
+    - name: Xi Xiao
+    - name: Zhuxuanzi Wang
+    - name: Mingqiao Mo
+    - name: Chen Liu
+    - name: Chenrui Ma
+    - name: Yanshu Li
+    - name: Smita Krishnaswamy
+    - name: Xiao Wang
+    - name: Tianyang Wang
+  venue:
+    selected: WACV 2026
+    archive: WACV 2026
+    url: https://wacv.thecvf.com/virtual/2026
+  paper_url: https://arxiv.org/abs/2511.12410
+  code_url: https://github.com/xixiaouab/PROBE
+  image:
+    thumb: /img/papers/thumbs/probe-480.avif
+    thumb_2x: /img/papers/thumbs/probe-960.avif
+    full: /img/papers/probe.png
+    width: 960
+    height: 380
+    alt: PROBE overview
+  summary: Self-supervised defect-aware prompts for cross-domain pavement defect detection
+
+- id: ctr-lora
+  title: "CTR-LoRA: Curvature-Aware and Trust-Region Guided Low-Rank Adaptation for Large Language Models"
+  year: "2026"
+  sort_key: "2026-01"
+  selected: false
+  authors:
+    - name: Zhuxuanzi Wang
+    - name: Mingqiao Mo
+    - name: Xi Xiao
+    - name: Chen Liu
+    - name: Chenrui Ma
+    - name: Yunbei Zhang
+    - name: Xiao Wang
+    - name: Smita Krishnaswamy
+    - name: Tianyang Wang
+  venue:
+    archive: ICASSP 2026
+    url: https://2026.ieeeicassp.org/
+  paper_url: https://arxiv.org/abs/2510.15962
+
+- id: cibr
+  title: "CIBR: Cross-Modal Information Bottleneck Regularization for Robust CLIP Generalization"
+  year: "2025"
+  sort_key: "2025-09-12"
+  selected: false
+  authors:
+    - name: Yingrui Ji
+    - name: Xi Xiao
+    - name: Gaofei Chen
+    - name: Hao Xu
+    - name: Chenrui Ma
+    - name: Lijing Zhu
+    - name: Aokun Liang
+    - name: Jiansheng Chen
+  venue:
+    archive: ICANN 2025
+    url: https://link.springer.com/chapter/10.1007/978-3-032-04558-4_20
+  paper_url: https://link.springer.com/chapter/10.1007/978-3-032-04558-4_20
+
+- id: beyond-editing-pairs
+  title: "Beyond Editing Pairs: Fine-Grained Instructional Image Editing via Multi-Scale Learnable Regions"
+  year: "2025"
+  sort_key: "2025-05-25"
+  selected: false
+  authors:
+    - name: Chenrui Ma
+    - name: Xi Xiao
+    - name: Tianyang Wang
+    - name: Yanning Shen
+  venue:
+    archive: arXiv 2025
+  paper_url: https://arxiv.org/abs/2505.19352
+
+- id: scs-yolo
+  title: "SCS-YOLO: a defect detection model for cigarette appearance"
+  year: "2024"
+  sort_key: "2024-09"
+  selected: false
+  authors:
+    - name: Yingchao Ding
+    - name: Hao Zhou
+    - name: Hao Wu
+    - name: Chenrui Ma
+    - name: Guowu Yuan
+  venue:
+    archive: Electronics 2024
+    url: https://www.mdpi.com/2079-9292/13/18/3761
+  paper_url: https://www.mdpi.com/2079-9292/13/18/3761
+
+- id: dense-object-detection
+  title: "Dense Object Detection Based on De-Homogenized Queries"
+  year: "2024"
+  sort_key: "2024-06"
+  selected: false
+  authors:
+    - name: Yueming Huang
+    - name: Chenrui Ma
+    - name: Hao Zhou
+    - name: Hao Wu
+    - name: Guowu Yuan
+  venue:
+    archive: Electronics 2024
+    url: https://www.mdpi.com/2079-9292/13/12/2312
+  paper_url: https://www.mdpi.com/2079-9292/13/12/2312

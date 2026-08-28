@@ -1,6 +1,3 @@
-// Optional: publication filter (showPubs) - template may call showPubs(1)
-function showPubs(n) { return true; }
-
 function initIdentityTyping() {
   var target = document.querySelector(".intro-identity-dynamic");
   if (!target) {
@@ -61,6 +58,7 @@ function initPublicationLightbox() {
   var lightboxImage = dialog.querySelector(".publication-lightbox-image");
   var lightboxCaption = dialog.querySelector(".publication-lightbox-caption");
   var closeButton = dialog.querySelector(".publication-lightbox-close");
+  var siteShell = document.getElementById("site-shell");
   var activeTrigger = null;
 
   if (!lightboxImage || !lightboxCaption || !closeButton) {
@@ -72,6 +70,9 @@ function initPublicationLightbox() {
       dialog.hidden = true;
       dialog.classList.remove("is-open");
       document.body.classList.remove("publication-lightbox-open");
+      if (siteShell) {
+        siteShell.removeAttribute("inert");
+      }
       lightboxImage.removeAttribute("src");
       if (activeTrigger) {
         var triggerToRestore = activeTrigger;
@@ -89,19 +90,15 @@ function initPublicationLightbox() {
       }
 
       activeTrigger = trigger;
-      lightboxImage.src = thumbnail.currentSrc || thumbnail.src;
+      lightboxImage.src = thumbnail.getAttribute("data-full-src") || thumbnail.currentSrc || thumbnail.src;
       lightboxImage.alt = thumbnail.alt;
       lightboxCaption.textContent = trigger.getAttribute("data-lightbox-caption") || thumbnail.alt;
       document.body.classList.add("publication-lightbox-open");
       dialog.hidden = false;
       dialog.classList.add("is-open");
       closeButton.focus();
-    });
-
-    trigger.addEventListener("keydown", function (event) {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        trigger.click();
+      if (siteShell) {
+        siteShell.setAttribute("inert", "");
       }
     });
   });
@@ -134,13 +131,14 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   document.addEventListener("click", function (event) {
-    var toggle = event.target.closest(".navbar-custom .dropdown-toggle");
+    var toggle = event.target.closest(".navbar-custom .nav-dropdown-toggle");
     var openMenus = document.querySelectorAll(".navbar-custom .dropdown-menu.show");
+    var menu = toggle ? toggle.closest(".dropdown").querySelector(".dropdown-menu") : null;
 
-    openMenus.forEach(function (menu) {
-      if (!toggle || menu !== toggle.nextElementSibling) {
-        menu.classList.remove("show");
-        var owner = menu.previousElementSibling;
+    openMenus.forEach(function (openMenu) {
+      if (!toggle || openMenu !== menu) {
+        openMenu.classList.remove("show");
+        var owner = openMenu.closest(".dropdown").querySelector(".nav-dropdown-toggle");
         if (owner) {
           owner.setAttribute("aria-expanded", "false");
         }
@@ -154,8 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault();
     event.stopPropagation();
 
-    var menu = toggle.nextElementSibling;
-    if (!menu || !menu.classList.contains("dropdown-menu")) {
+    if (!menu) {
       return;
     }
 
@@ -169,16 +166,32 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
-  navbarToggle.querySelectorAll(".nav-link").forEach(function (link) {
-    link.addEventListener("click", function () {
-      if (link.classList.contains("dropdown-toggle")) {
-        return;
-      }
+  function closeMobileNavbar() {
+    function applyClosedState() {
+      navbarToggle.classList.remove("show", "collapsing");
+      navbarToggle.classList.add("collapse");
+      navbarToggle.style.height = "";
+      navbarButton.setAttribute("aria-expanded", "false");
+    }
 
-      if (navbarToggle.classList.contains("show")) {
-        navbarToggle.classList.remove("show");
-        navbarButton.setAttribute("aria-expanded", "false");
-      }
+    if (window.jQuery && window.jQuery.fn && window.jQuery.fn.collapse) {
+      window.jQuery(navbarToggle).collapse("hide");
+    }
+    applyClosedState();
+    window.setTimeout(applyClosedState, 380);
+  }
+
+  navbarToggle.querySelectorAll(".nav-link, .dropdown-item").forEach(function (link) {
+    link.addEventListener("click", function () {
+      closeMobileNavbar();
+
+      navbarToggle.querySelectorAll(".dropdown-menu.show").forEach(function (menu) {
+        menu.classList.remove("show");
+        var owner = menu.closest(".dropdown").querySelector(".nav-dropdown-toggle");
+        if (owner) {
+          owner.setAttribute("aria-expanded", "false");
+        }
+      });
     });
   });
 });

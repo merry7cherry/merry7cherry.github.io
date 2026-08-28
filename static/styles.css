@@ -20,7 +20,20 @@
 }
 
 html {
-  scroll-padding-top: 92px;
+  scroll-behavior: smooth;
+}
+
+#About,
+#CV,
+#Experience,
+#Education,
+#Research,
+#News,
+#Publications,
+#Awards,
+#Miscellanea,
+#OtherPublications {
+  scroll-margin-top: 92px;
 }
 
 body {
@@ -56,6 +69,27 @@ hr {
   border-top: 1px solid var(--line);
 }
 
+.skip-link {
+  background: #ffffff;
+  border: 2px solid var(--primary);
+  border-radius: 0 0 8px 8px;
+  color: var(--primary-dark);
+  font-weight: 800;
+  left: 16px;
+  padding: 8px 12px;
+  position: fixed;
+  top: 0;
+  transform: translateY(-120%);
+  transition: transform 0.15s ease;
+  z-index: 2100;
+}
+
+.skip-link:focus {
+  color: var(--primary-dark);
+  outline: none;
+  transform: translateY(0);
+}
+
 .navbar-custom {
   background-color: rgba(8, 35, 63, 0.98);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
@@ -79,6 +113,30 @@ hr {
 .navbar-custom .nav-link:focus,
 .navbar-custom .nav-link.active {
   color: #ffffff;
+}
+
+.nav-split-control {
+  align-items: center;
+  display: flex;
+}
+
+.nav-split-control > .nav-link {
+  padding-right: 0.22rem;
+}
+
+.nav-dropdown-toggle {
+  background: transparent;
+  border: 0;
+  color: rgba(255, 255, 255, 0.88);
+  cursor: pointer;
+  padding: 0.5rem 0.5rem 0.5rem 0.18rem;
+}
+
+.nav-dropdown-toggle:hover,
+.nav-dropdown-toggle:focus {
+  color: #ffffff;
+  outline: 2px solid rgba(255, 255, 255, 0.42);
+  outline-offset: 1px;
 }
 
 .navbar-custom .dropdown-menu {
@@ -724,12 +782,23 @@ body.publication-lightbox-open {
   padding-right: 0;
 }
 
-.pub-content font[color="black"] {
-  color: var(--ink) !important;
-  display: inline-block;
+.pub-authors {
+  line-height: 1.55;
+}
+
+.pub-title {
+  color: var(--ink);
   font-size: 1.04rem;
+  font-weight: 800;
   line-height: 1.45;
   margin: 2px 0;
+}
+
+.pub-meta {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
 }
 
 .pub-content small a {
@@ -748,9 +817,9 @@ body.publication-lightbox-open {
   border-color: #cfcfcf;
 }
 
-.pub-content font[color="firebrick"] {
-  color: #9f2d24 !important;
-  display: inline-block;
+.pub-summary {
+  color: #9f2d24;
+  font-weight: 700;
   margin-top: 3px;
 }
 
@@ -952,10 +1021,11 @@ body.publication-lightbox-open {
   max-width: 100%;
 }
 
-footer {
+.site-footer {
   color: var(--muted);
   font-size: 0.92rem;
   padding-bottom: 20px;
+  text-align: center;
 }
 
 .last-modified {
@@ -980,6 +1050,19 @@ footer {
 
   .navbar-custom .nav-link {
     padding-left: 0;
+  }
+
+  .nav-split-control {
+    justify-content: space-between;
+  }
+
+  .nav-split-control > .nav-link {
+    flex: 1;
+  }
+
+  .nav-dropdown-toggle {
+    min-height: 42px;
+    min-width: 42px;
   }
 
   .intro-panel {
