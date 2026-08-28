@@ -26,6 +26,8 @@
 
 			<div class="collapse navbar-collapse" id="navbarToggle">
 				<ul class="navbar-nav ml-auto">
+					<li class="nav-item"><a class="nav-link" href="{{ experience_target | strip }}">Experience</a></li>
+					<li class="nav-item"><a class="nav-link" href="{{ education_target | strip }}">Education</a></li>
 					<li class="nav-item"><a class="nav-link" href="{{ research_target | strip }}">Research</a></li>
 					<li class="nav-item"><a class="nav-link" href="{{ news_target | strip }}">News</a></li>
 					<li class="nav-item nav-item-split dropdown">
@@ -38,8 +40,6 @@
 							<a class="dropdown-item{% if include.current == 'publications' %} active{% endif %}" href="{{ '/other-publications.html' | relative_url }}"{% if include.current == 'publications' %} aria-current="page"{% endif %}>All Publications</a>
 						</div>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="{{ experience_target | strip }}">Experience</a></li>
-					<li class="nav-item"><a class="nav-link" href="{{ education_target | strip }}">Education</a></li>
 					<li class="nav-item"><a class="nav-link" href="{{ awards_target | strip }}">Awards</a></li>
 					<li class="nav-item"><a class="nav-link" href="{{ service_target | strip }}">Service</a></li>
 				</ul>

@@ -99,6 +99,10 @@ assert_contains "_layouts/index.html" 'Last checked {{ site.data.publication_met
 assert_contains "_layouts/index.html" 'Not All Directions Matter: Towards Structured and Task-Aware Low-Rank Model Adaptation'
 assert_contains "_layouts/index.html" 'EMNLP 2026 Findings'
 assert_contains "_layouts/index.html" 'Central South University (中南大学)'
+assert_contains "_layouts/index.html" '<span class="name-chinese" lang="zh-CN">马陈瑞</span>'
+assert_contains "_layouts/index.html" '<div class="cv-org"><a href="https://www.virginia.edu/" target="_blank">University of Virginia</a></div>'
+assert_contains "_layouts/index.html" '<div class="cv-org"><a href="https://uci.edu/" target="_blank">University of California, Irvine</a></div>'
+assert_contains "_layouts/index.html" '<div class="cv-org"><a href="https://www.usnews.com/education/best-global-universities/central-south-university-501467" target="_blank">Central South University (中南大学)</a></div>'
 assert_contains "_layouts/index.html" '<h3 id="Service">Professional Service</h3>'
 assert_contains "_layouts/index.html" 'class="legacy-anchor" id="Miscellanea"'
 assert_contains "_layouts/index.html" '08/2026 - Present'
@@ -127,7 +131,7 @@ assert_contains "other-publications.html" 'Last checked {{ site.data.publication
 assert_not_contains "other-publications.html" 'Additional papers grouped by year'
 assert_not_contains "other-publications.html" '<center>'
 
-assert_contains "_includes/site-head.html" 'static/styles.css?v=20260828-1'
+assert_contains "_includes/site-head.html" 'static/styles.css?v=20260828-2'
 assert_contains "_includes/site-head.html" 'js/main.js?v=20260827-2'
 assert_contains "_includes/site-navbar.html" 'navbar-expand-lg'
 assert_contains "_includes/site-navbar.html" '>Research</a>'
@@ -141,6 +145,15 @@ assert_contains "_includes/site-navbar.html" 'aria-current="page"'
 assert_not_contains "_includes/site-navbar.html" '>CV</a>'
 assert_not_contains "_includes/site-navbar.html" 'id="cvMenu"'
 assert_contains "_includes/site-footer.html" 'Last modified: August 28, 2026.'
+
+ruby <<'RUBY' || failures=$((failures + 1))
+navbar = File.read("_includes/site-navbar.html")
+expected = %w[Experience Education Research News Publications Awards Service]
+positions = expected.map do |label|
+  navbar.index(">#{label}</a>") || raise("missing navigation item: #{label}")
+end
+raise "navigation order does not match homepage section order" unless positions == positions.sort
+RUBY
 
 assert_contains "js/main.js" 'thumbnail.getAttribute("data-full-src")'
 assert_contains "js/main.js" 'siteShell.setAttribute("inert", "")'
@@ -156,6 +169,7 @@ assert_not_contains "js/main.js" 'function showPubs'
 assert_contains "static/styles.css" 'scroll-behavior: smooth;'
 assert_contains "static/styles.css" 'scroll-margin-top: 92px;'
 assert_contains "static/styles.css" '.skip-link'
+assert_contains "static/styles.css" '.name-chinese'
 assert_contains "static/styles.css" '.nav-split-control'
 assert_contains "static/styles.css" '.nav-dropdown-toggle'
 assert_contains "static/styles.css" '.pub-title'
