@@ -83,6 +83,9 @@ assert_contains "_layouts/index.html" 'Not All Directions Matter: Towards Struct
 assert_contains "_layouts/index.html" 'EMNLP 2026 Findings'
 assert_contains "_layouts/index.html" '08/2026 - Present'
 assert_contains "_layouts/index.html" '05/2025 - Present'
+assert_contains "_layouts/index.html" 'My research focuses on responsible and efficient generative modeling, trustworthy machine learning, and multimodal AI.'
+assert_contains "_layouts/index.html" 'Previously, I completed my M.S. in Computer Science'
+assert_not_contains "_layouts/index.html" "I received my bachelor's degree from"
 assert_not_contains "_layouts/index.html" 'Toward Structured and Task-Aware Low-Rank Adaptation'
 assert_not_contains "_layouts/index.html" '<font'
 assert_not_contains "_layouts/index.html" 'toggle_vis('
