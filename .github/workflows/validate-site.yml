@@ -23,7 +23,11 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.3"
+          ruby-version: "3.1"
+          bundler-cache: true
 
       - name: Run repository checks
         run: bash tests/site_migration_check.sh
+
+      - name: Build Jekyll site
+        run: bundle exec jekyll build

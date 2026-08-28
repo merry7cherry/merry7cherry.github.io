@@ -251,7 +251,9 @@ assert_not_contains ".github/workflows/update-publication-metrics.yml" '--base m
 
 assert_contains ".github/workflows/validate-site.yml" 'pull_request:'
 assert_contains ".github/workflows/validate-site.yml" 'uses: actions/checkout@v7'
+assert_contains ".github/workflows/validate-site.yml" 'bundler-cache: true'
 assert_contains ".github/workflows/validate-site.yml" 'run: bash tests/site_migration_check.sh'
+assert_contains ".github/workflows/validate-site.yml" 'run: bundle exec jekyll build'
 
 thumb_count=$(find img/papers/thumbs -type f -name '*.avif' | wc -l | tr -d ' ')
 if [[ "$thumb_count" != "16" ]]; then
