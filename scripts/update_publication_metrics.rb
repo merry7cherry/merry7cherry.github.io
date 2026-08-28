@@ -19,10 +19,12 @@ def normalize_title(title)
   title.to_s.downcase.gsub(/[^a-z0-9]+/, " ").strip
 end
 
-def request_json(uri, request, attempts: 3)
+def request_json(uri, request, attempts: 5)
   tries = 0
+  response = nil
   begin
     tries += 1
+    response = nil
     http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = uri.scheme == "https"
     http.open_timeout = 15
@@ -40,7 +42,10 @@ def request_json(uri, request, attempts: 3)
   rescue MetricsError, Net::OpenTimeout, Net::ReadTimeout, SocketError, Errno::ECONNRESET => error
     raise error if tries >= attempts
 
-    sleep(2**tries)
+    retry_after = response&.[]("Retry-After").to_s.to_i
+    delay = retry_after.positive? ? [retry_after, 60].min : [2**tries, 30].min
+    warn "#{error.message}; retrying in #{delay}s (attempt #{tries + 1}/#{attempts})"
+    sleep(delay)
     retry
   end
 end
