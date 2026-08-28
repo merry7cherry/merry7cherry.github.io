@@ -1,0 +1,18 @@
+{% assign publication_metrics_id = include.paper.id %}
+{% assign publication_metrics = site.data.publication_metrics.publications[publication_metrics_id] %}
+{% if publication_metrics.citations or publication_metrics.stars %}
+<span class="publication-metrics" aria-label="Publication metrics for {{ include.paper.title | escape }}">
+	{% if publication_metrics.citations %}
+	<a class="publication-metric publication-metric-citations" href="{{ publication_metrics.citations.url }}" target="_blank" rel="noopener noreferrer" title="Semantic Scholar citations, updated {{ publication_metrics.citations.updated_at }}" aria-label="{{ publication_metrics.citations.count }} Semantic Scholar citation{% unless publication_metrics.citations.count == 1 %}s{% endunless %} for {{ include.paper.title | escape }}">
+		<i class="ai ai-semantic-scholar" aria-hidden="true"></i>
+		<span>{{ publication_metrics.citations.count }} Citation{% unless publication_metrics.citations.count == 1 %}s{% endunless %}</span>
+	</a>
+	{% endif %}
+	{% if publication_metrics.stars %}
+	<a class="publication-metric publication-metric-stars" href="{{ publication_metrics.stars.url }}" target="_blank" rel="noopener noreferrer" title="GitHub stars, updated {{ publication_metrics.stars.updated_at }}" aria-label="{{ publication_metrics.stars.count }} GitHub star{% unless publication_metrics.stars.count == 1 %}s{% endunless %} for {{ include.paper.title | escape }}">
+		<i class="fas fa-star" aria-hidden="true"></i>
+		<span>{{ publication_metrics.stars.count }} Star{% unless publication_metrics.stars.count == 1 %}s{% endunless %}</span>
+	</a>
+	{% endif %}
+</span>
+{% endif %}

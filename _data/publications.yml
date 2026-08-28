@@ -15,6 +15,8 @@
     selected: arXiv
     archive: arXiv 2026
   paper_url: https://arxiv.org/abs/2605.17244
+  metrics:
+    semantic_scholar_id: 7359c810d2fff2920909bd421fec32d1f3330d33
   image:
     thumb: /img/papers/thumbs/drift-flow-matching-480.avif
     thumb_2x: /img/papers/thumbs/drift-flow-matching-960.avif
@@ -36,6 +38,8 @@
     selected: arXiv
     archive: arXiv 2026
   paper_url: https://arxiv.org/abs/2603.15689
+  metrics:
+    semantic_scholar_id: 888144fe9404ae340ad0728ca6fd960769254ba0
   image:
     thumb: /img/papers/thumbs/transition-flow-matching-480.avif
     thumb_2x: /img/papers/thumbs/transition-flow-matching-960.avif
@@ -63,6 +67,9 @@
     url: https://cvpr.thecvf.com/
   paper_url: https://arxiv.org/abs/2511.17583
   code_url: https://github.com/merry7cherry/S-VFM
+  metrics:
+    semantic_scholar_id: d3faa85f1bea7612e372dae2108f5c91eb80acd3
+    github_repo: merry7cherry/S-VFM
   image:
     thumb: /img/papers/thumbs/learning-straight-flows-480.avif
     thumb_2x: /img/papers/thumbs/learning-straight-flows-960.avif
@@ -90,6 +97,9 @@
     url: https://aaai.org/conference/aaai/aaai-26/
   paper_url: https://arxiv.org/abs/2503.07938
   code_url: https://github.com/merry7cherry/CAD-VAE
+  metrics:
+    semantic_scholar_id: 4cb89a30021d2b6d93721a33c8bc25fe0269b569
+    github_repo: merry7cherry/CAD-VAE
   image:
     thumb: /img/papers/thumbs/cad-vae-480.avif
     thumb_2x: /img/papers/thumbs/cad-vae-960.avif
@@ -116,6 +126,9 @@
     archive: arXiv 2025
   paper_url: https://arxiv.org/abs/2509.23122
   code_url: https://github.com/merry7cherry/Stochastic-Interpolants-via-Conditional-Dependent-Coupling
+  metrics:
+    semantic_scholar_id: 87923b7e5f76f2871ad90720e1c532a98aba2050
+    github_repo: merry7cherry/Stochastic-Interpolants-via-Conditional-Dependent-Coupling
   image:
     thumb: /img/papers/thumbs/stochastic-interpolants-480.avif
     thumb_2x: /img/papers/thumbs/stochastic-interpolants-960.avif
@@ -150,6 +163,8 @@
     archive: ACL 2026
     url: https://2026.aclweb.org/
   paper_url: https://arxiv.org/abs/2603.14228
+  metrics:
+    semantic_scholar_id: 6a34fbd59a656b2b3bb2a35cfa9b4bb235046ce1
   image:
     thumb: /img/papers/thumbs/not-all-directions-480.avif
     thumb_2x: /img/papers/thumbs/not-all-directions-960.avif
@@ -214,6 +229,9 @@
     url: https://wacv.thecvf.com/virtual/2026
   paper_url: https://arxiv.org/abs/2511.12410
   code_url: https://github.com/xixiaouab/PROBE
+  metrics:
+    semantic_scholar_id: adf48141cfb90dcd436f66dcc30cbcc18f6ac6f4
+    github_repo: xixiaouab/PROBE
   image:
     thumb: /img/papers/thumbs/probe-480.avif
     thumb_2x: /img/papers/thumbs/probe-960.avif
@@ -242,6 +260,8 @@
     archive: ICASSP 2026
     url: https://2026.ieeeicassp.org/
   paper_url: https://arxiv.org/abs/2510.15962
+  metrics:
+    semantic_scholar_id: b9e5e25d7d747461df05d42cab54996739077042
 
 - id: cibr
   title: "CIBR: Cross-Modal Information Bottleneck Regularization for Robust CLIP Generalization"
@@ -261,6 +281,8 @@
     archive: ICANN 2025
     url: https://link.springer.com/chapter/10.1007/978-3-032-04558-4_20
   paper_url: https://link.springer.com/chapter/10.1007/978-3-032-04558-4_20
+  metrics:
+    semantic_scholar_id: 602460a755dc5240f2064c1afcb3bc3f19b01d50
 
 - id: beyond-editing-pairs
   title: "Beyond Editing Pairs: Fine-Grained Instructional Image Editing via Multi-Scale Learnable Regions"
@@ -275,6 +297,8 @@
   venue:
     archive: arXiv 2025
   paper_url: https://arxiv.org/abs/2505.19352
+  metrics:
+    semantic_scholar_id: dd72c8c5e6a916d20713c46235dcbab47cb7eaeb
 
 - id: scs-yolo
   title: "SCS-YOLO: a defect detection model for cigarette appearance"
@@ -291,6 +315,8 @@
     archive: Electronics 2024
     url: https://www.mdpi.com/2079-9292/13/18/3761
   paper_url: https://www.mdpi.com/2079-9292/13/18/3761
+  metrics:
+    semantic_scholar_id: 94f4ddd95d7c11b031fd59f0caea120a508e6c8e
 
 - id: dense-object-detection
   title: "Dense Object Detection Based on De-Homogenized Queries"
@@ -307,3 +333,5 @@
     archive: Electronics 2024
     url: https://www.mdpi.com/2079-9292/13/12/2312
   paper_url: https://www.mdpi.com/2079-9292/13/12/2312
+  metrics:
+    semantic_scholar_id: b0dd5ee22c6d1076e785e82f1868e34d12a0175b

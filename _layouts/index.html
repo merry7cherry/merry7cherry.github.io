@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css">
-	<link rel="stylesheet" href="{{ '/static/styles.css?v=20260827-2' | relative_url }}">
+	<link rel="stylesheet" href="{{ '/static/styles.css?v=20260827-3' | relative_url }}">
 	<link href="{{ '/files/jumbotron.css' | relative_url }}" rel="stylesheet">
 	<link rel="icon" href="{{ '/files/favicon.ico' | relative_url }}" type="image/x-icon">
 	<script src="{{ '/js/main.js?v=20260827-2' | relative_url }}"></script>
@@ -270,6 +270,7 @@
 			Selected Publications
 			<small><small> (<i>see full list <a href="https://scholar.google.com/citations?user=dvkqKZsAAAAJ&hl=en" target="_blank">here</a>; * indicates equal contribution</i>)</small></small><br>
 		</h3>
+		<p class="publication-metrics-note">Citation counts are from Semantic Scholar; Stars are from GitHub. Last checked {{ site.data.publication_metrics.checked_at | date: "%B %-d, %Y" }}.</p>
 
 		<div id="pubs"></div>
 		<div id="pubs_selected" class="selected-publications">
@@ -299,6 +300,7 @@
 						<small><a href="{{ paper.paper_url }}" target="_blank" aria-label="Paper: {{ paper.title | escape }}">[Paper]</a></small>
 						{% if paper.code_url %}<small><a href="{{ paper.code_url }}" target="_blank" aria-label="Code: {{ paper.title | escape }}">[Code]</a></small>{% endif %}
 					</div>
+					{% include publication-metrics.html paper=paper %}
 					<div class="pub-summary">{{ paper.summary }}</div>
 				</div>
 			</div>

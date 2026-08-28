@@ -1,0 +1,78 @@
+checked_at: "2026-08-27"
+publications:
+  drift-flow-matching:
+    citations:
+      count: 0
+      url: https://www.semanticscholar.org/paper/7359c810d2fff2920909bd421fec32d1f3330d33
+      updated_at: "2026-08-27"
+  transition-flow-matching:
+    citations:
+      count: 1
+      url: https://www.semanticscholar.org/paper/888144fe9404ae340ad0728ca6fd960769254ba0
+      updated_at: "2026-08-27"
+  learning-straight-flows:
+    citations:
+      count: 8
+      url: https://www.semanticscholar.org/paper/d3faa85f1bea7612e372dae2108f5c91eb80acd3
+      updated_at: "2026-08-27"
+    stars:
+      count: 6
+      url: https://github.com/merry7cherry/S-VFM
+      updated_at: "2026-08-27"
+  cad-vae:
+    citations:
+      count: 10
+      url: https://www.semanticscholar.org/paper/4cb89a30021d2b6d93721a33c8bc25fe0269b569
+      updated_at: "2026-08-27"
+    stars:
+      count: 2
+      url: https://github.com/merry7cherry/CAD-VAE
+      updated_at: "2026-08-27"
+  stochastic-interpolants:
+    citations:
+      count: 6
+      url: https://www.semanticscholar.org/paper/87923b7e5f76f2871ad90720e1c532a98aba2050
+      updated_at: "2026-08-27"
+    stars:
+      count: 1
+      url: https://github.com/merry7cherry/Stochastic-Interpolants-via-Conditional-Dependent-Coupling
+      updated_at: "2026-08-27"
+  not-all-directions:
+    citations:
+      count: 11
+      url: https://www.semanticscholar.org/paper/6a34fbd59a656b2b3bb2a35cfa9b4bb235046ce1
+      updated_at: "2026-08-27"
+  probe:
+    citations:
+      count: 8
+      url: https://www.semanticscholar.org/paper/adf48141cfb90dcd436f66dcc30cbcc18f6ac6f4
+      updated_at: "2026-08-27"
+    stars:
+      count: 1
+      url: https://github.com/xixiaouab/PROBE
+      updated_at: "2026-08-27"
+  ctr-lora:
+    citations:
+      count: 6
+      url: https://www.semanticscholar.org/paper/b9e5e25d7d747461df05d42cab54996739077042
+      updated_at: "2026-08-27"
+  cibr:
+    citations:
+      count: 8
+      url: https://www.semanticscholar.org/paper/602460a755dc5240f2064c1afcb3bc3f19b01d50
+      updated_at: "2026-08-27"
+  beyond-editing-pairs:
+    citations:
+      count: 7
+      url: https://www.semanticscholar.org/paper/dd72c8c5e6a916d20713c46235dcbab47cb7eaeb
+      updated_at: "2026-08-27"
+  scs-yolo:
+    citations:
+      count: 10
+      url: https://www.semanticscholar.org/paper/94f4ddd95d7c11b031fd59f0caea120a508e6c8e
+      updated_at: "2026-08-27"
+  dense-object-detection:
+    citations:
+      count: 2
+      url: https://www.semanticscholar.org/paper/b0dd5ee22c6d1076e785e82f1868e34d12a0175b
+      updated_at: "2026-08-27"

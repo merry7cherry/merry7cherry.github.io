@@ -11,7 +11,7 @@ layout: null
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css">
-	<link rel="stylesheet" href="{{ '/static/styles.css?v=20260827-2' | relative_url }}">
+	<link rel="stylesheet" href="{{ '/static/styles.css?v=20260827-3' | relative_url }}">
 	<link rel="icon" href="{{ '/files/favicon.ico' | relative_url }}" type="image/x-icon">
 	<script src="{{ '/js/main.js?v=20260827-2' | relative_url }}"></script>
 </head>
@@ -65,6 +65,7 @@ layout: null
 			<div class="container">
 				<h3 id="OtherPublications">All Publications</h3>
 				<hr>
+				<p class="publication-metrics-note">Citation counts are from Semantic Scholar; Stars are from GitHub. Last checked {{ site.data.publication_metrics.checked_at | date: "%B %-d, %Y" }}.</p>
 				{% assign publication_years = site.data.publications | map: "year" | uniq | sort | reverse %}
 				{% for year in publication_years %}
 				<div class="publication-category">{{ year }}</div>
@@ -81,6 +82,7 @@ layout: null
 								<a class="pub-link" href="{{ paper.paper_url }}" target="_blank" aria-label="Paper: {{ paper.title | escape }}">Paper</a>
 								{% if paper.code_url %}<a class="pub-link" href="{{ paper.code_url }}" target="_blank" aria-label="Code: {{ paper.title | escape }}">Code</a>{% endif %}
 							</span>
+							{% include publication-metrics.html paper=paper %}
 						</div>
 					</li>
 					{% endfor %}

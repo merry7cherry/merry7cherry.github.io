@@ -12,17 +12,40 @@ this repository.
 - Homepage profile, news, experience, education, awards, and services live in
   `_layouts/index.html`.
 - `_data/publications.yml` is the single source for both selected publications
-  and the complete publication archive.
+  and the complete publication archive. It also stores reviewed Semantic
+  Scholar paper IDs and GitHub repository names for publication metrics.
+- `_data/publication_metrics.yml` stores generated citation and Star counts;
+  `scripts/update_publication_metrics.rb` validates and refreshes that data.
 - Publication cards use optimized AVIF files under `img/papers/thumbs/`; their
   full-resolution PNG files are loaded only when the lightbox opens.
-- Citation counts and GitHub stars are intentionally not displayed because
-  those values are volatile and were not backed by a reliable update pipeline.
+- Citation counts are sourced from Semantic Scholar and Star counts from the
+  GitHub repository API. The homepage and publication archive render the same
+  checked data and show its freshness date.
 
 ## Local Checks
 
 ```bash
 bash tests/site_migration_check.sh
 ```
+
+The metrics data can be validated without network access:
+
+```bash
+ruby scripts/update_publication_metrics.rb --check
+```
+
+## Publication Metrics Refresh
+
+The weekly `Update publication metrics` workflow runs from the default branch,
+checks out `codex/development`, refreshes the metrics, runs the site checks, and
+opens or updates a PR into `codex/development`. It never writes directly to the
+production `master` branch.
+
+Add the Semantic Scholar key as the repository Actions secret
+`SEMANTIC_SCHOLAR_API_KEY`. GitHub Stars use the workflow's built-in
+`GITHUB_TOKEN`; no separate GitHub API key is needed. Until the Semantic Scholar
+secret is configured, scheduled runs exit successfully with a warning and do
+not alter the checked-in metrics.
 
 The checked-in `Gemfile`/`Gemfile.lock` mirror the template's GitHub Pages
 tooling. On machines with Ruby 2.7 or newer, use:

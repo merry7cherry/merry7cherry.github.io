@@ -19,22 +19,26 @@ assert_absent() {
 assert_contains() {
   local file=$1
   local needle=$2
-  grep -Fq "$needle" "$file" || fail "missing expected content in $file: $needle"
+  grep -Fq -- "$needle" "$file" || fail "missing expected content in $file: $needle"
 }
 
 assert_not_contains() {
   local file=$1
   local needle=$2
-  if grep -Fq "$needle" "$file"; then
+  if grep -Fq -- "$needle" "$file"; then
     fail "forbidden content still present in $file: $needle"
   fi
 }
 
 required_files=(
   "_config.yml"
+  ".github/workflows/update-publication-metrics.yml"
   "_data/publications.yml"
+  "_data/publication_metrics.yml"
+  "_includes/publication-metrics.html"
   "_layouts/index.html"
   "other-publications.html"
+  "scripts/update_publication_metrics.rb"
   "static/styles.css"
   "js/main.js"
   "img/ChenruiMa.jpeg"
@@ -77,8 +81,10 @@ assert_contains "_layouts/index.html" 'loading="lazy"'
 assert_contains "_layouts/index.html" 'decoding="async"'
 assert_contains "_layouts/index.html" 'srcset="{{ paper.image.thumb | relative_url }} 480w, {{ paper.image.thumb_2x | relative_url }} 960w"'
 assert_contains "_layouts/index.html" 'aria-label="Paper: {{ paper.title | escape }}"'
-assert_contains "_layouts/index.html" 'static/styles.css?v=20260827-2'
+assert_contains "_layouts/index.html" 'static/styles.css?v=20260827-3'
 assert_contains "_layouts/index.html" 'js/main.js?v=20260827-2'
+assert_contains "_layouts/index.html" 'include publication-metrics.html paper=paper'
+assert_contains "_layouts/index.html" 'Citation counts are from Semantic Scholar; Stars are from GitHub.'
 assert_contains "_layouts/index.html" 'Not All Directions Matter: Towards Structured and Task-Aware Low-Rank Model Adaptation'
 assert_contains "_layouts/index.html" 'EMNLP 2026 Findings'
 assert_contains "_layouts/index.html" '08/2026 - Present'
@@ -99,8 +105,9 @@ assert_contains "other-publications.html" 'site.data.publications'
 assert_contains "other-publications.html" 'sort: "sort_key" | reverse'
 assert_contains "other-publications.html" 'aria-current="page"'
 assert_contains "other-publications.html" '<main id="main-content" tabindex="-1">'
-assert_contains "other-publications.html" 'static/styles.css?v=20260827-2'
+assert_contains "other-publications.html" 'static/styles.css?v=20260827-3'
 assert_contains "other-publications.html" 'js/main.js?v=20260827-2'
+assert_contains "other-publications.html" 'include publication-metrics.html paper=paper'
 assert_not_contains "other-publications.html" 'Additional papers grouped by year'
 assert_not_contains "other-publications.html" '<center>'
 
@@ -123,6 +130,9 @@ assert_contains "static/styles.css" '.nav-dropdown-toggle'
 assert_contains "static/styles.css" '.pub-title'
 assert_contains "static/styles.css" '.pub-summary'
 assert_contains "static/styles.css" '.publication-lightbox[hidden]'
+assert_contains "static/styles.css" '.publication-metrics-note'
+assert_contains "static/styles.css" '.publication-metric-citations'
+assert_contains "static/styles.css" '.publication-metric-stars'
 assert_contains "static/styles.css" '@media (prefers-reduced-motion: reduce)'
 assert_not_contains "static/styles.css" 'scroll-padding-top:'
 
@@ -173,6 +183,14 @@ papers.each do |paper|
   end
 end
 
+semantic_sources = papers.count { |paper| paper.dig("metrics", "semantic_scholar_id") }
+github_sources = papers.count { |paper| paper.dig("metrics", "github_repo") }
+raise "expected 12 locked Semantic Scholar records, found #{semantic_sources}" unless semantic_sources == 12
+raise "expected 4 GitHub Star sources, found #{github_sources}" unless github_sources == 4
+
+dhsm = papers.find { |paper| paper["id"] == "dhsm" }
+raise "DHSM must remain unmatched until Semantic Scholar indexes it" if dhsm && dhsm.dig("metrics", "semantic_scholar_id")
+
 html = File.read("_layouts/index.html")
 experience = html[/<div class="cv-panel" id="Experience">(.*?)<div class="cv-panel" id="Education">/m, 1]
 raise "experience section not found" unless experience
@@ -185,6 +203,17 @@ expected_dates = [
 ]
 raise "current experience entries must precede completed roles: #{experience_dates}" unless experience_dates == expected_dates
 RUBY
+
+ruby -c scripts/update_publication_metrics.rb >/dev/null || failures=$((failures + 1))
+ruby scripts/update_publication_metrics.rb --check || failures=$((failures + 1))
+
+assert_contains ".github/workflows/update-publication-metrics.yml" 'ref: codex/development'
+assert_contains ".github/workflows/update-publication-metrics.yml" 'SEMANTIC_SCHOLAR_API_KEY'
+assert_contains ".github/workflows/update-publication-metrics.yml" 'GITHUB_TOKEN: ${{ github.token }}'
+assert_contains ".github/workflows/update-publication-metrics.yml" 'ruby scripts/update_publication_metrics.rb --require-semantic-scholar-key'
+assert_contains ".github/workflows/update-publication-metrics.yml" '--base codex/development'
+assert_contains ".github/workflows/update-publication-metrics.yml" 'git push --force origin HEAD:codex/metrics-refresh'
+assert_not_contains ".github/workflows/update-publication-metrics.yml" '--base master'
 
 thumb_count=$(find img/papers/thumbs -type f -name '*.avif' | wc -l | tr -d ' ')
 if [[ "$thumb_count" != "16" ]]; then

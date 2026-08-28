@@ -1,0 +1,86 @@
+name: Update publication metrics
+
+on:
+  schedule:
+    - cron: "17 13 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: publication-metrics-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check API key availability
+        id: semantic-key
+        env:
+          SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
+        run: |
+          if [ -n "$SEMANTIC_SCHOLAR_API_KEY" ]; then
+            echo "available=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "available=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::Add the SEMANTIC_SCHOLAR_API_KEY repository secret to enable scheduled refreshes."
+          fi
+
+      - name: Check out development
+        if: steps.semantic-key.outputs.available == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: codex/development
+          fetch-depth: 0
+
+      - name: Set up Ruby
+        if: steps.semantic-key.outputs.available == 'true'
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+
+      - name: Refresh citation and Star counts
+        if: steps.semantic-key.outputs.available == 'true'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
+        run: ruby scripts/update_publication_metrics.rb --require-semantic-scholar-key
+
+      - name: Run site checks
+        if: steps.semantic-key.outputs.available == 'true'
+        run: bash tests/site_migration_check.sh
+
+      - name: Commit refresh branch
+        if: steps.semantic-key.outputs.available == 'true'
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B codex/metrics-refresh
+          git add _data/publication_metrics.yml
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git commit -m "Refresh publication metrics"
+          git push --force origin HEAD:codex/metrics-refresh
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Open or update development pull request
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          existing_pr=$(gh pr list --base codex/development --head codex/metrics-refresh --state open --json number --jq '.[0].number')
+          if [ -z "$existing_pr" ]; then
+            gh pr create \
+              --base codex/development \
+              --head codex/metrics-refresh \
+              --title "Refresh publication metrics" \
+              --body "Weekly Semantic Scholar citation and GitHub Star refresh. The generated data passed the repository site checks."
+          else
+            echo "Updated existing metrics PR #$existing_pr"
+          fi
