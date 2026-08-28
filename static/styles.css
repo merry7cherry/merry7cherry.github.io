@@ -272,6 +272,16 @@ hr {
   margin: 0 0 6px;
 }
 
+.name-chinese {
+  color: var(--muted);
+  display: inline-block;
+  font-size: 0.48em;
+  font-weight: 700;
+  margin-left: 0.42rem;
+  vertical-align: 0.18em;
+  white-space: nowrap;
+}
+
 .intro-identity {
   align-items: baseline;
   color: var(--muted);
@@ -480,6 +490,10 @@ h3[id] small {
   font-weight: 750;
   line-height: 1.4;
   margin-top: 2px;
+}
+
+.cv-org a {
+  color: inherit;
 }
 
 .cv-meta {
