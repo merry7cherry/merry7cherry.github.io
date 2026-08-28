@@ -238,6 +238,9 @@ RUBY
 
 ruby -c scripts/update_publication_metrics.rb >/dev/null || failures=$((failures + 1))
 ruby scripts/update_publication_metrics.rb --check || failures=$((failures + 1))
+assert_contains "scripts/update_publication_metrics.rb" 'def request_json(uri, request, attempts: 5)'
+assert_contains "scripts/update_publication_metrics.rb" 'response&.[]("Retry-After").to_s.to_i'
+assert_contains "scripts/update_publication_metrics.rb" 'retrying in #{delay}s'
 
 assert_contains ".github/workflows/update-publication-metrics.yml" 'ref: codex/development'
 assert_contains ".github/workflows/update-publication-metrics.yml" 'SEMANTIC_SCHOLAR_API_KEY'
