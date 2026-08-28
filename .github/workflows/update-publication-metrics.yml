@@ -31,7 +31,7 @@ jobs:
 
       - name: Check out development
         if: steps.semantic-key.outputs.available == 'true'
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: codex/development
           fetch-depth: 0
@@ -66,7 +66,10 @@ jobs:
             exit 0
           fi
           git commit -m "Refresh publication metrics"
-          git push --force origin HEAD:codex/metrics-refresh
+          if git ls-remote --exit-code --heads origin codex/metrics-refresh >/dev/null; then
+            git fetch origin codex/metrics-refresh:refs/remotes/origin/codex/metrics-refresh
+          fi
+          git push --force-with-lease origin HEAD:codex/metrics-refresh
           echo "changed=true" >> "$GITHUB_OUTPUT"
 
       - name: Open or update development pull request

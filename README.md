@@ -11,6 +11,9 @@ this repository.
 
 - Homepage profile, news, experience, education, awards, and services live in
   `_layouts/index.html`.
+- Shared page metadata, navigation, footer, and script dependencies live in
+  `_includes/site-head.html`, `_includes/site-navbar.html`,
+  `_includes/site-footer.html`, and `_includes/site-scripts.html`.
 - `_data/publications.yml` is the single source for both selected publications
   and the complete publication archive. It also stores reviewed Semantic
   Scholar paper IDs and GitHub repository names for publication metrics.
@@ -20,7 +23,7 @@ this repository.
   full-resolution PNG files are loaded only when the lightbox opens.
 - Citation counts are sourced from Semantic Scholar and Star counts from the
   GitHub repository API. The homepage and publication archive render the same
-  checked data and show its freshness date.
+  checked data and show its UTC freshness date.
 
 ## Local Checks
 
@@ -40,6 +43,10 @@ The weekly `Update publication metrics` workflow runs from the default branch,
 checks out `codex/development`, refreshes the metrics, runs the site checks, and
 opens or updates a PR into `codex/development`. It never writes directly to the
 production `master` branch.
+
+The `Validate site` workflow runs the same repository checks on pull requests
+targeting `codex/development` or `master`, so review pages show an explicit
+validation result.
 
 Add the Semantic Scholar key as the repository Actions secret
 `SEMANTIC_SCHOLAR_API_KEY`. GitHub Stars use the workflow's built-in
