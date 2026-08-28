@@ -1,0 +1,29 @@
+name: Validate site
+
+on:
+  pull_request:
+    branches:
+      - codex/development
+      - master
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-site-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out pull request
+        uses: actions/checkout@v7
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+
+      - name: Run repository checks
+        run: bash tests/site_migration_check.sh

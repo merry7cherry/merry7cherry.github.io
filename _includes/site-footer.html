@@ -1,0 +1,22 @@
+	<footer class="container site-footer">
+		<hr>
+		{% if include.show_map %}
+		{% assign mapmyvisitors_token = site.mapmyvisitors_token | default: "" %}
+		{% if mapmyvisitors_token != "" %}
+		<div class="visitor-map-card">
+			<h5>Visitor Map</h5>
+			<div class="visitor-map-embed">
+				<script type="text/javascript" id="mapmyvisitors" src="https://mapmyvisitors.com/map.js?d={{ mapmyvisitors_token | uri_escape }}&cl=ffffff&w=a"></script>
+				<noscript>
+					<a class="visitor-map-link" href="https://mapmyvisitors.com/add" title="Visit tracker" target="_blank" rel="noopener noreferrer">
+						<img class="visitor-map-image" src="https://mapmyvisitors.com/map.png?d={{ mapmyvisitors_token | uri_escape }}&cl=ffffff" alt="Visitor map for Chenrui Ma's homepage" loading="lazy" referrerpolicy="no-referrer">
+					</a>
+				</noscript>
+			</div>
+		</div>
+		{% endif %}
+		{% endif %}
+
+		<p>&copy; Chenrui Ma 2026.{% if include.show_credit %} Website adapted from <a href="https://github.com/xixiaouab/xixiaouab.github.io" target="_blank">Xi Xiao's template</a>.{% endif %}</p>
+		{% if include.show_modified %}<p class="last-modified">Last modified: August 28, 2026.</p>{% endif %}
+	</footer>

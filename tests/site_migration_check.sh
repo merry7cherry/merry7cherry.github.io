@@ -33,9 +33,14 @@ assert_not_contains() {
 required_files=(
   "_config.yml"
   ".github/workflows/update-publication-metrics.yml"
+  ".github/workflows/validate-site.yml"
   "_data/publications.yml"
   "_data/publication_metrics.yml"
   "_includes/publication-metrics.html"
+  "_includes/site-footer.html"
+  "_includes/site-head.html"
+  "_includes/site-navbar.html"
+  "_includes/site-scripts.html"
   "_layouts/index.html"
   "other-publications.html"
   "scripts/update_publication_metrics.rb"
@@ -65,6 +70,12 @@ obsolete_files=(
   "METRICS_SETUP_GUIDE.md"
   "SHIELDS_IO_SOLUTION.md"
   "USAGE_GUIDE.md"
+  "files/jumbotron.css"
+  "img/logo/UVA.jpg"
+  "img/logo/UVA.webp"
+  "img/papers/beyond-editing-pairs.png"
+  "img/papers/cad-vae.jpg"
+  "img/papers/cibr.png"
 )
 for file in "${obsolete_files[@]}"; do
   assert_absent "$file"
@@ -72,21 +83,24 @@ done
 
 assert_contains "_layouts/index.html" 'class="skip-link"'
 assert_contains "_layouts/index.html" '<main id="main-content" tabindex="-1">'
-assert_contains "_layouts/index.html" '>Research</a>'
-assert_contains "_layouts/index.html" '>News</a>'
-assert_contains "_layouts/index.html" 'class="nav-dropdown-toggle dropdown-toggle"'
+assert_contains "_layouts/index.html" 'include site-head.html page_title=site.title'
+assert_contains "_layouts/index.html" 'include site-navbar.html homepage=true'
+assert_contains "_layouts/index.html" 'include site-footer.html show_map=true show_credit=true show_modified=true'
+assert_contains "_layouts/index.html" 'include site-scripts.html'
 assert_contains "_layouts/index.html" 'site.data.publications'
 assert_contains "_layouts/index.html" 'data-full-src="{{ paper.image.full | relative_url }}"'
 assert_contains "_layouts/index.html" 'loading="lazy"'
 assert_contains "_layouts/index.html" 'decoding="async"'
 assert_contains "_layouts/index.html" 'srcset="{{ paper.image.thumb | relative_url }} 480w, {{ paper.image.thumb_2x | relative_url }} 960w"'
 assert_contains "_layouts/index.html" 'aria-label="Paper: {{ paper.title | escape }}"'
-assert_contains "_layouts/index.html" 'static/styles.css?v=20260827-3'
-assert_contains "_layouts/index.html" 'js/main.js?v=20260827-2'
 assert_contains "_layouts/index.html" 'include publication-metrics.html paper=paper'
 assert_contains "_layouts/index.html" 'Citation counts are from Semantic Scholar; Stars are from GitHub.'
+assert_contains "_layouts/index.html" 'Last checked {{ site.data.publication_metrics.checked_at | date: "%B %-d, %Y" }} (UTC).'
 assert_contains "_layouts/index.html" 'Not All Directions Matter: Towards Structured and Task-Aware Low-Rank Model Adaptation'
 assert_contains "_layouts/index.html" 'EMNLP 2026 Findings'
+assert_contains "_layouts/index.html" 'Central South University (中南大学)'
+assert_contains "_layouts/index.html" '<h3 id="Service">Professional Service</h3>'
+assert_contains "_layouts/index.html" 'class="legacy-anchor" id="Miscellanea"'
 assert_contains "_layouts/index.html" '08/2026 - Present'
 assert_contains "_layouts/index.html" '05/2025 - Present'
 assert_contains "_layouts/index.html" 'My research focuses on responsible and efficient generative modeling, trustworthy machine learning, and multimodal AI.'
@@ -103,13 +117,30 @@ assert_contains "other-publications.html" 'layout: null'
 assert_contains "other-publications.html" 'Complete publication list grouped by year.'
 assert_contains "other-publications.html" 'site.data.publications'
 assert_contains "other-publications.html" 'sort: "sort_key" | reverse'
-assert_contains "other-publications.html" 'aria-current="page"'
 assert_contains "other-publications.html" '<main id="main-content" tabindex="-1">'
-assert_contains "other-publications.html" 'static/styles.css?v=20260827-3'
-assert_contains "other-publications.html" 'js/main.js?v=20260827-2'
+assert_contains "other-publications.html" 'include site-head.html page_title="All Publications | Chenrui Ma"'
+assert_contains "other-publications.html" 'include site-navbar.html current="publications"'
+assert_contains "other-publications.html" 'include site-footer.html'
+assert_contains "other-publications.html" 'include site-scripts.html'
 assert_contains "other-publications.html" 'include publication-metrics.html paper=paper'
+assert_contains "other-publications.html" 'Last checked {{ site.data.publication_metrics.checked_at | date: "%B %-d, %Y" }} (UTC).'
 assert_not_contains "other-publications.html" 'Additional papers grouped by year'
 assert_not_contains "other-publications.html" '<center>'
+
+assert_contains "_includes/site-head.html" 'static/styles.css?v=20260828-1'
+assert_contains "_includes/site-head.html" 'js/main.js?v=20260827-2'
+assert_contains "_includes/site-navbar.html" 'navbar-expand-lg'
+assert_contains "_includes/site-navbar.html" '>Research</a>'
+assert_contains "_includes/site-navbar.html" '>News</a>'
+assert_contains "_includes/site-navbar.html" '>Experience</a>'
+assert_contains "_includes/site-navbar.html" '>Education</a>'
+assert_contains "_includes/site-navbar.html" '>Awards</a>'
+assert_contains "_includes/site-navbar.html" '>Service</a>'
+assert_contains "_includes/site-navbar.html" 'class="nav-dropdown-toggle dropdown-toggle"'
+assert_contains "_includes/site-navbar.html" 'aria-current="page"'
+assert_not_contains "_includes/site-navbar.html" '>CV</a>'
+assert_not_contains "_includes/site-navbar.html" 'id="cvMenu"'
+assert_contains "_includes/site-footer.html" 'Last modified: August 28, 2026.'
 
 assert_contains "js/main.js" 'thumbnail.getAttribute("data-full-src")'
 assert_contains "js/main.js" 'siteShell.setAttribute("inert", "")'
@@ -133,6 +164,7 @@ assert_contains "static/styles.css" '.publication-lightbox[hidden]'
 assert_contains "static/styles.css" '.publication-metrics-note'
 assert_contains "static/styles.css" '.publication-metric-citations'
 assert_contains "static/styles.css" '.publication-metric-stars'
+assert_contains "static/styles.css" '#Service,'
 assert_contains "static/styles.css" '@media (prefers-reduced-motion: reduce)'
 assert_not_contains "static/styles.css" 'scroll-padding-top:'
 
@@ -212,8 +244,14 @@ assert_contains ".github/workflows/update-publication-metrics.yml" 'SEMANTIC_SCH
 assert_contains ".github/workflows/update-publication-metrics.yml" 'GITHUB_TOKEN: ${{ github.token }}'
 assert_contains ".github/workflows/update-publication-metrics.yml" 'ruby scripts/update_publication_metrics.rb --require-semantic-scholar-key'
 assert_contains ".github/workflows/update-publication-metrics.yml" '--base codex/development'
-assert_contains ".github/workflows/update-publication-metrics.yml" 'git push --force origin HEAD:codex/metrics-refresh'
+assert_contains ".github/workflows/update-publication-metrics.yml" 'uses: actions/checkout@v7'
+assert_contains ".github/workflows/update-publication-metrics.yml" 'git push --force-with-lease origin HEAD:codex/metrics-refresh'
+assert_not_contains ".github/workflows/update-publication-metrics.yml" 'git push --force origin'
 assert_not_contains ".github/workflows/update-publication-metrics.yml" '--base master'
+
+assert_contains ".github/workflows/validate-site.yml" 'pull_request:'
+assert_contains ".github/workflows/validate-site.yml" 'uses: actions/checkout@v7'
+assert_contains ".github/workflows/validate-site.yml" 'run: bash tests/site_migration_check.sh'
 
 thumb_count=$(find img/papers/thumbs -type f -name '*.avif' | wc -l | tr -d ' ')
 if [[ "$thumb_count" != "16" ]]; then
