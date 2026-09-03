@@ -1047,11 +1047,41 @@ body.publication-lightbox-open {
   padding: 2px 0 2px 14px;
 }
 
-.service-list {
+.service-block {
+  display: grid;
+  gap: 14px;
+}
+
+.service-group {
   background: var(--accent-soft);
+  border: 1px solid var(--line);
   border-left: 4px solid var(--accent);
   border-radius: 8px;
   padding: 14px 18px;
+}
+
+.service-heading {
+  color: var(--primary-dark);
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+
+.service-subheading {
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.service-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.service-list li {
+  line-height: 1.55;
 }
 
 .visitor-map-card {
@@ -1068,7 +1098,20 @@ body.publication-lightbox-open {
 }
 
 .visitor-map-embed {
+  max-width: 100%;
   min-height: 120px;
+  overflow: hidden;
+}
+
+.visitor-map-embed .mapmyvisitors-map-control,
+.visitor-map-embed .mapmyvisitors-map-container,
+.visitor-map-embed .mapmyvisitors-visitors,
+.visitor-map-embed .mapmyvisitors-date,
+.visitor-map-embed .mapmyvisitors-map,
+.visitor-map-embed .jvectormap-container,
+.visitor-map-embed svg {
+  max-width: 100%;
+  width: 100% !important;
 }
 
 .visitor-map-link {

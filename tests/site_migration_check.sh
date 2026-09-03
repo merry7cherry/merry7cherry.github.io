@@ -98,14 +98,21 @@ assert_contains "_layouts/index.html" 'Citation counts are from Semantic Scholar
 assert_contains "_layouts/index.html" 'Last checked {{ site.data.publication_metrics.checked_at | date: "%B %-d, %Y" }} (UTC).'
 assert_contains "_layouts/index.html" 'Not All Directions Matter: Towards Structured and Task-Aware Low-Rank Model Adaptation'
 assert_contains "_layouts/index.html" 'EMNLP 2026 Findings'
+assert_contains "_layouts/index.html" 'I am co-organizing <a href="https://chenliu-1996.github.io/LVR-WACV2027/" target="_blank"><b>the 1st Latent Visual Reasoning (LVR) Workshop</b></a> at <b>WACV 2027</b>.'
 assert_contains "_layouts/index.html" 'Central South University (中南大学)'
 assert_contains "_layouts/index.html" '<span class="name-chinese" lang="zh-CN">马晨睿</span>'
 assert_not_contains "_layouts/index.html" '马陈瑞'
 assert_contains "_layouts/index.html" '<div class="cv-org"><a href="https://www.virginia.edu/" target="_blank">University of Virginia</a></div>'
 assert_contains "_layouts/index.html" '<div class="cv-org"><a href="https://uci.edu/" target="_blank">University of California, Irvine</a></div>'
 assert_contains "_layouts/index.html" '<div class="cv-org"><a href="https://www.usnews.com/education/best-global-universities/central-south-university-501467" target="_blank">Central South University (中南大学)</a></div>'
-assert_contains "_layouts/index.html" '<h3 id="Service">Professional Service</h3>'
+assert_contains "_layouts/index.html" '<h3 id="Service">Service &amp; Activities</h3>'
 assert_contains "_layouts/index.html" 'class="legacy-anchor" id="Miscellanea"'
+assert_contains "_layouts/index.html" 'id="academic-service-heading">Academic Service</h4>'
+assert_contains "_layouts/index.html" 'id="professional-activities-heading">Professional Activities</h4>'
+assert_contains "_layouts/index.html" '<li><b>Organizer</b>, <a href="https://chenliu-1996.github.io/LVR-WACV2027/" target="_blank">the 1st Latent Visual Reasoning (LVR) Workshop</a>, <b>WACV 2027</b></li>'
+assert_contains "_layouts/index.html" 'id="teaching-service-heading">Teaching Service</h4>'
+assert_contains "_layouts/index.html" '<li><b>Teaching Assistant</b>, UCI EECS 298: Networked System, Spring 2026</li>'
+assert_not_contains "_layouts/index.html" '<div class="cv-role">Teaching Assistant</div>'
 assert_contains "_layouts/index.html" '08/2026 - Present'
 assert_contains "_layouts/index.html" '05/2025 - Present'
 assert_contains "_layouts/index.html" 'My research focuses on responsible and efficient generative modeling, trustworthy machine learning, and multimodal AI.'
@@ -132,7 +139,7 @@ assert_contains "other-publications.html" 'Last checked {{ site.data.publication
 assert_not_contains "other-publications.html" 'Additional papers grouped by year'
 assert_not_contains "other-publications.html" '<center>'
 
-assert_contains "_includes/site-head.html" 'static/styles.css?v=20260828-2'
+assert_contains "_includes/site-head.html" 'static/styles.css?v=20260903-1'
 assert_contains "_includes/site-head.html" 'js/main.js?v=20260827-2'
 assert_contains "_includes/site-navbar.html" 'navbar-expand-lg'
 assert_contains "_includes/site-navbar.html" '>Research</a>'
@@ -145,7 +152,7 @@ assert_contains "_includes/site-navbar.html" 'class="nav-dropdown-toggle dropdow
 assert_contains "_includes/site-navbar.html" 'aria-current="page"'
 assert_not_contains "_includes/site-navbar.html" '>CV</a>'
 assert_not_contains "_includes/site-navbar.html" 'id="cvMenu"'
-assert_contains "_includes/site-footer.html" 'Last modified: August 28, 2026.'
+assert_contains "_includes/site-footer.html" 'Last modified: September 3, 2026.'
 
 ruby <<'RUBY' || failures=$((failures + 1))
 navbar = File.read("_includes/site-navbar.html")
@@ -154,6 +161,16 @@ positions = expected.map do |label|
   navbar.index(">#{label}</a>") || raise("missing navigation item: #{label}")
 end
 raise "navigation order does not match homepage section order" unless positions == positions.sort
+RUBY
+
+ruby <<'RUBY' || failures=$((failures + 1))
+homepage = File.read("_layouts/index.html")
+workshop_url = "https://chenliu-1996.github.io/LVR-WACV2027/"
+raise "workshop link should appear once in News and once in Professional Activities" unless homepage.scan(workshop_url).length == 2
+
+ta_entry = "<li><b>Teaching Assistant</b>, UCI EECS 298: Networked System, Spring 2026</li>"
+raise "teaching assistant entry should appear exactly once" unless homepage.scan(ta_entry).length == 1
+raise "teaching assistant entry must live under Service" unless homepage.index(ta_entry) > homepage.index('<h3 id="Service">')
 RUBY
 
 assert_contains "js/main.js" 'thumbnail.getAttribute("data-full-src")'
@@ -180,6 +197,11 @@ assert_contains "static/styles.css" '.publication-metrics-note'
 assert_contains "static/styles.css" '.publication-metric-citations'
 assert_contains "static/styles.css" '.publication-metric-stars'
 assert_contains "static/styles.css" '#Service,'
+assert_contains "static/styles.css" '.service-block'
+assert_contains "static/styles.css" '.service-group'
+assert_contains "static/styles.css" '.service-heading'
+assert_contains "static/styles.css" '.service-subheading'
+assert_contains "static/styles.css" '.visitor-map-embed .mapmyvisitors-map-control'
 assert_contains "static/styles.css" '@media (prefers-reduced-motion: reduce)'
 assert_not_contains "static/styles.css" 'scroll-padding-top:'
 
@@ -245,7 +267,6 @@ experience_dates = experience.scan(/class="cv-entry-date">([^<]+)</).flatten
 expected_dates = [
   "08/2026 - Present",
   "05/2025 - Present",
-  "01/2026 - 03/2026",
   "09/2024 - 06/2026",
 ]
 raise "current experience entries must precede completed roles: #{experience_dates}" unless experience_dates == expected_dates
