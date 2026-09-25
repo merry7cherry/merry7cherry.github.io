@@ -84,7 +84,8 @@ labels use dark red, while one-sentence summaries use the primary navy color.
 This color treatment was approved for GitHub release on September 24, 2026.
 
 Research cards are Efficient Generative Modeling, Trustworthy Machine Learning,
-and Multimodal AI. The generative modeling card includes TFM with an arXiv 2026
+and Multimodal AI. Each card shows its heading and paper links, without a
+separate descriptive sentence. The generative modeling card includes TFM with an arXiv 2026
 label alongside the two NeurIPS papers and Learning Straight Flows.
 
 Homepage order is About, Research Interests, News, Selected Publications,
