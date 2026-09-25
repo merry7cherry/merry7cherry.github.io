@@ -1,7 +1,7 @@
 - id: drift-flow-matching
   title: "Drift Flow Matching"
   year: "2026"
-  sort_key: "2026-05"
+  sort_key: "2026-09-24"
   selected: true
   selected_order: 1
   authors:
@@ -12,8 +12,9 @@
     - name: Ferdinando Fioretto
     - name: Yanning Shen
   venue:
-    selected: arXiv
-    archive: arXiv 2026
+    selected: NeurIPS 2026 Main Track
+    archive: NeurIPS 2026
+    url: https://neurips.cc/Conferences/2026
   paper_url: https://arxiv.org/abs/2605.17244
   metrics:
     semantic_scholar_id: 7359c810d2fff2920909bd421fec32d1f3330d33
@@ -31,7 +32,7 @@
   year: "2026"
   sort_key: "2026-03-16"
   selected: true
-  selected_order: 2
+  selected_order: 7
   authors:
     - name: Chenrui Ma
   venue:
@@ -111,10 +112,10 @@
 
 - id: stochastic-interpolants
   title: "Stochastic Interpolants via Conditional Dependent Coupling"
-  year: "2025"
-  sort_key: "2025-09-27"
+  year: "2026"
+  sort_key: "2026-09-24"
   selected: true
-  selected_order: 5
+  selected_order: 2
   authors:
     - name: Chenrui Ma
     - name: Xi Xiao
@@ -122,8 +123,9 @@
     - name: Xiao Wang
     - name: Yanning Shen
   venue:
-    selected: arXiv
-    archive: arXiv 2025
+    selected: NeurIPS 2026 Main Track
+    archive: NeurIPS 2026
+    url: https://neurips.cc/Conferences/2026
   paper_url: https://arxiv.org/abs/2509.23122
   code_url: https://github.com/merry7cherry/Stochastic-Interpolants-via-Conditional-Dependent-Coupling
   metrics:
@@ -143,7 +145,7 @@
   year: "2026"
   sort_key: "2026-03-15"
   selected: true
-  selected_order: 6
+  selected_order: 5
   authors:
     - name: Xi Xiao
       equal: true
@@ -179,7 +181,7 @@
   year: "2026"
   sort_key: "2026-08"
   selected: true
-  selected_order: 7
+  selected_order: 6
   authors:
     - name: Xinru Jiang
       equal: true
@@ -197,7 +199,7 @@
     selected: EMNLP 2026 Findings
     archive: EMNLP 2026 Findings
     url: https://2026.emnlp.org/
-  paper_url: https://openreview.net/forum?id=zo1QpQ2KbF
+  paper_url: https://arxiv.org/abs/2608.30294
   image:
     thumb: /img/papers/thumbs/dhsm-480.avif
     thumb_2x: /img/papers/thumbs/dhsm-960.avif
@@ -211,8 +213,7 @@
   title: "Self-Supervised Visual Prompting for Cross-Domain Road Damage Detection"
   year: "2026"
   sort_key: "2025-11-16"
-  selected: true
-  selected_order: 8
+  selected: false
   authors:
     - name: Xi Xiao
     - name: Zhuxuanzi Wang

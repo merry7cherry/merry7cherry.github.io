@@ -68,3 +68,29 @@ Develop and review changes on `codex/development`. After the checks and browser
 review pass, fast-forward `master` to the reviewed commit and push `master` as
 the GitHub Pages source. Verify the completed Pages run and read the live page
 back before considering the release complete.
+
+## Current Content Decisions
+
+The September 24, 2026 update highlights Summer 2027 research internships in
+Generative AI. Selected Publications contains DFM, Stochastic Interpolants,
+Learning Straight Flows, CAD-VAE, StructLoRA, D-HSM, and TFM, in that order.
+DFM and Stochastic Interpolants were confirmed as NeurIPS 2026 Main Track
+posters by the September 24 decision emails. TFM remains labeled arXiv until
+a formal acceptance is confirmed. ICLR 2027 reviewer service was confirmed by
+the September 23 reviewer bidding email. All 13 publication records remain
+in the complete archive; PROBE is no longer selected.
+The NeurIPS news item uses "Two of our works". Selected publication venue
+labels use dark red, while one-sentence summaries use the primary navy color.
+This color treatment was approved for GitHub release on September 24, 2026.
+
+Research cards are Efficient Generative Modeling, Trustworthy Machine Learning,
+and Multimodal AI. The generative modeling card includes TFM with an arXiv 2026
+label alongside the two NeurIPS papers and Learning Straight Flows.
+
+Homepage order is About, Research Interests, News, Selected Publications,
+Experience/Education, Awards, and Service. Local source updates do not imply
+a production deployment; follow the release verification steps above.
+
+The linked `files/2026FALL_PHD_CV.pdf` was inspected during this update and
+still lists Stochastic Interpolants as submitted to ICLR. The PDF needs a
+separate CV-source update to match the website's confirmed publication status.

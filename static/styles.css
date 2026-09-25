@@ -336,13 +336,20 @@ hr {
 }
 
 .availability-note {
-  background: var(--primary-soft);
-  border-left: 4px solid var(--primary);
+  background: #fff5f5;
+  border-left: 4px solid #b42332;
   border-radius: 8px;
   color: var(--ink);
   line-height: 1.7;
   margin: 16px 0 12px;
   padding: 14px 18px;
+}
+
+.availability-headline {
+  color: #a51d2d;
+  display: block;
+  font-weight: 700;
+  margin-bottom: 4px;
 }
 
 h3[id] {
@@ -820,6 +827,18 @@ body.publication-lightbox-open {
   gap: 4px;
 }
 
+/* Venue labels carry the red emphasis; summaries use the site's navy. */
+.pub-meta > strong,
+.pub-meta > strong a {
+  color: #9f2d24;
+}
+
+.pub-meta > strong a:hover,
+.pub-meta > strong a:focus {
+  color: #7c211b;
+  text-decoration: underline;
+}
+
 .publication-metrics-note {
   color: var(--muted);
   font-size: 0.82rem;
@@ -880,7 +899,7 @@ body.publication-lightbox-open {
 }
 
 .pub-summary {
-  color: #9f2d24;
+  color: var(--primary);
   font-weight: 700;
   margin-top: 3px;
 }

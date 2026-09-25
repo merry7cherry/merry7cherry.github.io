@@ -115,7 +115,7 @@ assert_contains "_layouts/index.html" '<li><b>Teaching Assistant</b>, UCI EECS 2
 assert_not_contains "_layouts/index.html" '<div class="cv-role">Teaching Assistant</div>'
 assert_contains "_layouts/index.html" '08/2026 - Present'
 assert_contains "_layouts/index.html" '05/2025 - Present'
-assert_contains "_layouts/index.html" 'My research focuses on responsible and efficient generative modeling, trustworthy machine learning, and multimodal AI.'
+assert_contains "_layouts/index.html" 'My research focuses on efficient generative modeling, trustworthy machine learning, and multimodal AI.'
 assert_contains "_layouts/index.html" 'Previously, I completed my M.S. in Computer Science'
 assert_not_contains "_layouts/index.html" "I received my bachelor's degree from"
 assert_not_contains "_layouts/index.html" 'Toward Structured and Task-Aware Low-Rank Adaptation'
@@ -139,7 +139,7 @@ assert_contains "other-publications.html" 'Last checked {{ site.data.publication
 assert_not_contains "other-publications.html" 'Additional papers grouped by year'
 assert_not_contains "other-publications.html" '<center>'
 
-assert_contains "_includes/site-head.html" 'static/styles.css?v=20260903-1'
+assert_contains "_includes/site-head.html" 'static/styles.css?v=20260924-2'
 assert_contains "_includes/site-head.html" 'js/main.js?v=20260827-2'
 assert_contains "_includes/site-navbar.html" 'navbar-expand-lg'
 assert_contains "_includes/site-navbar.html" '>Research</a>'
@@ -152,11 +152,11 @@ assert_contains "_includes/site-navbar.html" 'class="nav-dropdown-toggle dropdow
 assert_contains "_includes/site-navbar.html" 'aria-current="page"'
 assert_not_contains "_includes/site-navbar.html" '>CV</a>'
 assert_not_contains "_includes/site-navbar.html" 'id="cvMenu"'
-assert_contains "_includes/site-footer.html" 'Last modified: September 3, 2026.'
+assert_contains "_includes/site-footer.html" 'Last modified: September 24, 2026.'
 
 ruby <<'RUBY' || failures=$((failures + 1))
 navbar = File.read("_includes/site-navbar.html")
-expected = %w[Experience Education Research News Publications Awards Service]
+expected = %w[Research News Publications Experience Education Awards Service]
 positions = expected.map do |label|
   navbar.index(">#{label}</a>") || raise("missing navigation item: #{label}")
 end
@@ -218,15 +218,24 @@ raise "publication ids must be unique" unless ids.uniq.length == ids.length
 selected = papers.select { |paper| paper["selected"] }.sort_by { |paper| paper.fetch("selected_order") }
 expected_selected = %w[
   drift-flow-matching
-  transition-flow-matching
+  stochastic-interpolants
   learning-straight-flows
   cad-vae
-  stochastic-interpolants
   not-all-directions
   dhsm
-  probe
+  transition-flow-matching
 ]
 raise "selected publication order changed: #{selected.map { |paper| paper["id"] }}" unless selected.map { |paper| paper["id"] } == expected_selected
+
+%w[drift-flow-matching stochastic-interpolants].each do |id|
+  paper = papers.find { |item| item["id"] == id }
+  raise "incorrect NeurIPS year for #{id}" unless paper["year"] == "2026"
+  raise "inconsistent NeurIPS venue for #{id}" unless paper.dig("venue", "selected") == "NeurIPS 2026 Main Track" && paper.dig("venue", "archive") == "NeurIPS 2026"
+end
+tfm = papers.find { |paper| paper["id"] == "transition-flow-matching" }
+raise "TFM must remain an arXiv selected paper pending acceptance" unless tfm["selected"] && tfm.dig("venue", "selected") == "arXiv"
+probe = papers.find { |paper| paper["id"] == "probe" }
+raise "PROBE must remain in the archive only" unless probe && !probe["selected"]
 
 not_all = papers.find { |paper| paper["id"] == "not-all-directions" }
 expected_acl_title = "Not All Directions Matter: Towards Structured and Task-Aware Low-Rank Model Adaptation"
