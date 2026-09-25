@@ -94,3 +94,10 @@ a production deployment; follow the release verification steps above.
 The linked `files/2026FALL_PHD_CV.pdf` was inspected during this update and
 still lists Stochastic Interpolants as submitted to ICLR. The PDF needs a
 separate CV-source update to match the website's confirmed publication status.
+
+The seven selected publication summaries were reviewed against their linked
+papers and revised to state the main mechanism and practical benefit in one
+sentence. They distinguish DFM's iterative refinement, TFM's direct transitions,
+S-VFM's trajectory straightness, and conditional coupling for pixel-space
+generation; the remaining summaries explain correlation modeling, cross-layer
+LoRA coordination, and textual memory with recent video frames.

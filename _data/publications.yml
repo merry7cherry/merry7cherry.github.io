@@ -25,7 +25,7 @@
     width: 960
     height: 360
     alt: Drift Flow Matching overview
-  summary: Bridging one-step drift models and iterative flow matching for adaptive quality-efficiency sampling
+  summary: Enables both one-step generation and multi-step refinement in drift models, trading inference compute for sample quality.
 
 - id: transition-flow-matching
   title: "Transition Flow Matching"
@@ -48,7 +48,7 @@
     width: 960
     height: 468
     alt: Transition Flow Matching overview
-  summary: Direct transition-flow learning for one-step or arbitrary-time generation
+  summary: Learns direct transitions along generative trajectories, enabling one-step and few-step sampling with flexible step sizes.
 
 - id: learning-straight-flows
   title: "Learning Straight Flows: Variational Flow Matching for Efficient Generation"
@@ -78,7 +78,7 @@
     width: 960
     height: 613
     alt: Learning Straight Flows overview
-  summary: Variational flow matching with latent generation overview and straightness loss for efficient one-step generation
+  summary: Uses variational latent conditioning and a straightness objective to learn straighter flows for efficient one-step generation.
 
 - id: cad-vae
   title: "CAD-VAE: Leveraging Correlation-Aware Latents for Comprehensive Fair Disentanglement"
@@ -108,7 +108,7 @@
     width: 960
     height: 531
     alt: CAD-VAE overview
-  summary: Correlation-aware latent modeling for comprehensive fair disentanglement
+  summary: Models correlations between target and sensitive attributes with a shared latent code for fair representation learning and image editing.
 
 - id: stochastic-interpolants
   title: "Stochastic Interpolants via Conditional Dependent Coupling"
@@ -138,7 +138,7 @@
     width: 960
     height: 580
     alt: Stochastic Interpolants overview
-  summary: A coarse-to-fine image generation framework parameterized by a single generative model
+  summary: Enables end-to-end, coarse-to-fine image generation in pixel space through conditional dependent coupling and a single shared model.
 
 - id: not-all-directions
   title: "Not All Directions Matter: Towards Structured and Task-Aware Low-Rank Model Adaptation"
@@ -174,7 +174,7 @@
     width: 960
     height: 476
     alt: Not All Directions Matter overview
-  summary: Structured task-aware adaptation that filters task-irrelevant update directions without adding inference cost
+  summary: Filters task-irrelevant LoRA directions and coordinates updates across layers, with no additional inference cost.
 
 - id: dhsm
   title: "Dynamic Hub-and-Spoke Memory for Streaming Video Understanding"
@@ -207,7 +207,7 @@
     width: 960
     height: 417
     alt: D-HSM overview
-  summary: Training-free dynamic hub-and-spoke memory for question-aware long-range retrieval in streaming video understanding
+  summary: Combines question-relevant textual memory with recent visual frames for streaming video question answering, without additional training.
 
 - id: probe
   title: "Self-Supervised Visual Prompting for Cross-Domain Road Damage Detection"
