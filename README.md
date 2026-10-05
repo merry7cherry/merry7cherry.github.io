@@ -71,6 +71,13 @@ back before considering the release complete.
 
 ## Current Content Decisions
 
+As of October 5, 2026, Drift Flow Matching links appear in Page, Paper, Code
+order on both the homepage and publication archive. The Page links to
+`https://merry7cherry.github.io/drift-flow-matching/`, Paper to
+`https://arxiv.org/abs/2605.17244`, and Code to
+`https://github.com/merry7cherry/drift-flow-matching`. Publication templates
+render Page only when a record provides `page_url`.
+
 The September 24, 2026 update highlights Summer 2027 research internships in
 Generative AI. Selected Publications contains DFM, Stochastic Interpolants,
 Learning Straight Flows, CAD-VAE, StructLoRA, D-HSM, and TFM, in that order.

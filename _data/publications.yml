@@ -15,7 +15,9 @@
     selected: NeurIPS 2026 Main Track
     archive: NeurIPS 2026
     url: https://neurips.cc/Conferences/2026
+  page_url: https://merry7cherry.github.io/drift-flow-matching/
   paper_url: https://arxiv.org/abs/2605.17244
+  code_url: https://github.com/merry7cherry/drift-flow-matching
   metrics:
     semantic_scholar_id: 7359c810d2fff2920909bd421fec32d1f3330d33
   image:

@@ -35,6 +35,7 @@ layout: null
 							{% assign venue_url = paper.venue.url | default: paper.paper_url %}
 							<strong><a class="other-venue" href="{{ venue_url }}" target="_blank">{{ paper.venue.archive }}</a></strong>
 							<span class="other-links">
+								{% if paper.page_url %}<a class="pub-link" href="{{ paper.page_url }}" target="_blank" aria-label="Page: {{ paper.title | escape }}">Page</a>{% endif %}
 								<a class="pub-link" href="{{ paper.paper_url }}" target="_blank" aria-label="Paper: {{ paper.title | escape }}">Paper</a>
 								{% if paper.code_url %}<a class="pub-link" href="{{ paper.code_url }}" target="_blank" aria-label="Code: {{ paper.title | escape }}">Code</a>{% endif %}
 							</span>

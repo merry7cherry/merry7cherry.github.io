@@ -145,6 +145,7 @@
 					<div class="pub-title">{{ paper.title }}</div>
 					<div class="pub-meta">
 						{% if paper.venue.url %}<strong><a href="{{ paper.venue.url }}" target="_blank">{{ paper.venue.selected }}</a></strong>{% else %}<strong>{{ paper.venue.selected }}</strong>{% endif %}
+						{% if paper.page_url %}<small><a href="{{ paper.page_url }}" target="_blank" aria-label="Page: {{ paper.title | escape }}">[Page]</a></small>{% endif %}
 						<small><a href="{{ paper.paper_url }}" target="_blank" aria-label="Paper: {{ paper.title | escape }}">[Paper]</a></small>
 						{% if paper.code_url %}<small><a href="{{ paper.code_url }}" target="_blank" aria-label="Code: {{ paper.title | escape }}">[Code]</a></small>{% endif %}
 					</div>
