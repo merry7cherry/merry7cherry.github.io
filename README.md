@@ -74,7 +74,11 @@ back before considering the release complete.
 As of October 5, 2026, Posterior Flow Matching is first in Selected Publications
 and the 2026 publication archive, with the remaining selected papers in their
 existing relative order. Its seven authors follow the public preprint, and its
-thumbnail variants reuse the project page's application overview (`assets/teaser.webp`).
+thumbnail variants and enlarged image show the appendix's complete three-panel
+overview: training, ODE/SDE sampling, and applications. The source is
+`figure/image/method_overview.pdf` in the PFM paper repository, rendered as a
+2200-by-1653 PNG with 480- and 960-pixel AVIF thumbnail variants. The reviewed
+source was checked on October 5, 2026.
 Page links to `https://merry7cherry.github.io/posterior-flow-matching/`, Paper to
 `https://merry7cherry.github.io/posterior-flow-matching/assets/paper.pdf`, and Code
 to `https://github.com/merry7cherry/posterior-flow-matching`; all three returned

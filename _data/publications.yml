@@ -19,12 +19,12 @@
   paper_url: https://merry7cherry.github.io/posterior-flow-matching/assets/paper.pdf
   code_url: https://github.com/merry7cherry/posterior-flow-matching
   image:
-    thumb: /img/papers/thumbs/posterior-flow-matching-480.avif
-    thumb_2x: /img/papers/thumbs/posterior-flow-matching-960.avif
-    full: /img/papers/posterior-flow-matching.png
+    thumb: /img/papers/thumbs/posterior-flow-matching-overview-480.avif
+    thumb_2x: /img/papers/thumbs/posterior-flow-matching-overview-960.avif
+    full: /img/papers/posterior-flow-matching-overview.png
     width: 2200
-    height: 931
-    alt: Posterior Flow Matching generation and uncertainty examples across images, point clouds, molecules, and actions
+    height: 1653
+    alt: Posterior Flow Matching full overview with training, ODE/SDE sampling, and applications
   summary: Learns conditional velocity means and variances for ODE/SDE generation and endpoint uncertainty readouts.
 
 - id: drift-flow-matching
