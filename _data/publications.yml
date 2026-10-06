@@ -1,9 +1,38 @@
+- id: posterior-flow-matching
+  title: "Posterior Flow Matching"
+  year: "2026"
+  sort_key: "2026-10-05"
+  selected: true
+  selected_order: 1
+  authors:
+    - name: Chenrui Ma
+    - name: Xi Xiao
+    - name: Lin Zhao
+    - name: Xinru Jiang
+    - name: Tianyang Wang
+    - name: Yanning Shen
+    - name: Nando Fioretto
+  venue:
+    selected: arXiv preprint, 2026 — link forthcoming
+    archive: arXiv preprint, 2026 — link forthcoming
+  page_url: https://merry7cherry.github.io/posterior-flow-matching/
+  paper_url: https://merry7cherry.github.io/posterior-flow-matching/assets/paper.pdf
+  code_url: https://github.com/merry7cherry/posterior-flow-matching
+  image:
+    thumb: /img/papers/thumbs/posterior-flow-matching-480.avif
+    thumb_2x: /img/papers/thumbs/posterior-flow-matching-960.avif
+    full: /img/papers/posterior-flow-matching.png
+    width: 2200
+    height: 931
+    alt: Posterior Flow Matching generation and uncertainty examples across images, point clouds, molecules, and actions
+  summary: Learns conditional velocity means and variances for ODE/SDE generation and endpoint uncertainty readouts.
+
 - id: drift-flow-matching
   title: "Drift Flow Matching"
   year: "2026"
   sort_key: "2026-09-24"
   selected: true
-  selected_order: 1
+  selected_order: 2
   authors:
     - name: Chenrui Ma
     - name: Xi Xiao
@@ -34,7 +63,7 @@
   year: "2026"
   sort_key: "2026-03-16"
   selected: true
-  selected_order: 7
+  selected_order: 8
   authors:
     - name: Chenrui Ma
   venue:
@@ -57,7 +86,7 @@
   year: "2026"
   sort_key: "2026-02"
   selected: true
-  selected_order: 3
+  selected_order: 4
   authors:
     - name: Chenrui Ma
     - name: Xi Xiao
@@ -87,7 +116,7 @@
   year: "2026"
   sort_key: "2025-11"
   selected: true
-  selected_order: 4
+  selected_order: 5
   authors:
     - name: Chenrui Ma
     - name: Xi Xiao
@@ -117,7 +146,7 @@
   year: "2026"
   sort_key: "2026-09-24"
   selected: true
-  selected_order: 2
+  selected_order: 3
   authors:
     - name: Chenrui Ma
     - name: Xi Xiao
@@ -147,7 +176,7 @@
   year: "2026"
   sort_key: "2026-03-15"
   selected: true
-  selected_order: 5
+  selected_order: 6
   authors:
     - name: Xi Xiao
       equal: true
@@ -183,7 +212,7 @@
   year: "2026"
   sort_key: "2026-08"
   selected: true
-  selected_order: 6
+  selected_order: 7
   authors:
     - name: Xinru Jiang
       equal: true

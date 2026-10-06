@@ -71,6 +71,19 @@ back before considering the release complete.
 
 ## Current Content Decisions
 
+As of October 5, 2026, Posterior Flow Matching is first in Selected Publications
+and the 2026 publication archive, with the remaining selected papers in their
+existing relative order. Its seven authors follow the public preprint, and its
+thumbnail variants reuse the project page's application overview (`assets/teaser.webp`).
+Page links to `https://merry7cherry.github.io/posterior-flow-matching/`, Paper to
+`https://merry7cherry.github.io/posterior-flow-matching/assets/paper.pdf`, and Code
+to `https://github.com/merry7cherry/posterior-flow-matching`; all three returned
+HTTP 200 when checked on October 5, 2026. The displayed status is
+"arXiv preprint, 2026 — link forthcoming". The author reports that arXiv is on
+hold; no public arXiv identifier is recorded. Once that URL is available, update
+PFM's `paper_url` and both venue labels in `_data/publications.yml`. No citation
+or Star count is asserted for this new entry. The archive now has 14 records.
+
 As of October 5, 2026, Drift Flow Matching links appear in Page, Paper, Code
 order on both the homepage and publication archive. The Page links to
 `https://merry7cherry.github.io/drift-flow-matching/`, Paper to
@@ -79,12 +92,12 @@ order on both the homepage and publication archive. The Page links to
 render Page only when a record provides `page_url`.
 
 The September 24, 2026 update highlights Summer 2027 research internships in
-Generative AI. Selected Publications contains DFM, Stochastic Interpolants,
+Generative AI. Before the October 5 PFM addition, Selected Publications contained DFM, Stochastic Interpolants,
 Learning Straight Flows, CAD-VAE, StructLoRA, D-HSM, and TFM, in that order.
 DFM and Stochastic Interpolants were confirmed as NeurIPS 2026 Main Track
 posters by the September 24 decision emails. TFM remains labeled arXiv until
 a formal acceptance is confirmed. ICLR 2027 reviewer service was confirmed by
-the September 23 reviewer bidding email. All 13 publication records remain
+the September 23 reviewer bidding email. All 13 publication records from that update remain
 in the complete archive; PROBE is no longer selected.
 The NeurIPS news item uses "Two of our works". Selected publication venue
 labels use dark red, while one-sentence summaries use the primary navy color.

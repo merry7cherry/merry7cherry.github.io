@@ -210,13 +210,14 @@ require "yaml"
 
 papers = YAML.safe_load(File.read("_data/publications.yml"))
 raise "publication data must be a non-empty array" unless papers.is_a?(Array) && !papers.empty?
-raise "expected 13 publications, found #{papers.length}" unless papers.length == 13
+raise "expected 14 publications, found #{papers.length}" unless papers.length == 14
 
 ids = papers.map { |paper| paper.fetch("id") }
 raise "publication ids must be unique" unless ids.uniq.length == ids.length
 
 selected = papers.select { |paper| paper["selected"] }.sort_by { |paper| paper.fetch("selected_order") }
 expected_selected = %w[
+  posterior-flow-matching
   drift-flow-matching
   stochastic-interpolants
   learning-straight-flows
@@ -304,8 +305,8 @@ assert_contains ".github/workflows/validate-site.yml" 'run: bash tests/site_migr
 assert_contains ".github/workflows/validate-site.yml" 'run: bundle exec jekyll build'
 
 thumb_count=$(find img/papers/thumbs -type f -name '*.avif' | wc -l | tr -d ' ')
-if [[ "$thumb_count" != "16" ]]; then
-  fail "expected 16 AVIF thumbnail variants, found $thumb_count"
+if [[ "$thumb_count" != "18" ]]; then
+  fail "expected 18 AVIF thumbnail variants, found $thumb_count"
 fi
 
 thumb_bytes=0
