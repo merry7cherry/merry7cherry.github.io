@@ -119,9 +119,9 @@ Homepage order is About, Research Interests, News, Selected Publications,
 Experience/Education, Awards, and Service. Local source updates do not imply
 a production deployment; follow the release verification steps above.
 
-The linked `files/2026FALL_PHD_CV.pdf` was inspected during this update and
-still lists Stochastic Interpolants as submitted to ICLR. The PDF needs a
-separate CV-source update to match the website's confirmed publication status.
+The linked `files/2026FALL_PHD_CV.pdf` was updated on October 6, 2026 from the
+current Digital internship resume. Stochastic Interpolants now correctly lists
+NeurIPS 2026. See the Current CV asset record below for the source revision.
 
 The seven selected publication summaries were reviewed against their linked
 papers and revised to state the main mechanism and practical benefit in one
