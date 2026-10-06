@@ -111,6 +111,9 @@ Research cards are Efficient Generative Modeling, Trustworthy Machine Learning,
 and Multimodal AI. Each card shows its heading and paper links, without a
 separate descriptive sentence. The generative modeling card includes TFM with an arXiv 2026
 label alongside the two NeurIPS papers and Learning Straight Flows.
+As of October 5, 2026, Trustworthy Machine Learning also includes an
+"arXiv'26 PFM" chip linking to the PFM project page, alongside CAD-VAE and
+StructLoRA. This chip uses the project page while the arXiv URL is pending.
 
 Homepage order is About, Research Interests, News, Selected Publications,
 Experience/Education, Awards, and Service. Local source updates do not imply
