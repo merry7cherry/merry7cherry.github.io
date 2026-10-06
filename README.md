@@ -135,6 +135,8 @@ LoRA coordination, and textual memory with recent video frames.
 The homepage CV button and `cv.md` point to `files/2026FALL_PHD_CV.pdf`.
 This asset now contains the two-page Summer 2027 research internship **Digital**
 resume exported from `merry7cherry/Chenrui_Ma_Resume`, branch `job-internship`,
-source revision `c8f20d3`. It includes the updated research profile and publication
-method labels; it is not the longer Academic/NIW CV or the Print edition.
+source revision `3a7de61`. It includes the updated research profile, publication
+method labels, and four skills categories: Machine Learning, Mathematical Methods,
+Programming and Frameworks, and Systems. It is not the longer Academic/NIW CV
+or the Print edition.
 The PDF was compiled and both pages inspected before publication.
