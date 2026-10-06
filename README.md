@@ -129,3 +129,12 @@ sentence. They distinguish DFM's iterative refinement, TFM's direct transitions,
 S-VFM's trajectory straightness, and conditional coupling for pixel-space
 generation; the remaining summaries explain correlation modeling, cross-layer
 LoRA coordination, and textual memory with recent video frames.
+
+## Current CV asset — October 6, 2026
+
+The homepage CV button and `cv.md` point to `files/2026FALL_PHD_CV.pdf`.
+This asset now contains the two-page Summer 2027 research internship **Digital**
+resume exported from `merry7cherry/Chenrui_Ma_Resume`, branch `job-internship`,
+source revision `c8f20d3`. It includes the updated research profile and publication
+method labels; it is not the longer Academic/NIW CV or the Print edition.
+The PDF was compiled and both pages inspected before publication.
