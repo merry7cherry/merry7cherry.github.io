@@ -140,3 +140,10 @@ method labels, and four skills categories: Machine Learning, Mathematical Method
 Programming and Frameworks, and Systems. It is not the longer Academic/NIW CV
 or the Print edition.
 The PDF was compiled and both pages inspected before publication.
+
+## October 12, 2026 reviewer recognition
+
+Added NeurIPS 2026 Top Reviewer to Awards and Conference Reviewer, based on
+the October 11 official NeurIPS notification. News is unchanged by explicit
+user request. Refreshed the linked CV with the two-page internship Digital
+PDF; AAAI 2027 is listed as Reviewer. Source checks and PDF rendering passed.
