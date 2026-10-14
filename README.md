@@ -81,8 +81,9 @@ overview: training, ODE/SDE sampling, and applications. The source is
 source was checked on October 5, 2026.
 Page links to `https://merry7cherry.github.io/posterior-flow-matching/`, Paper to
 `https://merry7cherry.github.io/posterior-flow-matching/assets/paper.pdf`, and Code
-to `https://github.com/merry7cherry/posterior-flow-matching`; all three returned
-HTTP 200 when checked on October 5, 2026. The displayed status is
+to `https://github.com/merry7cherry/posterior-flow-matching#code`. The October 13
+code update uses one PFM repository with four parallel task directories:
+`images/`, `pointcloud/`, `molecules/`, and `pusht/`. The displayed status is
 "arXiv preprint, 2026 — link forthcoming". The author reports that arXiv is on
 hold; no public arXiv identifier is recorded. Once that URL is available, update
 PFM's `paper_url` and both venue labels in `_data/publications.yml`. No citation
