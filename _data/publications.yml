@@ -13,11 +13,13 @@
     - name: Yanning Shen
     - name: Nando Fioretto
   venue:
-    selected: arXiv preprint, 2026 — link forthcoming
-    archive: arXiv preprint, 2026 — link forthcoming
+    selected: arXiv 2026
+    archive: arXiv 2026
   page_url: https://merry7cherry.github.io/posterior-flow-matching/
-  paper_url: https://merry7cherry.github.io/posterior-flow-matching/assets/paper.pdf
+  paper_url: https://arxiv.org/abs/2610.13994
   code_url: https://github.com/merry7cherry/posterior-flow-matching#code
+  metrics:
+    github_repo: merry7cherry/posterior-flow-matching
   image:
     thumb: /img/papers/thumbs/posterior-flow-matching-overview-480.avif
     thumb_2x: /img/papers/thumbs/posterior-flow-matching-overview-960.avif
@@ -49,6 +51,7 @@
   code_url: https://github.com/merry7cherry/drift-flow-matching
   metrics:
     semantic_scholar_id: 7359c810d2fff2920909bd421fec32d1f3330d33
+    github_repo: merry7cherry/drift-flow-matching
   image:
     thumb: /img/papers/thumbs/drift-flow-matching-480.avif
     thumb_2x: /img/papers/thumbs/drift-flow-matching-960.avif
@@ -231,6 +234,8 @@
     archive: EMNLP 2026 Findings
     url: https://2026.emnlp.org/
   paper_url: https://arxiv.org/abs/2608.30294
+  metrics:
+    semantic_scholar_id: c6b13eb6f91ec8e4da4532cce9254a8af8a3731e
   image:
     thumb: /img/papers/thumbs/dhsm-480.avif
     thumb_2x: /img/papers/thumbs/dhsm-960.avif

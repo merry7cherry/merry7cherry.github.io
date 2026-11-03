@@ -152,7 +152,7 @@ assert_contains "_includes/site-navbar.html" 'class="nav-dropdown-toggle dropdow
 assert_contains "_includes/site-navbar.html" 'aria-current="page"'
 assert_not_contains "_includes/site-navbar.html" '>CV</a>'
 assert_not_contains "_includes/site-navbar.html" 'id="cvMenu"'
-assert_contains "_includes/site-footer.html" 'Last modified: September 24, 2026.'
+assert_contains "_includes/site-footer.html" 'Last modified: November 3, 2026.'
 
 ruby <<'RUBY' || failures=$((failures + 1))
 navbar = File.read("_includes/site-navbar.html")
@@ -264,11 +264,11 @@ end
 
 semantic_sources = papers.count { |paper| paper.dig("metrics", "semantic_scholar_id") }
 github_sources = papers.count { |paper| paper.dig("metrics", "github_repo") }
-raise "expected 12 locked Semantic Scholar records, found #{semantic_sources}" unless semantic_sources == 12
-raise "expected 4 GitHub Star sources, found #{github_sources}" unless github_sources == 4
+raise "expected 13 locked Semantic Scholar records, found #{semantic_sources}" unless semantic_sources == 13
+raise "expected 6 GitHub Star sources, found #{github_sources}" unless github_sources == 6
 
 dhsm = papers.find { |paper| paper["id"] == "dhsm" }
-raise "DHSM must remain unmatched until Semantic Scholar indexes it" if dhsm && dhsm.dig("metrics", "semantic_scholar_id")
+raise "DHSM must use its verified Semantic Scholar record" unless dhsm && dhsm.dig("metrics", "semantic_scholar_id") == "c6b13eb6f91ec8e4da4532cce9254a8af8a3731e"
 
 html = File.read("_layouts/index.html")
 experience = html[/<div class="cv-panel" id="Experience">(.*?)<div class="cv-panel" id="Education">/m, 1]

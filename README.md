@@ -80,14 +80,14 @@ overview: training, ODE/SDE sampling, and applications. The source is
 2200-by-1653 PNG with 480- and 960-pixel AVIF thumbnail variants. The reviewed
 source was checked on October 5, 2026.
 Page links to `https://merry7cherry.github.io/posterior-flow-matching/`, Paper to
-`https://merry7cherry.github.io/posterior-flow-matching/assets/paper.pdf`, and Code
-to `https://github.com/merry7cherry/posterior-flow-matching#code`. The October 13
+`https://arxiv.org/abs/2610.13994`, and Code to
+`https://github.com/merry7cherry/posterior-flow-matching#code`. The October 13
 code update uses one PFM repository with four parallel task directories:
-`images/`, `pointcloud/`, `molecules/`, and `pusht/`. The displayed status is
-"arXiv preprint, 2026 — link forthcoming". The author reports that arXiv is on
-hold; no public arXiv identifier is recorded. Once that URL is available, update
-PFM's `paper_url` and both venue labels in `_data/publications.yml`. No citation
-or Star count is asserted for this new entry. The archive now has 14 records.
+`images/`, `pointcloud/`, `molecules/`, and `pusht/`. The public arXiv record,
+including its title and seven authors, was verified on November 3, 2026;
+both venue labels now say "arXiv 2026". PFM's verified GitHub Stars are shown;
+its Semantic Scholar page does not display a citation count, so no citation
+number is asserted. The archive has 14 records.
 
 As of October 5, 2026, Drift Flow Matching links appear in Page, Paper, Code
 order on both the homepage and publication archive. The Page links to
@@ -114,7 +114,7 @@ separate descriptive sentence. The generative modeling card includes TFM with an
 label alongside the two NeurIPS papers and Learning Straight Flows.
 As of October 5, 2026, Trustworthy Machine Learning also includes an
 "arXiv'26 PFM" chip linking to the PFM project page, alongside CAD-VAE and
-StructLoRA. This chip uses the project page while the arXiv URL is pending.
+StructLoRA. This chip links to the project page; the publication Paper link uses arXiv.
 
 Homepage order is About, Research Interests, News, Selected Publications,
 Experience/Education, Awards, and Service. Local source updates do not imply
@@ -148,3 +148,23 @@ Added NeurIPS 2026 Top Reviewer to Awards and Conference Reviewer, based on
 the October 11 official NeurIPS notification. News is unchanged by explicit
 user request. Refreshed the linked CV with the two-page internship Digital
 PDF; AAAI 2027 is listed as Reviewer. Source checks and PDF rendering passed.
+
+## November 3, 2026 content and metrics refresh
+
+The Ph.D. education date range ends in June 2029 and the expected graduation
+label is 2029, following the owner's instruction. PFM uses its verified arXiv
+URL on both publication lists. The footer modification date is November 3.
+
+All 12 previously configured Semantic Scholar citation counts were refreshed
+from their public paper pages after the API returned HTTP 429. Every paper ID
+and normalized title was checked. D-HSM is now indexed at
+`c6b13eb6f91ec8e4da4532cce9254a8af8a3731e` and its verified citation count is
+also included. GitHub Stars were refreshed from the repository API for all
+six public code repositories, including the newly displayed PFM and DFM
+counts. Individual metrics and the shared freshness date are November 3, 2026
+(UTC). The weekly updater still requires the Semantic Scholar Actions secret;
+this manual refresh does not establish that the scheduled workflow is enabled.
+
+This refresh uses an isolated checkout to preserve unrelated local changes.
+Production publication follows the release workflow above, including a
+completed Pages build and live read-back of both publication lists.
