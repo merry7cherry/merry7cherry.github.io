@@ -85,7 +85,7 @@ Page links to `https://merry7cherry.github.io/posterior-flow-matching/`, Paper t
 code update uses one PFM repository with four parallel task directories:
 `images/`, `pointcloud/`, `molecules/`, and `pusht/`. The public arXiv record,
 including its title and seven authors, was verified on November 3, 2026;
-both venue labels now say "arXiv 2026". PFM's verified GitHub Stars are shown;
+both venue labels say "arXiv", following the owner's preference to omit the year. PFM's verified GitHub Stars are shown;
 its Semantic Scholar page does not display a citation count, so no citation
 number is asserted. The archive has 14 records.
 

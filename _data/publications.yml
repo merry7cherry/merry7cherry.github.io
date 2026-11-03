@@ -13,8 +13,8 @@
     - name: Yanning Shen
     - name: Nando Fioretto
   venue:
-    selected: arXiv 2026
-    archive: arXiv 2026
+    selected: arXiv
+    archive: arXiv
   page_url: https://merry7cherry.github.io/posterior-flow-matching/
   paper_url: https://arxiv.org/abs/2610.13994
   code_url: https://github.com/merry7cherry/posterior-flow-matching#code
